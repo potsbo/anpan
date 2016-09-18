@@ -65,5 +65,8 @@ describe 'My behaviour' do
     it 'should have one vowel' do
       expect(list.first).to be_a Vowel
     end
+    it 'should have one object' do
+      expect(list.size).to be 1
+    end
   end
 end
