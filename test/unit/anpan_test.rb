@@ -3,13 +3,6 @@ require 'anpan'
 require 'conf'
 
 class AnpanTest < Test::Unit::TestCase
-  def test_load_one_vowel
-    anpan = Anpan.new
-    anpan.load_vowel("a" => "a")
-    assert_equal  1,  anpan.vowel_list.size
-    assert_equal 'a', anpan.vowel_list.first.output
-  end
-
   def test_anpan
     anpan = Anpan.new
     anpan.load_conf(CONF)
