@@ -7,13 +7,14 @@ describe 'My behaviour' do
 
   describe '#render' do
     let(:render) { anpan.render }
-    before do
-      anpan.add_consonants(consonant)
-      anpan.add_vowels(vowel)
-    end
-
-    it 'should renter "ca\tか"' do
-      expect(render).to eq "ca\tか"
+    context 'conf one consonant and one vowel added' do
+      before do
+        anpan.add_consonants(consonant)
+        anpan.add_vowels(vowel)
+      end
+      it 'should renter "ca\tか"' do
+        expect(render).to eq "ca\tか"
+      end
     end
   end
 
