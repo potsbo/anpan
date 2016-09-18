@@ -23,5 +23,11 @@ describe 'My behaviour' do
     it 'should be an Array' do
       expect(list).to be_a Array
     end
+    it 'should have one consonant' do
+      expect(list.size).to be 1
+    end
+    it 'should output "k"' do
+      expect(list.first.output).to eq 'k'
+    end
   end
 end
