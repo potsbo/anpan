@@ -48,6 +48,9 @@ describe 'My behaviour' do
       it 'should return 3 consonants' do
         expect(list.size).to be 3
       end
+      it 'should output "k"' do
+        expect(list.first.output).to eq 'k'
+      end
     end
   end
 end
