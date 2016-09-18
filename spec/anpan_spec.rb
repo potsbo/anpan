@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe 'My behaviour' do
-  let(:anpan) { Anpan.new }
+  let(:conf) { {} }
+  let(:anpan) { Anpan.new(conf) }
   let(:consonant) { Consonant.new('c', {'output'=>'k'}) }
   let(:vowel) { Vowel.new('a', 'a') }
 
