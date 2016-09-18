@@ -3,18 +3,6 @@ require 'anpan'
 require 'conf'
 
 class AnpanTest < Test::Unit::TestCase
-  def test_load_consonants
-    conf = {
-      "c" => {"output"=>"k"},
-      "s" => {},
-      "t" => {} 
-    }
-    anpan = Anpan.new
-    anpan.load_consonant(conf)
-    assert_equal  3,  anpan.consonant_list.size
-    assert_equal 'k', anpan.consonant_list.first.output
-  end
-
   def test_load_one_vowel
     anpan = Anpan.new
     anpan.load_vowel("a" => "a")
