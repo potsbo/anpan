@@ -3,15 +3,6 @@ require 'anpan'
 require 'conf'
 
 class AnpanTest < Test::Unit::TestCase
-  def test_add_consonants
-    anpan = Anpan.new
-    anpan.add_consonants(Consonant.new('c',{"output"=>'k'}))
-    anpan.add_vowels(Vowel.new('a','a'))
-
-    assert anpan.render.is_a? String
-    assert_equal "ca\tか", anpan.render
-  end
-
   def test_load_one_consonant
     anpan = Anpan.new
     anpan.load_consonant({"c" => {"output"=>"k"}})
