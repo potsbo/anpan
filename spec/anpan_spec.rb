@@ -35,7 +35,7 @@ describe 'My behaviour' do
           "wha\tうぁ","whi\tうぃ","whu\tうぅ","whe\tうぇ","who\tうぉ",
       ]
       expected.each do |output|
-        it "should contairn #{output}" do
+        it "should contain #{output}" do
           expect(render).to include("#{output}\n")
         end
       end
