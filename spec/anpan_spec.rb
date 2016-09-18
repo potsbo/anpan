@@ -33,4 +33,21 @@ describe 'My behaviour' do
       expect(list.first.output).to eq 'k'
     end
   end
+
+  describe '#load_consonants' do
+    let(:list) { anpan.consonant_list }
+    before do
+      conf = {
+          "c" => {"output"=>"k"},
+          "s" => {},
+          "t" => {}
+      }
+      anpan.load_consonant conf
+    end
+    context 'when conf size == 3' do
+      it 'should return 3 consonants' do
+        expect(list.size).to be 3
+      end
+    end
+  end
 end
