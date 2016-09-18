@@ -53,4 +53,14 @@ describe 'My behaviour' do
       end
     end
   end
+
+  describe '#vowel_list' do
+    let(:list) { anpan.vowel_list }
+    before do
+      anpan.load_vowel("a"=>"a")
+    end
+    it 'should be an Array' do
+      expect(list).to be_a Array
+    end
+  end
 end
