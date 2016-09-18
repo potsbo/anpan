@@ -17,6 +17,29 @@ describe 'My behaviour' do
         expect(render).to eq "ca\tか"
       end
     end
+
+    context 'when default conf loaded' do
+      let(:conf) { CONF }
+      expected = [
+          "a\tあ", "i\tい", "u\tう", "e\tえ", "o\tお",
+          "ca\tか","ci\tき","cu\tく","ce\tけ","co\tこ",
+          "ta\tた","ti\tち","tu\tつ","te\tて","to\tと",
+          "na\tな","ni\tに","nu\tぬ","ne\tね","no\tの",
+          "ha\tは","hi\tひ","hu\tふ","he\tへ","ho\tほ",
+          "ma\tま","mi\tみ","mu\tむ","me\tめ","mo\tも",
+          "fa\tや","fi\tい","fu\tゆ","fe\tえ","fo\tよ",
+          "ra\tら","ri\tり","ru\tる","re\tれ","ro\tろ",
+          "cna\tきゃ","cni\tきぃ","cnu\tきゅ","cne\tきぇ","cno\tきょ",
+          "cn;\tきゃん","cnq\tきょん","cnj\tきぇん","cnk\tきゅん","cnx\tきぃん",
+          "cc\tっ\tc",
+          "wha\tうぁ","whi\tうぃ","whu\tうぅ","whe\tうぇ","who\tうぉ",
+      ]
+      expected.each do |output|
+        it "should contairn #{output}" do
+          expect(render).to include("#{output}\n")
+        end
+      end
+    end
   end
 
   describe '#consonant_list' do
