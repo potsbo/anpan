@@ -62,5 +62,8 @@ describe 'My behaviour' do
     it 'should be an Array' do
       expect(list).to be_a Array
     end
+    it 'should have one vowel' do
+      expect(list.first).to be_a Vowel
+    end
   end
 end
