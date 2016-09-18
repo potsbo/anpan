@@ -42,6 +42,15 @@ describe 'My behaviour' do
     end
   end
 
+  describe '#patterns' do
+    let(:conf) { CONF }
+    it 'should have no alphabets in output_jp' do
+      anpan.patterns.each do |pattern|
+        expect(pattern.output_jp).not_to match(/[a-z]+/)
+      end
+    end
+  end
+
   describe '#consonant_list' do
     let(:list) { anpan.consonant_list }
     before do
