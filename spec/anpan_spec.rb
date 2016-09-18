@@ -20,7 +20,7 @@ describe 'My behaviour' do
 
   describe '#consonant_list' do
     let(:list) { anpan.consonant_list }
-    it 'should have 1 consonant' do
+    it 'should be an Array' do
       expect(list).to be_a Array
     end
   end
