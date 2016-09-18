@@ -5,13 +5,12 @@ describe 'My behaviour' do
   let(:consonant) { Consonant.new('c', {'output'=>'k'}) }
   let(:vowel) { Vowel.new('a', 'a') }
 
-  before do
-    anpan.add_consonants(consonant)
-    anpan.add_vowels(vowel)
-  end
-
   describe '#render' do
     let(:render) { anpan.render }
+    before do
+      anpan.add_consonants(consonant)
+      anpan.add_vowels(vowel)
+    end
 
     it 'should renter "ca\tか"' do
       expect(render).to eq "ca\tか"
@@ -20,6 +19,10 @@ describe 'My behaviour' do
 
   describe '#consonant_list' do
     let(:list) { anpan.consonant_list }
+    before do
+      anpan.add_consonants(consonant)
+      anpan.add_vowels(vowel)
+    end
     it 'should be an Array' do
       expect(list).to be_a Array
     end
