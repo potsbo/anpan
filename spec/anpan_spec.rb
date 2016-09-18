@@ -68,5 +68,8 @@ describe 'My behaviour' do
     it 'should have one object' do
       expect(list.size).to be 1
     end
+    it 'should have output "a"' do
+      expect(list.first.output).to eq 'a'
+    end
   end
 end
