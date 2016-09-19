@@ -8,7 +8,8 @@ class Anpan
           "c" => {
               "output"=>"t",
               "contracted" => {
-                  "h" => "ily"
+                  "h" => "ily",
+                  "y" => "ily",
               },
               "geminated"  => {"c" => "ltuc"}
           },
