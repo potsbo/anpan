@@ -103,7 +103,6 @@ class Anpan
               "geminated"  => {"b" => "ltub"}
           },
           "l" => {
-              "regression" => {"f" => "ly"},
               "geminated"  => {"l" => "ltul"}
           },
           "x" => {
