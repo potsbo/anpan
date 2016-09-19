@@ -6,6 +6,13 @@ require './lib/vowel'
 require './lib/anpan_symbol'
 require './lib/pattern'
 
+require "bundler/gem_tasks"
+require "rspec/core/rake_task"
+
+RSpec::Core::RakeTask.new(:spec)
+
+task :default => :spec
+
 desc 'Run test_unit based test'
 Rake::TestTask.new do |t|
   t.libs << "test"
