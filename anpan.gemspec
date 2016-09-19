@@ -5,7 +5,7 @@ require 'anpan/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "anpan"
-  spec.version       = StrokeCounter::VERSION
+  spec.version       = Anpan::VERSION
   spec.authors       = ["Shimpei Otsubo"]
   spec.email         = ["potsbo@gmail.com"]
 
