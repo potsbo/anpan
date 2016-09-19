@@ -58,8 +58,6 @@ class Anpan
               "geminated"  => {"d" => "ltud"}
           },
           "v" => {
-              "output"     => "p",
-              "regression" => {"t" => "v","s" => "v"},
               "contracted" => {"y" => "ily"},
               "geminated"  => {"v" => "ltuv"},
           },
