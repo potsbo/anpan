@@ -59,6 +59,7 @@ class Anpan
           },
           "f" => {
               "output" => "hul",
+              "contracted" => {"y" => "y"},
               "geminated"  => {"f" => "ltuf"}
           },
           "r" => {
