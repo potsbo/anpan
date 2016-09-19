@@ -23,7 +23,7 @@ class Anpan
   end
 
   def load_symbol(hash)
-    add_symbols (hash||{}).collect {|i,o| AnpanSymbol.new i,o }
+    add_symbols (hash||{}).collect {|i,o| Symbol.new i,o }
   end
   ### loading ###
 
