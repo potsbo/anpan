@@ -12,6 +12,10 @@ class Pattern
     [@input,output_jp,@addition].join("\t").gsub(/\t+$/,'')
   end
 
+  def to_h
+    { input: @input, output: output_jp, addition: @addition}
+  end
+
   def output_jp
     jp, @addition = search_table(@output)
     jp
