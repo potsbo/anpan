@@ -6,8 +6,10 @@ class Anpan
       :consonants => {
           "" => {},
           "c" => {
-              "output"=>"k",
-              "contracted" => {"y" => "ily"},
+              "output"=>"t",
+              "contracted" => {
+                  "h" => "ily"
+              },
               "geminated"  => {"c" => "ltuc"}
           },
           "k" => {
