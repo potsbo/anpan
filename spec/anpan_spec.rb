@@ -48,7 +48,7 @@ describe 'My behaviour' do
         File.open('spec/table/google_japanese_input.txt') do |file|
           file.each_line do |line|
             it "should contain '#{line}'" do
-              expect(render).to include line
+              expect(render.split("\n")).to include line.chomp
             end
           end
         end
