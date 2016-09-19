@@ -43,10 +43,21 @@ describe 'My behaviour' do
 
     context 'when Google Japanese Input conf given' do
       let(:conf) { Anpan::GOOGLE_JAPANESE }
-      File.open('spec/table/google_japanese_input.txt') do |file|
-        file.each_line do |line|
-          it "should contain '#{line}'" do
-            expect(render).to include line
+      let(:lines) { File.readlines('spec/table/google_japanese_input.txt').map(&:chomp) }
+      describe 'render covers Google Japanese Input' do
+        File.open('spec/table/google_japanese_input.txt') do |file|
+          file.each_line do |line|
+            it "should contain '#{line}'" do
+              expect(render).to include line
+            end
+          end
+        end
+      end
+
+      describe "Google Japanese Input covers rendered" do
+        Anpan.new(Anpan::GOOGLE_JAPANESE).render.split("\n").each do |pattern|
+          it "should not contain any line not listed on google_japanese_input.txt" do
+            expect(lines).to include pattern
           end
         end
       end
