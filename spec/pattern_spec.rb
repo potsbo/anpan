@@ -21,4 +21,13 @@ describe Pattern do
       expect(jp).to eq 'あ'
     end
   end
+
+  describe 'TABLE' do
+    it 'should not be nil' do
+      expect(TABLE).not_to be_nil
+    end
+    it 'should have :a as a key' do
+      expect(TABLE[:a]).not_to be_nil
+    end
+  end
 end
