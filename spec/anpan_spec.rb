@@ -19,7 +19,7 @@ describe 'My behaviour' do
     end
 
     context 'when default conf loaded' do
-      let(:conf) { CONF }
+      let(:conf) { Anpan::CONF }
       expected = [
           "a\tあ", "i\tい", "u\tう", "e\tえ", "o\tお",
           "ca\tか","ci\tき","cu\tく","ce\tけ","co\tこ",
@@ -43,7 +43,7 @@ describe 'My behaviour' do
   end
 
   describe '#patterns' do
-    let(:conf) { CONF }
+    let(:conf) { Anpan::CONF }
     it 'should have no alphabets in output_jp' do
       anpan.patterns.each do |pattern|
         expect(pattern.output_jp).not_to match(/[a-z]+/)
