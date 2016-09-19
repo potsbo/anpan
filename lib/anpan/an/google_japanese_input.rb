@@ -54,6 +54,7 @@ class Anpan
               "geminated"  => {"m" => "ltum"}
           },
           "y" => {
+              "vowel_filter" => %w(a u o),
               "geminated"  => {"y" => "ltuy"}
           },
           "f" => {
