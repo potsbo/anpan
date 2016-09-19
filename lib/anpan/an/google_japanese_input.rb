@@ -90,7 +90,7 @@ class Anpan
               "geminated"  => {"p" => "ltup"}
           },
           "v" => {
-              "contracted" => {"y" => "ily"},
+              "contracted" => {"y" => "uly"},
               "geminated"  => {"v" => "ltuv"},
           },
           "b" => {
