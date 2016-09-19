@@ -7,27 +7,27 @@ class Anpan
           "" => {},
           "c" => {
               "output"=>"k",
-              "contracted" => {"n" => "ily"},
+              "contracted" => {"y" => "ily"},
               "geminated"  => {"c" => "ltuc"}
           },
           "s" => {
-              "contracted" => {"h" => "ily"},
+              "contracted" => {"y" => "ily"},
               "geminated"  => {"s" => "ltus"}
           },
           "t" => {
-              "contracted" => {"n" => "ily","h" => "ely"},
+              "contracted" => {"y" => "ily","h" => "ely"},
               "geminated"  => {"t" => "ltut"}
           },
           "n" => {
-              "contracted" => {"h" => "ily"},
+              "contracted" => {"y" => "ily"},
               "geminated"  => {"n" => "nn"}
           },
           "h" => {
-              "contracted" => {"n" => "ily"},
+              "contracted" => {"y" => "ily"},
               "geminated"  => {"h" => "ltuh"}
           },
           "m" => {
-              "contracted" => {"n" => "ily"},
+              "contracted" => {"y" => "ily"},
               "geminated"  => {"m" => "ltum"}
           },
           "f" => {
@@ -36,33 +36,33 @@ class Anpan
               "geminated"  => {"f" => "ltuf"}
           },
           "r" => {
-              "contracted" => {"h" => "ily"},
+              "contracted" => {"y" => "ily"},
               "geminated"  => {"r" => "ltur"}
           },
           "w" => {
-              "contracted" => {"h" => "ul"},
+              "contracted" => {"y" => "ul"},
               "geminated"  => {"r" => "ltur"}
           },
           "g" => {
-              "contracted" => {"n" => "ily"},
+              "contracted" => {"y" => "ily"},
               "geminated"  => {"g" => "ltug"}
           },
           "z" => {
-              "contracted" => {"h" => "ily"},
+              "contracted" => {"y" => "ily"},
               "geminated"  => {"z" => "ltuz"}
           },
           "d" => {
-              "contracted" => {"n" => "ely","h" => "ily"},
+              "contracted" => {"y" => "ely","h" => "ily"},
               "geminated"  => {"d" => "ltud"}
           },
           "v" => {
               "output"     => "p",
               "regression" => {"t" => "v","s" => "v"},
-              "contracted" => {"h" => "ily"},
+              "contracted" => {"y" => "ily"},
               "geminated"  => {"v" => "ltuv"},
           },
           "b" => {
-              "contracted" => {"n" => "ily"},
+              "contracted" => {"y" => "ily"},
               "geminated"  => {"b" => "ltub"}
           },
           "l" => {
