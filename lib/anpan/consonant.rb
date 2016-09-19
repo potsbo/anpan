@@ -1,18 +1,20 @@
 class Consonant
   attr_reader :input, :output
   def initialize(input, conf)
-    @input       = input
-    @vowel_list  = []
-    @patterns    = []
+    @input        = input
+    @vowel_list   = []
+    @patterns     = []
+    @vowel_filter = []
     load_conf(conf)
   end
 
   def load_conf(conf)
-    @input       = conf["input"]      || @input
-    @output      = conf["output"]     || @input || @output
-    @contraction = conf["contracted"] || @contraction || []
-    @gemination  = conf["geminated"]  || @gemination  || []
-    @regression  = conf["regression"] || @regression  || []
+    @input        = conf["input"]      || @input
+    @output       = conf["output"]     || @input || @output
+    @contraction  = conf["contracted"] || @contraction || []
+    @gemination   = conf["geminated"]  || @gemination  || []
+    @regression   = conf["regression"] || @regression  || []
+    @vowel_filter = (conf["vowel_filter"] || []).empty? ? ['a', 'i', 'u', 'e', 'o'] : conf["vowel_filter"]
   end
 
   def addVowel(vowel)
@@ -35,12 +37,12 @@ class Consonant
   end
 
   def patterns_normal
-    @vowel_list.collect { |v| Pattern.new(@input + v.input, @output + v.output)}
+    vowels.collect { |v| Pattern.new(@input + v.input, @output + v.output)}
   end
 
   def patterns_contracted
     @contraction.collect do |trigger,insertion|
-      @vowel_list.collect do |v|
+      vowels.collect do |v|
         # insertion = "" if insertion[0] == v.output[0]
         Pattern.new(
           @input  + trigger   + v.input,
@@ -57,12 +59,16 @@ class Consonant
 
   def patterns_regression
     @regression.collect do |trigger,output|
-      @vowel_list.collect do |v|
+      vowels.collect do |v|
         Pattern.new(
           @input + trigger + v.input,
           output + v.output)
       end
     end
+  end
+
+  def vowels
+    @vowel_list.select { |v| @vowel_filter.include? v.output[0]}
   end
   ### pattern makers ###
 end
