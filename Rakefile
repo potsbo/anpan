@@ -1,12 +1,5 @@
-require 'rake/testtask'
-require './lib/anpan'
-require './lib/conf'
-require './lib/consonant'
-require './lib/vowel'
-require './lib/anpan_symbol'
-require './lib/pattern'
-
 require "rspec/core/rake_task"
+require 'anpan'
 
 RSpec::Core::RakeTask.new(:spec)
 
