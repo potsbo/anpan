@@ -2,7 +2,7 @@ require 'anpan/an/conf'
 
 class Anpan
   attr_reader :consonant_list, :vowel_list
-  def initialize(conf={})
+  def initialize(conf=CONF)
     @vowel_list     = []
     @consonant_list = []
     @symbol_list    = []
@@ -61,4 +61,12 @@ class Anpan
     @patterns.collect{|p| p.render}.join("\n")
   end
   ### rendering ###
+
+  def table
+    patterns.map { |pattern| pattern.to_h }
+  end
+
+  def self.table
+    Anpan.new.table
+  end
 end

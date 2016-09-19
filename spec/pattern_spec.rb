@@ -22,6 +22,16 @@ describe Pattern do
     end
   end
 
+  describe '#to_h' do
+    it 'should return a Hash' do
+      expect(pattern.to_h).to be_a Hash
+    end
+
+    it 'should contain input, output, and addition' do
+      expect(pattern.to_h.keys).to include(*%i(input output addition))
+    end
+  end
+
   describe 'TABLE' do
     it 'should not be nil' do
       expect(Pattern::TABLE).not_to be_nil
