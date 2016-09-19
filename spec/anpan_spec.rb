@@ -40,6 +40,17 @@ describe 'My behaviour' do
         end
       end
     end
+
+    context 'when Google Japanese Input conf given' do
+      let(:conf) { Anpan::GOOGLE_JAPANESE }
+      File.open('spec/table/google_japanese_input.txt') do |file|
+        file.each_line do |line|
+          it "should contain '#{line}'" do
+            expect(render).to include line
+          end
+        end
+      end
+    end
   end
 
   describe '#patterns' do

@@ -1,4 +1,5 @@
 require 'anpan/an/conf'
+require 'anpan/an/google_japanese_input'
 
 class Anpan
   attr_reader :consonant_list, :vowel_list
