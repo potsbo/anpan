@@ -80,7 +80,8 @@ class Anpan
           "d" => {
               "contracted" => {
                   "y" => "ily",
-                  "w" => "ol"
+                  "w" => "ol",
+                  "h" => "ely"
               },
               "geminated"  => {"d" => "ltud"}
           },
