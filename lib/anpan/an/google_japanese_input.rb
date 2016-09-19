@@ -104,6 +104,7 @@ class Anpan
               "geminated"  => {"b" => "ltub"}
           },
           "l" => {
+              "contracted" => {"y" => "y"},
               "geminated"  => {"l" => "ltul"}
           },
           "x" => {
