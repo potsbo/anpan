@@ -1,4 +1,4 @@
-require_relative './table'
+require 'anpan/pattern/table'
 
 class Pattern
   attr_reader :input, :output, :addition
@@ -10,6 +10,10 @@ class Pattern
 
   def render
     [@input,output_jp,@addition].join("\t").gsub(/\t+$/,'')
+  end
+
+  def to_h
+    { input: @input, output: output_jp, addition: @addition}
   end
 
   def output_jp

@@ -1,6 +1,8 @@
+require 'anpan/an/conf'
+
 class Anpan
   attr_reader :consonant_list, :vowel_list
-  def initialize(conf={})
+  def initialize(conf=CONF)
     @vowel_list     = []
     @consonant_list = []
     @symbol_list    = []
@@ -23,7 +25,7 @@ class Anpan
   end
 
   def load_symbol(hash)
-    add_symbols (hash||{}).collect {|i,o| AnpanSymbol.new i,o }
+    add_symbols (hash||{}).collect {|i,o| Symbol.new i,o }
   end
   ### loading ###
 
@@ -59,4 +61,12 @@ class Anpan
     @patterns.collect{|p| p.render}.join("\n")
   end
   ### rendering ###
+
+  def table
+    patterns.map { |pattern| pattern.to_h }
+  end
+
+  def self.table
+    Anpan.new.table
+  end
 end

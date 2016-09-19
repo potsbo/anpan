@@ -19,7 +19,7 @@ describe 'My behaviour' do
     end
 
     context 'when default conf loaded' do
-      let(:conf) { CONF }
+      let(:conf) { Anpan::CONF }
       expected = [
           "a\tあ", "i\tい", "u\tう", "e\tえ", "o\tお",
           "ca\tか","ci\tき","cu\tく","ce\tけ","co\tこ",
@@ -43,7 +43,7 @@ describe 'My behaviour' do
   end
 
   describe '#patterns' do
-    let(:conf) { CONF }
+    let(:conf) { Anpan::CONF }
     it 'should have no alphabets in output_jp' do
       anpan.patterns.each do |pattern|
         expect(pattern.output_jp).not_to match(/[a-z]+/)
@@ -104,6 +104,26 @@ describe 'My behaviour' do
     end
     it 'should have output "a"' do
       expect(list.first.output).to eq 'a'
+    end
+  end
+
+  describe '#table' do
+    let(:table) { anpan.table }
+    it 'should return an Array' do
+      expect(table).to be_a Array
+    end
+  end
+
+  describe '.table' do
+    let(:table) { Anpan.table }
+    it 'should return an Array' do
+      expect(table).to be_a Array
+    end
+    it 'should return an Array' do
+      expect(table.first).to be_a Hash
+    end
+    it 'should return hash with input, output, and addition keys' do
+      expect(table.first.keys).to include(*%i(input output addition))
     end
   end
 end
