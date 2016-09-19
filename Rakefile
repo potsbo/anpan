@@ -6,12 +6,11 @@ require './lib/vowel'
 require './lib/anpan_symbol'
 require './lib/pattern'
 
-desc 'Run test_unit based test'
-Rake::TestTask.new do |t|
-  t.libs << "test"
-  t.test_files = Dir["test/**/*_test.rb"]
-  t.verbose = true
-end
+require "rspec/core/rake_task"
+
+RSpec::Core::RakeTask.new(:spec)
+
+task :default => :spec
 
 task :render do
   puts Anpan.new(CONF).render
