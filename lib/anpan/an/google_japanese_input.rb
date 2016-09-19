@@ -43,7 +43,9 @@ class Anpan
               "contracted" => {"y" => "ily"},
               "geminated"  => {"m" => "ltum"}
           },
-          "y" => {},
+          "y" => {
+              "geminated"  => {"y" => "ltuy"}
+          },
           "f" => {
               "output" => "hul",
               "geminated"  => {"f" => "ltuf"}
