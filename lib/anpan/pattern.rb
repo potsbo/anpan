@@ -1,4 +1,4 @@
-require_relative './table'
+require 'anpan/pattern/table'
 
 class Pattern
   attr_reader :input, :output, :addition
