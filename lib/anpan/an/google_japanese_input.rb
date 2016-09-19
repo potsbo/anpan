@@ -75,6 +75,7 @@ class Anpan
           },
           "j" => {
               "output" => "zily",
+              "contracted" => {"y" => ""},
               "geminated"  => {"j" => "ltuj"}
           },
           "d" => {
