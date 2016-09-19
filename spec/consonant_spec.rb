@@ -14,7 +14,7 @@ describe Consonant do
     end
     context 'when consonant "c" and vowel "a" given' do
       before do
-        consonant.addVowel(Vowel.new('a','a'))
+        consonant.addVowel(Vowel.new(input: :a))
       end
       it 'should return a Pattern' do
         expect(consonant.patterns.first).to be_a Pattern

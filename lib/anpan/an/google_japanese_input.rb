@@ -1,8 +1,8 @@
 class Anpan
   GOOGLE_JAPANESE = {
-      :vowels => {
-          "a" => "a",   "o" => "o",   "e" => "e",   "u" => "u",   "i" => "i",
-      },
+      vowels: [
+          {input: :a}, {input: :o}, {input: :e}, {input: :u}, {input: :i},
+      ],
       :consonants => {
           "" => {},
           "ch" => {

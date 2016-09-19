@@ -4,7 +4,7 @@ describe 'My behaviour' do
   let(:conf) { {} }
   let(:anpan) { Anpan.new(conf) }
   let(:consonant) { Consonant.new('c', {'output'=>'k'}) }
-  let(:vowel) { Vowel.new('a', 'a') }
+  let(:vowel) { Vowel.new({input: :a}) }
 
   describe '#render' do
     let(:render) { anpan.render }
@@ -113,7 +113,7 @@ describe 'My behaviour' do
   describe '#vowel_list' do
     let(:list) { anpan.vowel_list }
     before do
-      anpan.load_vowel("a"=>"a")
+      anpan.load_vowel([{input: :a}])
     end
     it 'should be an Array' do
       expect(list).to be_a Array
@@ -125,7 +125,7 @@ describe 'My behaviour' do
       expect(list.size).to be 1
     end
     it 'should have output "a"' do
-      expect(list.first.output).to eq 'a'
+      expect(list.first.output).to be :a
     end
   end
 

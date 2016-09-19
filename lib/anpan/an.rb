@@ -21,8 +21,8 @@ class Anpan
     add_consonants (hash||{}).collect {|i,c| Consonant.new i,c }
   end
 
-  def load_vowel(hash)
-    add_vowels (hash||{}).collect {|i,o| Vowel.new i,o }
+  def load_vowel(array = [])
+    add_vowels (array||[]).collect {|a| Vowel.new a }
   end
 
   def load_symbol(hash)

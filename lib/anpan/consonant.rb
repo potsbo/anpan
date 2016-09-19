@@ -39,7 +39,7 @@ class Consonant
   end
 
   def patterns_normal
-    vowels.collect { |v| Pattern.new(@input + v.input, @output + v.output)}
+    vowels.collect { |v| Pattern.new("#{@input}#{v.input}", "#{@output}#{v.output}") }
   end
 
   def patterns_contracted
@@ -47,8 +47,9 @@ class Consonant
       @vowel_list.collect do |v|
         # insertion = "" if insertion[0] == v.output[0]
         Pattern.new(
-          @input  + trigger   + v.input,
-          @output + insertion + v.output)
+          "#{@input}#{trigger}#{v.input}",
+          "#{@output}#{insertion}#{v.output}"
+        )
       end
     end
   end
@@ -63,8 +64,9 @@ class Consonant
     @regression.collect do |trigger,output|
       @vowel_list.collect do |v|
         Pattern.new(
-          @input + trigger + v.input,
-          output + v.output)
+          "#{@input}#{trigger}#{v.input}",
+          "#{output}#{v.output}"
+        )
       end
     end
   end
@@ -74,7 +76,7 @@ class Consonant
   end
 
   def vowels
-    @vowel_list.select { |v| @vowel_filter.include? v.output[0]}
+    @vowel_list.select { |v| @vowel_filter.include?(v.output.to_s[0]) }
   end
   ### pattern makers ###
 end
