@@ -88,6 +88,9 @@ class Anpan
               "regression" => {"f" => "ly"},
               "geminated"  => {"l" => "ltul"}
           },
+          "x" => {
+              "output" => 'l'
+          },
           "q" => {
               "output" => "kul",
               "geminated"  => {"q" => "ltuq"}
