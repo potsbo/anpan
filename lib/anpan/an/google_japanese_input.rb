@@ -121,7 +121,12 @@ class Anpan
           "wy" => {
               "output" => "w",
               "vowel_filter" => %w(i e)
+          },
+          "lt" => {
+              "output" => "lt",
+              "vowel_filter" => %(u),
           }
+
       },
       :symbols => {
           "[" => "[","]"=> "]","-"=>"-",","=>",","."=>".",
