@@ -50,7 +50,7 @@ class Anpan
   end
 
   def patterns
-    make_list if @patterns.empty?
+    make_list unless @patterns && !@patterns.empty?
     @patterns
   end
 
