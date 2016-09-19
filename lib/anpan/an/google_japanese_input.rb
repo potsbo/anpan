@@ -39,7 +39,8 @@ class Anpan
           },
           "n" => {
               "contracted" => {"y" => "ily"},
-              "geminated"  => {"n" => "nn"}
+              "geminated"  => {"n" => "nn"},
+              "single"     => "nn"
           },
           "h" => {
               "contracted" => {

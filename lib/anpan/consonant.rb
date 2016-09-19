@@ -15,6 +15,7 @@ class Consonant
     @gemination   = conf["geminated"]  || @gemination  || []
     @regression   = conf["regression"] || @regression  || []
     @vowel_filter = conf["vowel_filter"] || ['a', 'i', 'u', 'e', 'o']
+    @single       = Array(conf["single"]) || @single || []
   end
 
   def addVowel(vowel)
@@ -33,6 +34,7 @@ class Consonant
     @patterns.push patterns_contracted
     @patterns.push patterns_geminated
     @patterns.push patterns_regression
+    @patterns.push patterns_single
     @patterns.flatten!
   end
 
@@ -65,6 +67,10 @@ class Consonant
           output + v.output)
       end
     end
+  end
+
+  def patterns_single
+    @single.empty? ? [] : @single.map { |s| Pattern.new(@input, s) }
   end
 
   def vowels
