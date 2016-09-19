@@ -109,6 +109,7 @@ class Anpan
           },
           "x" => {
               "output" => 'l',
+              "contracted" => {"y" => "y"},
               "geminated"  => {"x" => "ltux"}
           },
           "q" => {
