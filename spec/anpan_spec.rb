@@ -56,7 +56,7 @@ describe 'My behaviour' do
 
       describe "Google Japanese Input covers rendered" do
         Anpan.new(Anpan::GOOGLE_JAPANESE).render.split("\n").each do |pattern|
-          it "should not contain any line not listed on google_japanese_input.txt" do
+          it "should not contain '#{pattern}' if it's not on the table file" do
             expect(lines).to include pattern
           end
         end
