@@ -5,14 +5,15 @@ class Anpan
       },
       :consonants => {
           "" => {},
+          "ch" => {
+              "output"=>"tily",
+          },
+          "cy" => {
+              "output"=>"tily",
+          },
           "c" => {
-              "output"=>"t",
-              "vowel_filter" => [],
-              "contracted" => {
-                  "h" => "ily",
-                  "y" => "ily",
-              },
-              "geminated"  => {"c" => "ltuc"}
+              "output"=>'k',
+              "vowel_filter" => %w(a u o)
           },
           "k" => {
               "contracted" => {
