@@ -6,7 +6,6 @@ require './lib/vowel'
 require './lib/anpan_symbol'
 require './lib/pattern'
 
-require "bundler/gem_tasks"
 require "rspec/core/rake_task"
 
 RSpec::Core::RakeTask.new(:spec)
