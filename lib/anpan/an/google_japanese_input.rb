@@ -76,6 +76,9 @@ class Anpan
               "regression" => {"f" => "ly"},
               "geminated"  => {"l" => "ltul"}
           },
+          "q" => {
+              "output" => "kul"
+          }
       },
       :symbols => {
           "[" => "[","]"=> "]","-"=>"-",","=>",","."=>".",
