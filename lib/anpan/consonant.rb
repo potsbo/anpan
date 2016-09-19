@@ -14,7 +14,7 @@ class Consonant
     @contraction  = conf["contracted"] || @contraction || []
     @gemination   = conf["geminated"]  || @gemination  || []
     @regression   = conf["regression"] || @regression  || []
-    @vowel_filter = (conf["vowel_filter"] || []).empty? ? ['a', 'i', 'u', 'e', 'o'] : conf["vowel_filter"]
+    @vowel_filter = conf["vowel_filter"] || ['a', 'i', 'u', 'e', 'o']
   end
 
   def addVowel(vowel)
@@ -42,7 +42,7 @@ class Consonant
 
   def patterns_contracted
     @contraction.collect do |trigger,insertion|
-      vowels.collect do |v|
+      @vowel_list.collect do |v|
         # insertion = "" if insertion[0] == v.output[0]
         Pattern.new(
           @input  + trigger   + v.input,
@@ -59,7 +59,7 @@ class Consonant
 
   def patterns_regression
     @regression.collect do |trigger,output|
-      vowels.collect do |v|
+      @vowel_list.collect do |v|
         Pattern.new(
           @input + trigger + v.input,
           output + v.output)

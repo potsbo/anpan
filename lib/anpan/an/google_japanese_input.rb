@@ -7,6 +7,7 @@ class Anpan
           "" => {},
           "c" => {
               "output"=>"t",
+              "vowel_filter" => [],
               "contracted" => {
                   "h" => "ily",
                   "y" => "ily",
