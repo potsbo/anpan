@@ -31,8 +31,7 @@ class Anpan
               "geminated"  => {"m" => "ltum"}
           },
           "f" => {
-              "output"     => "y",
-              "regression" => {"t" => "f","s" => "f","n"=>"huly"},
+              "output" => "hul",
               "geminated"  => {"f" => "ltuf"}
           },
           "r" => {
