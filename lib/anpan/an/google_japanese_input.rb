@@ -23,7 +23,10 @@ class Anpan
               "geminated"  => {"n" => "nn"}
           },
           "h" => {
-              "contracted" => {"y" => "ily"},
+              "contracted" => {
+                  "y" => "ily",
+                  "w" => "ul"
+              },
               "geminated"  => {"h" => "ltuh"}
           },
           "m" => {
