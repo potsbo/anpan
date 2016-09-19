@@ -85,7 +85,8 @@ class Anpan
               "geminated"  => {"l" => "ltul"}
           },
           "q" => {
-              "output" => "kul"
+              "output" => "kul",
+              "geminated"  => {"q" => "ltuq"}
           }
       },
       :symbols => {
