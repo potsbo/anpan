@@ -117,6 +117,10 @@ class Anpan
           "q" => {
               "output" => "kul",
               "geminated"  => {"q" => "ltuq"}
+          },
+          "wy" => {
+              "output" => "w",
+              "vowel_filter" => %w(i e)
           }
       },
       :symbols => {
