@@ -58,7 +58,10 @@ class Anpan
               "geminated"  => {"r" => "ltur"}
           },
           "g" => {
-              "contracted" => {"y" => "ily"},
+              "contracted" => {
+                  "y" => "ily",
+                  "w" => "ul"
+              },
               "geminated"  => {"g" => "ltug"}
           },
           "z" => {
