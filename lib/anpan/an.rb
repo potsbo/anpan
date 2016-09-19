@@ -1,3 +1,5 @@
+require 'anpan/an/conf'
+
 class Anpan
   attr_reader :consonant_list, :vowel_list
   def initialize(conf={})
