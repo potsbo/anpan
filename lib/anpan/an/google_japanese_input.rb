@@ -25,7 +25,11 @@ class Anpan
               "geminated"  => {"s" => "ltus"}
           },
           "t" => {
-              "contracted" => {"y" => "ily","h" => "ely"},
+              "contracted" => {
+                  "y" => "ily",
+                  "h" => "ely",
+                  "s" => "ul"
+              },
               "geminated"  => {"t" => "ltut"}
           },
           "n" => {
