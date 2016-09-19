@@ -100,7 +100,8 @@ class Anpan
               "geminated"  => {"l" => "ltul"}
           },
           "x" => {
-              "output" => 'l'
+              "output" => 'l',
+              "geminated"  => {"x" => "ltux"}
           },
           "q" => {
               "output" => "kul",
