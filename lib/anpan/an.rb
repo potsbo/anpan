@@ -3,7 +3,7 @@ require 'anpan/an/google_japanese_input'
 
 class Anpan
   attr_reader :consonant_list, :vowel_list
-  def initialize(conf=CONF)
+  def initialize(conf=GOOGLE_JAPANESE)
     @vowel_list     = []
     @consonant_list = []
     @symbol_list    = []
@@ -17,16 +17,16 @@ class Anpan
     load_symbol    conf[:symbols]
   end
 
-  def load_consonant(hash)
-    add_consonants (hash||{}).collect {|i,c| Consonant.new i,c }
+  def load_consonant(array = [])
+    add_consonants (array||[]).map {|a| Consonant.new a }
   end
 
   def load_vowel(array = [])
     add_vowels (array||[]).collect {|a| Vowel.new a }
   end
 
-  def load_symbol(hash)
-    add_symbols (hash||{}).collect {|i,o| Symbol.new i,o }
+  def load_symbol(array)
+    add_symbols (array||{}).collect {|a| Symbol.new(a[:input], a[:output] || a[:input], a[:addition], a[:as_is])}
   end
   ### loading ###
 

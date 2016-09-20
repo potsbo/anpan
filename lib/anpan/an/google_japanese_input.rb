@@ -3,140 +3,318 @@ class Anpan
       vowels: [
           {input: :a}, {input: :o}, {input: :e}, {input: :u}, {input: :i},
       ],
-      :consonants => {
-          "" => {},
-          "ch" => {
-              "output"=>"tily",
+      consonants: [
+          { input: nil },
+          {
+              input: :ch,
+              output: :tily,
+              vowel_filter: %i(a o e u)
           },
-          "cy" => {
-              "output"=>"tily",
-          },
-          "c" => {
-              "output"=>'k',
-              "vowel_filter" => %w(a u o)
-          },
-          "k" => {
-              "contracted" => {
-                  "y" => "ily",
-                  "w" => "ul"
-              },
-              "geminated"  => {"k" => "ltuk"}
-          },
-          "s" => {
-              "contracted" => {
-                  "y" => "ily",
-                  "h" => "ily"
-              },
-              "geminated"  => {"s" => "ltus"}
-          },
-          "t" => {
-              "contracted" => {
-                  "y" => "ily",
-                  "h" => "ely",
-                  "s" => "ul",
-                  "w" => "ol"
-              },
-              "geminated"  => {"t" => "ltut"}
-          },
-          "n" => {
-              "contracted" => {"y" => "ily"},
-              "geminated"  => {"n" => "nn"},
-              "single"     => "nn"
-          },
-          "h" => {
-              "contracted" => {
-                  "y" => "ily",
-                  "w" => "ul"
-              },
-              "geminated"  => {"h" => "ltuh"}
-          },
-          "m" => {
-              "contracted" => {"y" => "ily"},
-              "geminated"  => {"m" => "ltum"}
-          },
-          "y" => {
-              "vowel_filter" => %w(a u o),
-              "geminated"  => {"y" => "ltuy"}
-          },
-          "f" => {
-              "output" => "hul",
-              "contracted" => {"y" => "y"},
-              "geminated"  => {"f" => "ltuf"}
-          },
-          "r" => {
-              "contracted" => {"y" => "ily"},
-              "geminated"  => {"r" => "ltur"}
-          },
-          "w" => {
-              "contracted" => {"h" => "ul"},
-              "geminated"  => {"w" => "ltuw"},
-          },
-          "g" => {
-              "contracted" => {
-                  "y" => "ily",
-                  "w" => "ul"
-              },
-              "geminated"  => {"g" => "ltug"}
-          },
-          "z" => {
-              "contracted" => {"y" => "ily"},
-              "geminated"  => {"z" => "ltuz"}
-          },
-          "j" => {
-              "output" => "zily",
-              "contracted" => {"y" => ""},
-              "geminated"  => {"j" => "ltuj"}
-          },
-          "d" => {
-              "contracted" => {
-                  "y" => "ily",
-                  "w" => "ol",
-                  "h" => "ely"
-              },
-              "geminated"  => {"d" => "ltud"}
-          },
-          "p" => {
-              "contracted" => {"y" => "ily"},
-              "geminated"  => {"p" => "ltup"}
-          },
-          "v" => {
-              "contracted" => {"y" => "uly"},
-              "geminated"  => {"v" => "ltuv"},
-          },
-          "b" => {
-              "contracted" => {"y" => "ily"},
-              "geminated"  => {"b" => "ltub"}
-          },
-          "l" => {
-              "contracted" => {"y" => "y"},
-              "geminated"  => {"l" => "ltul"}
-          },
-          "x" => {
-              "output" => 'l',
-              "contracted" => {"y" => "y"},
-              "geminated"  => {"x" => "ltux"}
-          },
-          "q" => {
-              "output" => "kul",
-              "geminated"  => {"q" => "ltuq"}
-          },
-          "wy" => {
-              "output" => "w",
-              "vowel_filter" => %w(i e)
-          },
-          "lt" => {
-              "output" => "lt",
-              "vowel_filter" => %(u),
-          }
 
-      },
-      :symbols => {
-          "[" => "[","]"=> "]","-"=>"-",","=>",","."=>".",
-          "~" => "~",
-          "z-" => "~",
-          "z/" => "/",
-          "zj" => "↓", "zk" => "↑", "zh" => "←", "zl" => "→",
-          "z[" => "z[", "z]" => "z]", "z." => '…', "z," => '‥'
-      }
+          {
+              input: :ch,
+              output: :t,
+              vowel_filter: %i(i)
+          },
+
+          {
+              input: :cy,
+              output: :tily,
+          },
+
+          {
+              input: :c,
+              vowel_filter: [],
+              germinated: [
+                  { trigger: :c, insertion: :ltuc }
+              ]
+          },
+
+          {
+              input: :c,
+              output: :k,
+              vowel_filter: %i(a u o)
+          },
+
+          {
+              input: :c,
+              output: :s,
+              vowel_filter: %i(i e)
+          },
+
+          {
+              input: :k,
+              contracted: [
+                  { trigger: :y, insertion: :ily },
+                  { trigger: :w, insertion: :ul },
+              ],
+              germinated: [
+                  { trigger: :k, insertion: :ltuk }
+              ]
+          },
+
+          {
+              input: :s,
+              contracted: [
+                  { trigger: :y, insertion: :ily },
+                  { trigger: :h, insertion: :ily, vowel_filter: %i(a o e u) },
+                  { trigger: :h, insertion: '', vowel_filter: %i(i) },
+              ],
+              germinated: [
+                  { trigger: :s, insertion: :ltus }
+              ]
+          },
+
+          {
+              input: :t,
+              contracted: [
+                  { trigger: :y, insertion: :ily },
+                  { trigger: :h, insertion: :ely },
+                  { trigger: :s, insertion: :ul, vowel_filter: %i(a o e i) },
+                  { trigger: :s, insertion: nil, vowel_filter: %i(u) },
+                  { trigger: :w, insertion: :ol },
+                  { trigger: :"'", insertion: :el, vowel_filter: %i(i) },
+                  { trigger: :"'y", insertion: :ely, vowel_filter: %i(u) },
+                  { trigger: :"'", insertion: :ol, vowel_filter: %i(u) },
+              ],
+              germinated: [
+                  { trigger: :t, insertion: :ltut }
+              ]
+          },
+          {
+              input: :n ,
+              contracted: [
+                  { trigger: :y, insertion: :ily },
+              ],
+              germinated: [
+                  { trigger: :n, insertion: :nn },
+                  { trigger: :"'", insertion: :nn }
+              ],
+              single: %i(nn)
+          },
+          {
+              input: :h,
+              contracted: [
+                  { trigger: :y, insertion: :ily },
+                  { trigger: :w, insertion: :ul, vowel_filter: %i(a o e i) },
+                  { trigger: :wy, insertion: :uly, vowel_filter: %i(u) },
+              ],
+              germinated: [
+                  { trigger: :h, insertion: :ltuh }
+              ]
+          },
+          {
+              input: :m,
+              contracted: [
+                  { trigger: :y, insertion: :ily },
+              ],
+              germinated: [
+                  { trigger: :m, insertion: :ltum }
+              ]
+          },
+          {
+              input: :y,
+              vowel_filter: %i(a u o),
+              germinated: [
+                  { trigger: :y, insertion: :ltuy }
+              ]
+          },
+          {
+              input: :y,
+              output: :il,
+              vowel_filter: %i(e),
+          },
+          {
+              input: :f,
+              output: :hul,
+              vowel_filter: %i(a o e i),
+              contracted: [
+                  { trigger: :y, insertion: :y, vowel_filter: %i(a o u)},
+              ],
+              germinated: [
+                  { trigger: :f, insertion: :ltuf }
+              ]
+          },
+          {
+              input: :f,
+              output: :h,
+              vowel_filter: %i(u),
+              contracted: [
+                  { trigger: :y, insertion: :uly},
+              ],
+          },
+
+          {
+              input: :r,
+              contracted: [
+                  { trigger: :y, insertion: :ily },
+              ],
+              germinated: [
+                  { trigger: :r, insertion: :ltur }
+              ]
+          },
+
+          {
+              input: :w,
+              vowel_filter: %i(a u o),
+              contracted: [
+                  { trigger: :h, insertion: :ul, vowel_filter: %i(a o)},
+              ],
+              germinated: [
+                  { trigger: :w, insertion: :ltuw }
+              ]
+          },
+          {
+              input: :wh,
+              output: '',
+              vowel_filter: %i(u)
+          },
+          {
+              input: :g,
+              contracted: [
+                  { trigger: :y, insertion: :ily },
+                  { trigger: :w, insertion: :ul },
+              ],
+              germinated: [
+                  { trigger: :g, insertion: :ltug }
+              ]
+          },
+          {
+              input: :z,
+              contracted: [
+                  { trigger: :y, insertion: :ily },
+              ],
+              germinated: [
+                  { trigger: :z, insertion: :ltuz }
+              ]
+          },
+          {
+              input: :j,
+              output: :zily,
+              vowel_filter: %i(a o e u),
+              contracted: [
+                  { trigger: :y, insertion: nil },
+              ],
+              germinated: [
+                  { trigger: :j, insertion: :ltuj }
+              ]
+          },
+
+          {
+              input: :j,
+              output: :z,
+              vowel_filter: %i(i),
+              contracted: [
+                  { trigger: :y, insertion: :ily },
+              ]
+          },
+
+          {
+              input: :d,
+              contracted: [
+                  { trigger: :y, insertion: :ily },
+                  { trigger: :w, insertion: :ol },
+                  { trigger: :h, insertion: :ely },
+                  { trigger: :"'", insertion: :el, vowel_filter: %i(i) },
+                  { trigger: :"'", insertion: :ol, vowel_filter: %i(u) },
+                  { trigger: :"'y", insertion: :ely, vowel_filter: %i(u) },
+              ],
+              germinated: [
+                  { trigger: :d, insertion: :ltud }
+              ]
+          },
+          {
+              input: :p,
+              contracted: [
+                  { trigger: :y, insertion: :ily },
+              ],
+              germinated: [
+                  { trigger: :p, insertion: :ltup }
+              ]
+          },
+          {
+              input: :v,
+              contracted: [
+                  { trigger: :y, insertion: :uly },
+              ],
+              germinated: [
+                  { trigger: :v, insertion: :ltuv }
+              ]
+          },
+          {
+              input: :b,
+              contracted: [
+                  { trigger: :y, insertion: :ily },
+              ],
+              germinated: [
+                  { trigger: :b, insertion: :ltub }
+              ]
+          },
+
+          {
+              input: :l,
+              contracted: [
+                  { trigger: :y, insertion: :y },
+                  { trigger: :k, insertion: :k, vowel_filter: %i(a e) },
+                  { trigger: :t, insertion: :t, vowel_filter: %i(u) },
+                  { trigger: :ts, insertion: :t, vowel_filter: %i(u) },
+                  { trigger: :w, insertion: :w, vowel_filter: %i(a) },
+              ],
+              germinated: [
+                  { trigger: :l, insertion: :ltul }
+              ]
+          },
+
+          {
+              input: :x,
+              output: :l,
+              contracted: [
+                  { trigger: :y, insertion: :y },
+                  { trigger: :k, insertion: :k, vowel_filter: %i(a e) },
+                  { trigger: :t, insertion: :t, vowel_filter: %i(u) },
+                  { trigger: :ts, insertion: :t, vowel_filter: %i(u) },
+                  { trigger: :w, insertion: :w, vowel_filter: %i(a) },
+              ],
+              germinated: [
+                  { trigger: :x, insertion: :ltux }
+              ]
+          },
+          {
+              input: :q,
+              output: :kul,
+              vowel_filter: %i(a i e o),
+              germinated: [
+                  { trigger: :q, insertion: :ltuq }
+              ]
+          },
+
+          {
+              input: :q,
+              output: :k,
+              vowel_filter: %i(u),
+          },
+
+          {
+              input: :w,
+              output: :ul,
+              vowel_filter: %i(i e),
+              contracted: [
+                  { trigger: :h}
+              ]
+          },
+
+          {
+              input: :wy,
+              output: :w,
+              vowel_filter: %i(i e),
+          },
+      ],
+      symbols: [
+          { input: :'[' }, { input: :']' }, { input: :- }, { input: :","}, { input: :"."},
+          { input: :~ }, { input: :'z-', output: :~ }, { input: :'z/', output: :'/' },
+          { input: :zj, output: :"↓"}, { input: :zk, output: :"↑"}, { input: :zh, output: :"←"}, { input: :zl, output: :"→"},
+          { input: :'z[', output: :"z["}, { input: :'z]', output: :"z]"}, { input: :'z.', output: :"…"}, { input: :'z,', output: :"‥"},
+          { input: :xn, output: :nn}, { input: :www, output: :w, addition: :ww, as_is: true}
+      ]
   }
 end

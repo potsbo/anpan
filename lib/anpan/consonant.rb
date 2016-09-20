@@ -1,7 +1,7 @@
 class Consonant
   attr_reader :input, :output
-  def initialize(input, conf)
-    @input        = input
+  def initialize(conf)
+    @input        = conf[:input]
     @vowel_list   = []
     @patterns     = []
     @vowel_filter = []
@@ -9,13 +9,13 @@ class Consonant
   end
 
   def load_conf(conf)
-    @input        = conf["input"]      || @input
-    @output       = conf["output"]     || @input || @output
-    @contraction  = conf["contracted"] || @contraction || []
-    @gemination   = conf["geminated"]  || @gemination  || []
-    @regression   = conf["regression"] || @regression  || []
-    @vowel_filter = conf["vowel_filter"] || ['a', 'i', 'u', 'e', 'o']
-    @single       = Array(conf["single"]) || @single || []
+    @input        = conf[:input]      || @input
+    @output       = conf[:output]     || @input || @output
+    @contraction  = conf[:contracted] || @contraction || []
+    @germination  = conf[:germinated]  || @germination  || []
+    @regression   = conf[:regression] || @regression  || []
+    @vowel_filter = conf[:vowel_filter] || %i(a o e u i)
+    @single       = Array(conf[:single]) || @single || []
   end
 
   def addVowel(vowel)
@@ -32,7 +32,7 @@ class Consonant
     @patterns = []
     @patterns.push patterns_normal
     @patterns.push patterns_contracted
-    @patterns.push patterns_geminated
+    @patterns.push patterns_germinated
     @patterns.push patterns_regression
     @patterns.push patterns_single
     @patterns.flatten!
@@ -43,21 +43,20 @@ class Consonant
   end
 
   def patterns_contracted
-    @contraction.collect do |trigger,insertion|
-      @vowel_list.collect do |v|
-        # insertion = "" if insertion[0] == v.output[0]
+    @contraction.collect do |c|
+      vowels(filter: c[:vowel_filter]).collect do |v|
         Pattern.new(
-          "#{@input}#{trigger}#{v.input}",
-          "#{@output}#{insertion}#{v.output}"
+          "#{@input}#{c[:trigger]}#{v.input}",
+          "#{@output}#{c[:insertion]}#{v.output}"
         )
       end
     end
   end
 
-  def patterns_geminated
-    @gemination.collect do |trigger,insertion|
-      Pattern.new( @input + trigger, insertion)
-    end
+  def patterns_germinated
+    @germination.map { |hash|
+      Pattern.new("#{@input}#{hash[:trigger]}","#{hash[:insertion]}")
+    }
   end
 
   def patterns_regression
@@ -72,11 +71,12 @@ class Consonant
   end
 
   def patterns_single
-    @single.empty? ? [] : @single.map { |s| Pattern.new(@input, s) }
+    @single.map { |s| Pattern.new(@input, s)}
   end
 
-  def vowels
-    @vowel_list.select { |v| @vowel_filter.include?(v.output.to_s[0]) }
+  def vowels(filter: nil)
+    filter ||= %i(a o e u i)
+    @vowel_list.select { |v| (@vowel_filter & filter).include?(v.output.to_s[0].to_sym) }
   end
   ### pattern makers ###
 end
