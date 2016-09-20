@@ -44,7 +44,7 @@ class Consonant
 
   def patterns_contracted
     @contraction.collect do |c|
-      vowels(filter: c[:vowel_filter]).collect do |v|
+      vowels(c).collect do |v|
         Pattern.new(
           "#{@input}#{c[:trigger]}#{v.input}",
           "#{@output}#{c[:insertion]}#{v.output}"
@@ -60,11 +60,11 @@ class Consonant
   end
 
   def patterns_regression
-    @regression.collect do |trigger,output|
-      @vowel_list.collect do |v|
+    @regression.collect do |a|
+      vowels(a).collect do |v|
         Pattern.new(
-          "#{@input}#{trigger}#{v.input}",
-          "#{output}#{v.output}"
+          "#{@input}#{a[:trigger]}#{v.input}",
+          "#{a[:insertion]}#{v.output}"
         )
       end
     end
@@ -74,9 +74,11 @@ class Consonant
     @single.map { |s| Pattern.new(@input, s)}
   end
 
-  def vowels(filter: nil)
-    filter ||= %i(a o e u i)
-    @vowel_list.select { |v| (@vowel_filter & filter).include?(v.output.to_s[0].to_sym) }
+  def vowels(conf = {})
+    base = conf[:vowels] || @vowel_filter
+    base = base & (conf[:vowel_filter] || %i(a o e u i))
+    base = base - (conf[:expect_vowels] || [])
+    @vowel_list.select { |v| base.include?(v.output.to_s[0].to_sym) }
   end
   ### pattern makers ###
 end

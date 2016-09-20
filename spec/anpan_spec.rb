@@ -41,6 +41,28 @@ describe 'My behaviour' do
       # end
     end
 
+    context 'when anpan conf given' do
+      let(:conf) { Anpan::CONF }
+      let(:lines) { File.readlines('spec/table/anpan.txt').map(&:chomp) }
+      describe 'render covers anpan.txt' do
+        File.open('spec/table/anpan.txt') do |file|
+          file.each_line do |line|
+            it "should contain '#{line}'" do
+              expect(render.split("\n")).to include line.chomp
+            end
+          end
+        end
+      end
+
+      describe "anpan.txt covers rendered" do
+        Anpan.new(Anpan::CONF).render.split("\n").each do |pattern|
+          it "should not contain '#{pattern}' if it's not on the table file" do
+            expect(lines).to include pattern
+          end
+        end
+      end
+    end
+
     context 'when Google Japanese Input conf given' do
       let(:conf) { Anpan::GOOGLE_JAPANESE }
       let(:lines) { File.readlines('spec/table/google_japanese_input.txt').map(&:chomp) }

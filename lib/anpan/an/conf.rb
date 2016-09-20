@@ -7,75 +7,158 @@ class Anpan
           {input: :";", output: :ann}, {input: :q, output: :onn}, {input: :j, output: :enn},
           {input: :k, output: :unn}, {input: :x, output: :inn},
       ],
-      # :consonants => {
-      #     "" => {},
-      #     "c" => {
-      #         "output"=>"k",
-      #         "contracted" => {"n" => "ily"},
-      #         "geminated"  => {"c" => "ltuc"}
-      #     },
-      #     "s" => {
-      #         "contracted" => {"h" => "ily"},
-      #         "geminated"  => {"s" => "ltus"}
-      #     },
-      #     "t" => {
-      #         "contracted" => {"n" => "ily","h" => "ely"},
-      #         "geminated"  => {"t" => "ltut"}
-      #     },
-      #     "n" => {
-      #         "contracted" => {"h" => "ily"},
-      #         "geminated"  => {"n" => "nn"}
-      #     },
-      #     "h" => {
-      #         "contracted" => {"n" => "ily"},
-      #         "geminated"  => {"h" => "ltuh"}
-      #     },
-      #     "m" => {
-      #         "contracted" => {"n" => "ily"},
-      #         "geminated"  => {"m" => "ltum"}
-      #     },
-      #     "f" => {
-      #         "output"     => "y",
-      #         "regression" => {"t" => "f","s" => "f","n"=>"huly"},
-      #         "geminated"  => {"f" => "ltuf"}
-      #     },
-      #     "r" => {
-      #         "contracted" => {"h" => "ily"},
-      #         "geminated"  => {"r" => "ltur"}
-      #     },
-      #     "w" => {
-      #         "contracted" => {"h" => "ul"},
-      #         "geminated"  => {"r" => "ltur"}
-      #     },
-      #     "g" => {
-      #         "contracted" => {"n" => "ily"},
-      #         "geminated"  => {"g" => "ltug"}
-      #     },
-      #     "z" => {
-      #         "contracted" => {"h" => "ily"},
-      #         "geminated"  => {"z" => "ltuz"}
-      #     },
-      #     "d" => {
-      #         "contracted" => {"n" => "ely","h" => "ily"},
-      #         "geminated"  => {"d" => "ltud"}
-      #     },
-      #     "v" => {
-      #         "output"     => "p",
-      #         "regression" => {"t" => "v","s" => "v"},
-      #         "contracted" => {"h" => "ily"},
-      #         "geminated"  => {"v" => "ltuv"},
-      #     },
-      #     "b" => {
-      #         "contracted" => {"n" => "ily"},
-      #         "geminated"  => {"b" => "ltub"}
-      #     },
-      #     "l" => {
-      #         "regression" => {"f" => "ly"},
-      #         "geminated"  => {"l" => "ltul"}
-      #     },
-      # },
-      # :symbols => {
-      #     "[" => "[","]"=> "]","-"=>"-","l,"=>",","l."=>"."
-      # }
+      consonants: [
+          { input: nil },
+          {
+              input: :c,
+              output: :k,
+              contracted: [
+                  {trigger: :n, insertion: :ily}
+              ],
+              germinated: [
+                  {trigger: :c, insertion: :ltuc}
+              ]
+          },
+          {
+              input: :s,
+              contracted: [
+                  {trigger: :h, insertion: :ily}
+              ],
+              germinated: [
+                  {trigger: :s, insertion: :ltus}
+              ]
+          },
+          {
+              input: :t,
+              contracted: [
+                  {trigger: :n, insertion: :ily},
+                  {trigger: :h, insertion: :ely},
+              ],
+              germinated: [
+                  {trigger: :t, insertion: :ltut}
+              ]
+          },
+          {
+              input: :n,
+              contracted: [
+                  {trigger: :h, insertion: :ily},
+              ],
+              germinated: [
+                  {trigger: :n, insertion: :nn}
+              ]
+          },
+          {
+              input: :h,
+              contracted: [
+                  {trigger: :n, insertion: :ily},
+              ],
+              germinated: [
+                  {trigger: :h, insertion: :ltuh}
+              ]
+          },
+          {
+              input: :m,
+              contracted: [
+                  {trigger: :n, insertion: :ily},
+              ],
+              germinated: [
+                  {trigger: :m, insertion: :ltum}
+              ]
+          },
+          {
+              input: :f,
+              output: :y,
+              germinated: [
+                  {trigger: :f, insertion: :ltuf}
+              ],
+              regression: [
+                  {trigger: :t, insertion: :f},
+                  {trigger: :s, insertion: :f},
+                  {trigger: :n, insertion: :huly},
+              ]
+          },
+          {
+              input: :r,
+              contracted: [
+                  {trigger: :h, insertion: :ily},
+              ],
+              germinated: [
+                  {trigger: :r, insertion: :ltur}
+              ],
+          },
+          {
+              input: :w,
+              contracted: [
+                  {trigger: :h, insertion: :ul},
+              ],
+              germinated: [
+                  {trigger: :r, insertion: :ltur}
+              ],
+          },
+          {
+              input: :g,
+              contracted: [
+                  {trigger: :n, insertion: :ily},
+              ],
+              germinated: [
+                  {trigger: :g, insertion: :ltug},
+              ],
+          },
+          {
+              input: :z,
+              contracted: [
+                  {trigger: :h, insertion: :ily},
+              ],
+              germinated: [
+                  {trigger: :z, insertion: :ltuz},
+              ],
+          },
+          {
+              input: :d,
+              contracted: [
+                  {trigger: :n, insertion: :ely},
+                  {trigger: :h, insertion: :ily},
+              ],
+              germinated: [
+                  {trigger: :d, insertion: :ltud},
+              ],
+          },
+          {
+              input: :v,
+              output: :p,
+              contracted: [
+                  {trigger: :h, insertion: :ily},
+              ],
+              regression: [
+                  {trigger: :t, insertion: :v},
+                  {trigger: :s, insertion: :v},
+              ],
+              germinated: [
+                  {trigger: :v, insertion: :ltuv},
+              ],
+          },
+          {
+              input: :b,
+              contracted: [
+                  {trigger: :n, insertion: :ily}
+              ],
+              germinated: [
+                  {trigger: :b, insertion: :ltub}
+              ]
+          },
+          {
+              input: :l,
+              regression: [
+                  {trigger: :f, insertion: :ly}
+              ],
+              germinated: [
+                  {trigger: :l, insertion: :ltul}
+              ]
+          },
+      ],
+      symbols: [
+          { input: :'[' }, { input: :']' }, { input: :- },
+          { input: :"l,", output: :","}, { input: :'l.', output: :"."},
+      ]
   }
 end

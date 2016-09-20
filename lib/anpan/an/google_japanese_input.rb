@@ -5,28 +5,18 @@ class Anpan
       ],
       consonants: [
           { input: nil },
-          {
-              input: :ch,
-              output: :tily,
-              vowel_filter: %i(a o e u)
-          },
-
-          {
-              input: :ch,
-              output: :t,
-              vowel_filter: %i(i)
-          },
-
-          {
-              input: :cy,
-              output: :tily,
-          },
 
           {
               input: :c,
               vowel_filter: [],
               germinated: [
                   { trigger: :c, insertion: :ltuc }
+              ],
+              regression: [
+                  { trigger: :h, insertion: :tily, vowels: %i(a o e u)},
+                  { trigger: :h, insertion: :t, vowels: %i(i)},
+                  { trigger: :y, insertion: :tily, vowels: %i(a o e u)},
+                  { trigger: :y, insertion: :til, vowels: %i(i)}
               ]
           },
 
@@ -57,8 +47,8 @@ class Anpan
               input: :s,
               contracted: [
                   { trigger: :y, insertion: :ily },
-                  { trigger: :h, insertion: :ily, vowel_filter: %i(a o e u) },
-                  { trigger: :h, insertion: '', vowel_filter: %i(i) },
+                  { trigger: :h, insertion: :ily, vowels: %i(a o e u) },
+                  { trigger: :h, insertion: nil, vowels: %i(i) },
               ],
               germinated: [
                   { trigger: :s, insertion: :ltus }
@@ -156,19 +146,29 @@ class Anpan
 
           {
               input: :w,
+              output: :ul,
+              vowel_filter: %i(i e),
+              contracted: [
+                  { trigger: :h}
+              ],
+              regression: [
+                  { trigger: :y, insertion: :w}
+              ]
+          },
+          {
+              input: :w,
               vowel_filter: %i(a u o),
               contracted: [
                   { trigger: :h, insertion: :ul, vowel_filter: %i(a o)},
               ],
               germinated: [
                   { trigger: :w, insertion: :ltuw }
+              ],
+              regression: [
+                  { trigger: :h, insertion: nil, vowels: %i(u) }
               ]
           },
-          {
-              input: :wh,
-              output: '',
-              vowel_filter: %i(u)
-          },
+
           {
               input: :g,
               contracted: [
@@ -294,20 +294,6 @@ class Anpan
               vowel_filter: %i(u),
           },
 
-          {
-              input: :w,
-              output: :ul,
-              vowel_filter: %i(i e),
-              contracted: [
-                  { trigger: :h}
-              ]
-          },
-
-          {
-              input: :wy,
-              output: :w,
-              vowel_filter: %i(i e),
-          },
       ],
       symbols: [
           { input: :'[' }, { input: :']' }, { input: :- }, { input: :","}, { input: :"."},
