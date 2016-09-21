@@ -31,10 +31,10 @@ class Consonant
   def reset_all_patterns
     @patterns = []
     @patterns.push patterns_normal
+    @patterns.push patterns_single
     @patterns.push patterns_contracted
     @patterns.push patterns_germinated
     @patterns.push patterns_regression
-    @patterns.push patterns_single
     @patterns.flatten!
   end
 
