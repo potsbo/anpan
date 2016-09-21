@@ -2,14 +2,16 @@ require 'anpan/pattern/table'
 
 class Pattern
   attr_reader :input, :output, :addition
-  def initialize(input, output=input, addition = nil)
+  def initialize(input, output=input, addition = nil, as_is = false)
     @input    = input
     @output   = output
     @addition = addition
+    @as_is    = as_is
   end
 
   def render
-    [@input,output_jp,@addition].join("\t").gsub(/\t+$/,'')
+    output = @as_is ? @output : output_jp
+    [@input,output,@addition].join("\t").gsub(/\t+$/,'')
   end
 
   def to_h
