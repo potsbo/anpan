@@ -3,8 +3,8 @@ require 'spec_helper'
 describe 'My behaviour' do
   let(:conf) { {} }
   let(:anpan) { Anpan.new(conf) }
-  let(:consonant) { Consonant.new('c', {'output'=>'k'}) }
-  let(:vowel) { Vowel.new('a', 'a') }
+  let(:consonant) { Consonant.new(input: :c, output: :k) }
+  let(:vowel) { Vowel.new({input: :a}) }
 
   describe '#render' do
     let(:render) { anpan.render }
@@ -34,9 +34,53 @@ describe 'My behaviour' do
           "cc\tっ\tc",
           "wha\tうぁ","whi\tうぃ","whu\tうぅ","whe\tうぇ","who\tうぉ",
       ]
-      expected.each do |output|
-        it "should contain #{output}" do
-          expect(render).to include("#{output}\n")
+      # expected.each do |output|
+      #   it "should contain #{output}" do
+      #     expect(render).to include("#{output}\n")
+      #   end
+      # end
+    end
+
+    context 'when anpan conf given' do
+      let(:conf) { Anpan::CONF }
+      let(:lines) { File.readlines('spec/table/anpan.txt').map(&:chomp) }
+      describe 'render covers anpan.txt' do
+        File.open('spec/table/anpan.txt') do |file|
+          file.each_line do |line|
+            it "should contain '#{line}'" do
+              expect(render.split("\n")).to include line.chomp
+            end
+          end
+        end
+      end
+
+      describe "anpan.txt covers rendered" do
+        Anpan.new(Anpan::CONF).render.split("\n").each do |pattern|
+          it "should not contain '#{pattern}' if it's not on the table file" do
+            expect(lines).to include pattern
+          end
+        end
+      end
+    end
+
+    context 'when Google Japanese Input conf given' do
+      let(:conf) { Anpan::GOOGLE_JAPANESE }
+      let(:lines) { File.readlines('spec/table/google_japanese_input.txt').map(&:chomp) }
+      describe 'render covers Google Japanese Input' do
+        File.open('spec/table/google_japanese_input.txt') do |file|
+          file.each_line do |line|
+            it "should contain '#{line}'" do
+              expect(render.split("\n")).to include line.chomp
+            end
+          end
+        end
+      end
+
+      describe "Google Japanese Input covers rendered" do
+        Anpan.new(Anpan::GOOGLE_JAPANESE).render.split("\n").each do |pattern|
+          it "should not contain '#{pattern}' if it's not on the table file" do
+            expect(lines).to include pattern
+          end
         end
       end
     end
@@ -64,18 +108,21 @@ describe 'My behaviour' do
       expect(list.size).to be 1
     end
     it 'should output "k"' do
-      expect(list.first.output).to eq 'k'
+      expect(list.first.output).to eq :k
     end
   end
 
   describe '#load_consonants' do
     let(:list) { anpan.consonant_list }
     before do
-      conf = {
-          "c" => {"output"=>"k"},
-          "s" => {},
-          "t" => {}
-      }
+      conf = [
+          {
+              input: :c,
+              output: :k,
+              vowel_filter: %w(a u o)
+          },
+          { input: :s }, { input: :t }
+      ]
       anpan.load_consonant conf
     end
     context 'when conf size == 3' do
@@ -83,7 +130,7 @@ describe 'My behaviour' do
         expect(list.size).to be 3
       end
       it 'should output "k"' do
-        expect(list.first.output).to eq 'k'
+        expect(list.first.output).to eq :k
       end
     end
   end
@@ -91,7 +138,7 @@ describe 'My behaviour' do
   describe '#vowel_list' do
     let(:list) { anpan.vowel_list }
     before do
-      anpan.load_vowel("a"=>"a")
+      anpan.load_vowel([{input: :a}])
     end
     it 'should be an Array' do
       expect(list).to be_a Array
@@ -103,7 +150,7 @@ describe 'My behaviour' do
       expect(list.size).to be 1
     end
     it 'should have output "a"' do
-      expect(list.first.output).to eq 'a'
+      expect(list.first.output).to be :a
     end
   end
 
