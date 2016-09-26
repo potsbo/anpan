@@ -63,11 +63,11 @@ class Anpan::An
   end
   ### rendering ###
 
-  def table
+  def table(args={})
     patterns.map { |pattern| pattern.to_h }
   end
 
-  def self.table
-    Anpan::An.new.table
+  def self.table(args={})
+    Anpan::An.new.table(args)
   end
 end
