@@ -1,4 +1,4 @@
-class Consonant
+class Anpan::Consonant
   attr_reader :input, :output
   def initialize(conf)
     @input        = conf[:input]
