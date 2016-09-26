@@ -1,7 +1,7 @@
 require 'anpan/an/conf'
 require 'anpan/an/google_japanese_input'
 
-class Anpan
+class Anpan::An
   attr_reader :consonant_list, :vowel_list
   def initialize(conf=CONF)
     @vowel_list     = []
@@ -18,15 +18,15 @@ class Anpan
   end
 
   def load_consonant(array = [])
-    add_consonants (array||[]).map {|a| Consonant.new a }
+    add_consonants (array||[]).map {|a| Anpan::Consonant.new a }
   end
 
   def load_vowel(array = [])
-    add_vowels (array||[]).collect {|a| Vowel.new a }
+    add_vowels (array||[]).collect {|a| Anpan::Vowel.new a }
   end
 
   def load_symbol(array)
-    add_symbols (array||{}).collect {|a| Symbol.new(a[:input], a[:output] || a[:input], a[:addition], a[:as_is])}
+    add_symbols (array||{}).collect {|a| Anpan::Symbol.new(a[:input], a[:output] || a[:input], a[:addition], a[:as_is])}
   end
   ### loading ###
 
@@ -63,11 +63,11 @@ class Anpan
   end
   ### rendering ###
 
-  def table
+  def table(args={})
     patterns.map { |pattern| pattern.to_h }
   end
 
-  def self.table
-    Anpan.new.table
+  def self.table(args={})
+    Anpan::An.new.table(args)
   end
 end

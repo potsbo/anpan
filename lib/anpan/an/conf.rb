@@ -1,4 +1,4 @@
-class Anpan
+class Anpan::An
   CONF = {
       :vowels => [
           {input: :a}, {input: :o}, {input: :e}, {input: :u}, {input: :i},
