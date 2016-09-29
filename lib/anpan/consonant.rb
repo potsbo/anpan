@@ -18,7 +18,7 @@ class Anpan::Consonant
     @single       = Array(conf[:single]) || @single       || []
   end
 
-  def addVowel(vowel)
+  def add_vowel(vowel)
     @vowel_list << vowel
   end
 

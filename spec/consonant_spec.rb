@@ -14,7 +14,7 @@ describe Anpan::Consonant do
     end
     context 'when consonant "c" and vowel "a" given' do
       before do
-        consonant.addVowel(Anpan::Vowel.new(input: :a))
+        consonant.add_vowel(Anpan::Vowel.new(input: :a))
       end
       it 'should return a Pattern' do
         expect(consonant.patterns.first).to be_a Pattern
