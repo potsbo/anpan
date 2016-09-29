@@ -9,13 +9,13 @@ class Anpan::Consonant
   end
 
   def load_conf(conf)
-    @input        = conf[:input]      || @input
-    @output       = conf[:output]     || @input || @output
-    @contraction  = conf[:contracted] || @contraction || []
-    @germination  = conf[:germinated]  || @germination  || []
-    @regression   = conf[:regression] || @regression  || []
-    @vowel_filter = conf[:vowel_filter] || %i(a o e u i)
-    @single       = Array(conf[:single]) || @single || []
+    @input        = conf[:input]         || @input
+    @output       = conf[:output]        || @input        || @output
+    @contraction  = conf[:contracted]    || @contraction  || []
+    @germination  = conf[:germinated]    || @germination  || []
+    @regression   = conf[:regression]    || @regression   || []
+    @vowel_filter = conf[:vowel_filter]  || %i(a o e u i)
+    @single       = Array(conf[:single]) || @single       || []
   end
 
   def addVowel(vowel)
