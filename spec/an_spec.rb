@@ -116,12 +116,12 @@ describe Anpan::An do
     let(:list) { anpan.consonant_list }
     before do
       conf = [
-          {
-              input: :c,
-              output: :k,
-              vowel_filter: %w(a u o)
-          },
-          { input: :s }, { input: :t }
+        {
+          input: :c,
+          output: :k,
+          vowel_filter: %i(a u o)
+        },
+        { input: :s }, { input: :t }
       ]
       anpan.load_consonant conf
     end
