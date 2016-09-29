@@ -11,7 +11,7 @@ class Pattern
 
   def render
     output = @as_is ? @output : output_jp
-    [@input,output,@addition].join("\t").gsub(/\t+$/,'')
+    [@input, output, @addition].join("\t").gsub(/\t+$/,'')
   end
 
   def to_h
