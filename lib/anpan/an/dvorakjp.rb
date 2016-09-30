@@ -283,6 +283,8 @@ class Anpan::An
         input: :l,
         contracted: [
           { trigger: :h, insertion: :y, vowel_filter: %i(a u o) },
+          { trigger: :k,  insertion: :k, vowel_filter: %i(a e) },
+          { trigger: :c,  insertion: :k, vowel_filter: %i(a e) },
         ],
         germinated: [
           {trigger: :l, insertion: :ltul},
@@ -295,6 +297,7 @@ class Anpan::An
         contracted: [
           { trigger: :y,  insertion: :y },
           { trigger: :k,  insertion: :k, vowel_filter: %i(a e) },
+          { trigger: :c,  insertion: :k, vowel_filter: %i(a e) },
           { trigger: :t,  insertion: :t, vowel_filter: %i(u) },
           { trigger: :ts, insertion: :t, vowel_filter: %i(u) },
           { trigger: :w,  insertion: :w, vowel_filter: %i(a) },
