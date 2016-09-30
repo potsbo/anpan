@@ -153,6 +153,15 @@ class Anpan::An
       },
 
       {
+        input: :f,
+        output: :h,
+        vowel_filter: %i(u),
+        contracted: [
+          { trigger: :y, insertion: :uly},
+        ],
+      },
+
+      {
         input: :r,
         contracted: [
           {trigger: :h, insertion: :ily},
