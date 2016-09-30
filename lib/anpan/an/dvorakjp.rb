@@ -9,6 +9,7 @@ class Anpan::An
     ],
     consonants: [
       { input: nil },
+
       {
         input: :c,
         output: :k,
@@ -20,6 +21,7 @@ class Anpan::An
           {trigger: :c, insertion: :ltuc}
         ]
       },
+
       {
         input: :k,
         contracted: [
@@ -29,6 +31,7 @@ class Anpan::An
           {trigger: :k, insertion: :ltuk}
         ]
       },
+
       {
         input: :s,
         contracted: [
@@ -39,6 +42,7 @@ class Anpan::An
           {trigger: :s, insertion: :ltus}
         ]
       },
+
       {
         input: :t,
         contracted: [
@@ -49,6 +53,7 @@ class Anpan::An
           {trigger: :t, insertion: :ltut}
         ]
       },
+
       {
         input: :n,
         contracted: [
@@ -59,6 +64,7 @@ class Anpan::An
           {trigger: :n, insertion: :nn}
         ]
       },
+
       {
         input: :h,
         contracted: [
@@ -68,6 +74,7 @@ class Anpan::An
           {trigger: :h, insertion: :ltuh}
         ]
       },
+
       {
         input: :m,
         contracted: [
@@ -78,6 +85,7 @@ class Anpan::An
           {trigger: :m, insertion: :ltum}
         ]
       },
+
       {
         input: :f,
         output: :hul,
@@ -88,6 +96,7 @@ class Anpan::An
           {trigger: :n, insertion: :huly},
         ]
       },
+
       {
         input: :r,
         contracted: [
@@ -98,6 +107,7 @@ class Anpan::An
           {trigger: :r, insertion: :ltur}
         ],
       },
+
       {
         input: :w,
         contracted: [
@@ -107,6 +117,7 @@ class Anpan::An
           {trigger: :r, insertion: :ltur}
         ],
       },
+
       {
         input: :g,
         contracted: [
@@ -117,6 +128,7 @@ class Anpan::An
           {trigger: :g, insertion: :ltug},
         ],
       },
+
       {
         input: :z,
         contracted: [
@@ -126,6 +138,7 @@ class Anpan::An
           {trigger: :z, insertion: :ltuz},
         ],
       },
+
       {
         input: :d,
         contracted: [
@@ -136,6 +149,7 @@ class Anpan::An
           {trigger: :d, insertion: :ltud},
         ],
       },
+
       {
         input: :v,
         output: :p,
@@ -150,6 +164,7 @@ class Anpan::An
           {trigger: :v, insertion: :ltuv},
         ],
       },
+
       {
         input: :b,
         contracted: [
@@ -159,6 +174,7 @@ class Anpan::An
           {trigger: :b, insertion: :ltub}
         ]
       },
+
       {
         input: :p,
         contracted: [
@@ -169,6 +185,7 @@ class Anpan::An
           {trigger: :p, insertion: :ltup},
         ]
       },
+
       {
         input: :l,
         regression: [
@@ -179,6 +196,7 @@ class Anpan::An
         ]
       },
     ],
+
     symbols: [
       { input: :'[' }, { input: :']' }, { input: :- },
       { input: :"l,", output: :","}, { input: :'l.', output: :"."},
