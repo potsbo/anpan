@@ -9,8 +9,8 @@ describe Anpan::An do
   describe 'config files' do
     let(:render) { anpan.render }
     config_files = {
-      # 'anpan.txt': Anpan::An::CONF,
-      # 'google_japanese_input.txt': Anpan::An::GOOGLE_JAPANESE,
+      'anpan.txt': Anpan::An::CONF,
+      'google_japanese_input.txt': Anpan::An::GOOGLE_JAPANESE,
       'dvorakjp_prime.txt': Anpan::An::DVORAKJP,
     }
     config_files.each do |table, config|
@@ -27,13 +27,13 @@ describe Anpan::An do
           end
         end
 
-        # describe "anpan.txt covers rendered" do
-        #   Anpan::An.new(config).render.split("\n").each do |pattern|
-        #     it "should not contain '#{pattern}' if it's not on the table file" do
-        #       expect(lines).to include pattern
-        #     end
-        #   end
-        # end
+        describe "anpan.txt covers rendered" do
+          Anpan::An.new(config).render.split("\n").each do |pattern|
+            it "should not contain '#{pattern}' if it's not on the table file" do
+              expect(lines).to include pattern
+            end
+          end
+        end
       end
     end
   end
