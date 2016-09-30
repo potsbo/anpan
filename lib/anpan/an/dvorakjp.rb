@@ -184,8 +184,13 @@ class Anpan::An
       {
         input: :d,
         contracted: [
-          {trigger: :n, insertion: :ily},
-          {trigger: :h, insertion: :ily},
+          { trigger: :n, insertion: :ily},
+          { trigger: :y,    insertion: :ily },
+          { trigger: :w,    insertion: :ol  },
+          { trigger: :h,    insertion: :ely },
+          { trigger: :"'",  insertion: :el,  vowel_filter: %i(i) },
+          { trigger: :"'",  insertion: :ol,  vowel_filter: %i(u) },
+          { trigger: :"'y", insertion: :ely, vowel_filter: %i(u) },
         ],
         germinated: [
           {trigger: :d, insertion: :ltud},
