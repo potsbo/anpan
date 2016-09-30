@@ -269,11 +269,11 @@ class Anpan::An
 
       {
         input: :l,
-        regression: [
-          {trigger: :f, insertion: :ly}
+        contracted: [
+          { trigger: :h, insertion: :y, vowel_filter: %i(a u o) },
         ],
         germinated: [
-          {trigger: :l, insertion: :ltul}
+          {trigger: :l, insertion: :ltul},
         ]
       },
 
