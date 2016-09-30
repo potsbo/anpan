@@ -264,7 +264,7 @@ class Anpan::An
         input: :v,
         contracted: [
           { trigger: :y, insertion: :uly },
-          { trigger: :h, insertion: :ul },
+          { trigger: :h, insertion: :uly },
         ],
         germinated: [
           { trigger: :v, insertion: :ltuv },
