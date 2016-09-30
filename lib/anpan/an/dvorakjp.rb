@@ -161,4 +161,4 @@ class Anpan::An
       { input: :"l,", output: :","}, { input: :'l.', output: :"."},
     ]
   }
-
+end
