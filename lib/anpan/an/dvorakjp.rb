@@ -111,6 +111,7 @@ class Anpan::An
         input: :g,
         contracted: [
           {trigger: :n, insertion: :ily},
+          {trigger: :y, insertion: :ily},
         ],
         germinated: [
           {trigger: :g, insertion: :ltug},
