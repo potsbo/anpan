@@ -170,11 +170,12 @@ class Anpan::An
       {
         input: :g,
         contracted: [
-          {trigger: :n, insertion: :ily},
-          {trigger: :y, insertion: :ily},
+          { trigger: :n, insertion: :ily },
+          { trigger: :y, insertion: :ily },
+          { trigger: :w, insertion: :ul  },
         ],
         germinated: [
-          {trigger: :g, insertion: :ltug},
+          { trigger: :g, insertion: :ltug },
         ],
       },
 
