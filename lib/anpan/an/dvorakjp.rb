@@ -348,6 +348,7 @@ class Anpan::An
     symbols: [
       { input: :'[' }, { input: :']' }, { input: :- },
       { input: :"l,", output: :","}, { input: :'l.', output: :"."},
+      { input: :';j', output: :"↓"}, { input: :';k', output: :"↑"}, { input: :';h', output: :"←"}, { input: :';l', output: :"→"},
     ]
   }
 end
