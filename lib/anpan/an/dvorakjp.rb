@@ -165,7 +165,7 @@ class Anpan::An
           {trigger: :y, insertion: :ily},
         ],
         germinated: [
-          {trigger: :b, insertion: :ltup},
+          {trigger: :p, insertion: :ltup},
         ]
       },
       {
