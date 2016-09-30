@@ -33,6 +33,11 @@ class Anpan::An
       },
 
       {
+        input: :cw,
+        output: :kul,
+      },
+
+      {
         input: :s,
         contracted: [
           {trigger: :h, insertion: :ily},
