@@ -3,7 +3,7 @@ class Anpan::An
     :vowels => [
       {input: :a}, {input: :o}, {input: :e}, {input: :u}, {input: :i},
       {input: :"'", output: :ai}, {input: :',', output: :ou}, {input: :'.', output: :ei},
-      {input: :p, output: :uu}, {input: :y, output: :ii},
+      {input: :p, output: :uu},
       {input: :";", output: :ann}, {input: :q, output: :onn}, {input: :j, output: :enn},
       {input: :k, output: :unn}, {input: :x, output: :inn},
     ],
