@@ -11,6 +11,7 @@ describe Anpan::An do
     config_files = {
       'anpan.txt': Anpan::An::CONF,
       'google_japanese_input.txt': Anpan::An::GOOGLE_JAPANESE,
+      'dvorakjp_prime.txt': Anpan::An::DVORAKJP,
     }
     config_files.each do |table, config|
       context 'when anpan conf given' do
