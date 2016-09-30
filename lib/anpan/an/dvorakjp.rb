@@ -157,7 +157,7 @@ class Anpan::An
           {trigger: :y, insertion: :ily},
         ],
         germinated: [
-          {trigger: :b, insertion: :ltub},
+          {trigger: :b, insertion: :ltup},
         ]
       },
       {
