@@ -88,13 +88,6 @@ class Anpan::An
       {
         input: :c,
         output: :k,
-        vowel_filter: %i(a u o)
-      },
-
-      {
-        input: :c,
-        output: :s,
-        vowel_filter: %i(i e)
       },
 
       {
