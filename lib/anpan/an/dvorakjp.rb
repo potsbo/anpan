@@ -13,7 +13,8 @@ class Anpan::An
         input: :c,
         output: :k,
         contracted: [
-          {trigger: :n, insertion: :ily}
+          {trigger: :n, insertion: :ily},
+          {trigger: :y, insertion: :ily},
         ],
         germinated: [
           {trigger: :c, insertion: :ltuc}
