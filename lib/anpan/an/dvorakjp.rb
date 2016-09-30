@@ -197,6 +197,7 @@ class Anpan::An
         vowel_filter: %i(a o e u),
         contracted: [
           { trigger: :y, insertion: nil },
+          { trigger: :h, insertion: nil },
         ],
         germinated: [
           { trigger: :j, insertion: :ltuj },
