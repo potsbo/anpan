@@ -131,11 +131,27 @@ class Anpan::An
 
       {
         input: :w,
+        output: :ul,
+        vowel_filter: %i(i e),
         contracted: [
-          {trigger: :h, insertion: :ul},
+          { trigger: :h}
+        ],
+        regression: [
+          { trigger: :y, insertion: :w}
+        ],
+      },
+
+      {
+        input: :w,
+        vowel_filter: %i(a u o),
+        contracted: [
+          { trigger: :h, insertion: :ul, vowel_filter: %i(a o)},
         ],
         germinated: [
-          {trigger: :r, insertion: :ltur}
+          { trigger: :w, insertion: :ltuw },
+        ],
+        regression: [
+          { trigger: :h, insertion: nil, vowels: %i(u) },
         ],
       },
 
