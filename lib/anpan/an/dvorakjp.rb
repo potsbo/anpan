@@ -140,6 +140,27 @@ class Anpan::An
       },
 
       {
+        input: :j,
+        output: :zily,
+        vowel_filter: %i(a o e u),
+        contracted: [
+          { trigger: :y, insertion: nil },
+        ],
+        germinated: [
+          { trigger: :j, insertion: :ltuj },
+        ],
+      },
+
+      {
+        input: :j,
+        output: :z,
+        vowel_filter: %i(i),
+        contracted: [
+          { trigger: :y, insertion: :ily },
+        ],
+      },
+
+      {
         input: :d,
         contracted: [
           {trigger: :n, insertion: :ely},
