@@ -231,6 +231,7 @@ class Anpan::An
         vowel_filter: %i(i),
         contracted: [
           { trigger: :y, insertion: :ily },
+          { trigger: :h, insertion: nil },
         ],
       },
 
