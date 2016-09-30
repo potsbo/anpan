@@ -11,18 +11,6 @@ class Anpan::An
       { input: nil },
 
       {
-        input: :c,
-        output: :k,
-        contracted: [
-          {trigger: :n, insertion: :ily},
-          {trigger: :y, insertion: :ily},
-        ],
-        germinated: [
-          {trigger: :c, insertion: :ltuc}
-        ]
-      },
-
-      {
         input: :k,
         contracted: [
           {trigger: :y, insertion: :ily},
@@ -58,6 +46,32 @@ class Anpan::An
         germinated: [
           { trigger: :t,    insertion: :ltut }
         ],
+      },
+
+      {
+        input: :c,
+        vowel_filter: [],
+        germinated: [
+          { trigger: :c, insertion: :ltuc }
+        ],
+        regression: [
+          { trigger: :h, insertion: :tily, vowels: %i(a o e u)},
+          { trigger: :h, insertion: :t,    vowels: %i(i)},
+          { trigger: :y, insertion: :tily, vowels: %i(a o e u)},
+          { trigger: :y, insertion: :til,  vowels: %i(i)}
+        ],
+      },
+
+      {
+        input: :c,
+        output: :k,
+        vowel_filter: %i(a u o)
+      },
+
+      {
+        input: :c,
+        output: :s,
+        vowel_filter: %i(i e)
       },
 
       {
