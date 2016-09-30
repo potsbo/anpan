@@ -21,6 +21,16 @@ class Anpan::An
       },
 
       {
+        input: :cn,
+        output: :kily,
+      },
+
+      {
+        input: :cy,
+        output: :kily,
+      },
+
+      {
         input: :s,
         contracted: [
           {trigger: :h, insertion: :ily},
