@@ -34,6 +34,7 @@ class Anpan::An
       {
         input: :t,
         contracted: [
+          { trigger: :n,    insertion: :ily },
           { trigger: :y,    insertion: :ily },
           { trigger: :h,    insertion: :ely },
           { trigger: :s,    insertion: :ul,  vowel_filter: %i(a o e i) },
