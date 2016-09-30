@@ -33,6 +33,11 @@ class Anpan::An
       },
 
       {
+        input: :cy,
+        output: :tily,
+      },
+
+      {
         input: :cw,
         output: :kul,
       },
