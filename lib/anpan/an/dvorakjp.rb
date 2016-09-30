@@ -13,11 +13,12 @@ class Anpan::An
       {
         input: :k,
         contracted: [
-          {trigger: :y, insertion: :ily},
+          { trigger: :y, insertion: :ily },
+          { trigger: :h, insertion: :ily },
           { trigger: :w, insertion: :ul  },
         ],
         germinated: [
-          {trigger: :k, insertion: :ltuk}
+          { trigger: :k, insertion: :ltuk },
         ]
       },
 
