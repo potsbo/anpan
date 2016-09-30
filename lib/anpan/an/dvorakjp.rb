@@ -71,13 +71,11 @@ class Anpan::An
       },
       {
         input: :f,
-        output: :y,
+        output: :hul,
         germinated: [
           {trigger: :f, insertion: :ltuf}
         ],
         regression: [
-          {trigger: :t, insertion: :f},
-          {trigger: :s, insertion: :f},
           {trigger: :n, insertion: :huly},
         ]
       },
