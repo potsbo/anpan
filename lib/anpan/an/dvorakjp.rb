@@ -126,6 +126,20 @@ class Anpan::An
       },
 
       {
+        input: :y,
+        vowel_filter: %i(a u o),
+        germinated: [
+          { trigger: :y, insertion: :ltuy }
+        ],
+      },
+
+      {
+        input: :y,
+        output: :il,
+        vowel_filter: %i(e),
+      },
+
+      {
         input: :f,
         output: :hul,
         germinated: [
