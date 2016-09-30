@@ -6,6 +6,37 @@ describe Anpan::An do
   let(:consonant) { Anpan::Consonant.new(input: :c, output: :k) }
   let(:vowel) { Anpan::Vowel.new({input: :a}) }
 
+  describe 'config files' do
+    let(:render) { anpan.render }
+    config_files = {
+      'anpan.txt': Anpan::An::CONF,
+      'google_japanese_input.txt': Anpan::An::GOOGLE_JAPANESE,
+    }
+    config_files.each do |table, config|
+      context 'when anpan conf given' do
+        let(:conf) { config }
+        let(:lines) { File.readlines("spec/table/#{table}").map(&:chomp) }
+        describe "render covers #{table}" do
+          File.open("spec/table/#{table}") do |file|
+            file.each_line do |line|
+              it "should contain '#{line}'" do
+                expect(render.split("\n")).to include line.chomp
+              end
+            end
+          end
+        end
+
+        describe "anpan.txt covers rendered" do
+          Anpan::An.new(config).render.split("\n").each do |pattern|
+            it "should not contain '#{pattern}' if it's not on the table file" do
+              expect(lines).to include pattern
+            end
+          end
+        end
+      end
+    end
+  end
+
   describe '#render' do
     let(:render) { anpan.render }
     context 'conf one consonant and one vowel added' do
@@ -15,73 +46,6 @@ describe Anpan::An do
       end
       it 'should renter "ca\tか"' do
         expect(render).to eq "ca\tか"
-      end
-    end
-
-    context 'when default conf loaded' do
-      let(:conf) { Anpan::An::CONF }
-      expected = [
-          "a\tあ", "i\tい", "u\tう", "e\tえ", "o\tお",
-          "ca\tか","ci\tき","cu\tく","ce\tけ","co\tこ",
-          "ta\tた","ti\tち","tu\tつ","te\tて","to\tと",
-          "na\tな","ni\tに","nu\tぬ","ne\tね","no\tの",
-          "ha\tは","hi\tひ","hu\tふ","he\tへ","ho\tほ",
-          "ma\tま","mi\tみ","mu\tむ","me\tめ","mo\tも",
-          "fa\tや","fi\tい","fu\tゆ","fe\tえ","fo\tよ",
-          "ra\tら","ri\tり","ru\tる","re\tれ","ro\tろ",
-          "cna\tきゃ","cni\tきぃ","cnu\tきゅ","cne\tきぇ","cno\tきょ",
-          "cn;\tきゃん","cnq\tきょん","cnj\tきぇん","cnk\tきゅん","cnx\tきぃん",
-          "cc\tっ\tc",
-          "wha\tうぁ","whi\tうぃ","whu\tうぅ","whe\tうぇ","who\tうぉ",
-      ]
-      # expected.each do |output|
-      #   it "should contain #{output}" do
-      #     expect(render).to include("#{output}\n")
-      #   end
-      # end
-    end
-
-    context 'when anpan conf given' do
-      let(:conf) { Anpan::An::CONF }
-      let(:lines) { File.readlines('spec/table/anpan.txt').map(&:chomp) }
-      describe 'render covers anpan.txt' do
-        File.open('spec/table/anpan.txt') do |file|
-          file.each_line do |line|
-            it "should contain '#{line}'" do
-              expect(render.split("\n")).to include line.chomp
-            end
-          end
-        end
-      end
-
-      describe "anpan.txt covers rendered" do
-        Anpan::An.new(Anpan::An::CONF).render.split("\n").each do |pattern|
-          it "should not contain '#{pattern}' if it's not on the table file" do
-            expect(lines).to include pattern
-          end
-        end
-      end
-    end
-
-    context 'when Google Japanese Input conf given' do
-      let(:conf) { Anpan::An::GOOGLE_JAPANESE }
-      let(:lines) { File.readlines('spec/table/google_japanese_input.txt').map(&:chomp) }
-      describe 'render covers Google Japanese Input' do
-        File.open('spec/table/google_japanese_input.txt') do |file|
-          file.each_line do |line|
-            it "should contain '#{line}'" do
-              expect(render.split("\n")).to include line.chomp
-            end
-          end
-        end
-      end
-
-      describe "Google Japanese Input covers rendered" do
-        Anpan::An.new(Anpan::An::GOOGLE_JAPANESE).render.split("\n").each do |pattern|
-          it "should not contain '#{pattern}' if it's not on the table file" do
-            expect(lines).to include pattern
-          end
-        end
       end
     end
   end
