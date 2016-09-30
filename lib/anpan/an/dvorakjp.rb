@@ -150,6 +150,16 @@ class Anpan::An
         ]
       },
       {
+        input: :p,
+        contracted: [
+          {trigger: :n, insertion: :ily},
+          {trigger: :y, insertion: :ily},
+        ],
+        germinated: [
+          {trigger: :b, insertion: :ltub},
+        ]
+      },
+      {
         input: :l,
         regression: [
           {trigger: :f, insertion: :ly}
