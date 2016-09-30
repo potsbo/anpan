@@ -299,6 +299,7 @@ class Anpan::An
           { trigger: :ts, insertion: :t, vowel_filter: %i(u) },
           { trigger: :w,  insertion: :w, vowel_filter: %i(a) },
           { trigger: :h,  insertion: :y, vowel_filter: %i(a u o) },
+          { trigger: :h,  insertion: :y, vowel_filter: %i(i e) },
         ],
         germinated: [
           { trigger: :x, insertion: :ltux },
