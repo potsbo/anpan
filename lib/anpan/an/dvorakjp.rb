@@ -193,17 +193,12 @@ class Anpan::An
 
       {
         input: :v,
-        output: :p,
         contracted: [
-          {trigger: :h, insertion: :ily},
-        ],
-        regression: [
-          {trigger: :t, insertion: :v},
-          {trigger: :s, insertion: :v},
+          { trigger: :y, insertion: :uly },
         ],
         germinated: [
-          {trigger: :v, insertion: :ltuv},
-        ],
+          { trigger: :v, insertion: :ltuv },
+        ]
       },
 
       {
