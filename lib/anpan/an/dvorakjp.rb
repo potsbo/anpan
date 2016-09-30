@@ -14,6 +14,7 @@ class Anpan::An
         input: :k,
         contracted: [
           {trigger: :y, insertion: :ily},
+          { trigger: :w, insertion: :ul  },
         ],
         germinated: [
           {trigger: :k, insertion: :ltuk}
