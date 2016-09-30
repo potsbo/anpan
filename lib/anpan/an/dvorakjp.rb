@@ -106,6 +106,7 @@ class Anpan::An
         contracted: [
           { trigger: :n, insertion: :ily },
           { trigger: :y, insertion: :ily },
+          { trigger: :w, insertion: :ul,  vowel_filter: %i(a o e i) },
         ],
         germinated: [
           { trigger: :h, insertion: :ltuh }
