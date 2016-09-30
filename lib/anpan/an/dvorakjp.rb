@@ -140,6 +140,9 @@ class Anpan::An
       {
         input: :f,
         output: :hul,
+        contracted: [
+          { trigger: :y, insertion: :y }
+        ],
         germinated: [
           {trigger: :f, insertion: :ltuf}
         ],
