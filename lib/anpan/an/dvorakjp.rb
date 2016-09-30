@@ -222,6 +222,21 @@ class Anpan::An
           {trigger: :l, insertion: :ltul}
         ]
       },
+
+      {
+        input: :q,
+        output: :kul,
+        vowel_filter: %i(a i e o),
+        germinated: [
+          { trigger: :q, insertion: :ltuq },
+        ],
+      },
+
+      {
+        input: :q,
+        output: :k,
+        vowel_filter: %i(u),
+      },
     ],
 
     symbols: [
