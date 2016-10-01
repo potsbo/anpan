@@ -27,26 +27,6 @@ class Anpan::An
       },
 
       {
-        input: :cn,
-        output: :kily,
-      },
-
-      {
-        input: :cy,
-        output: :kily,
-      },
-
-      {
-        input: :cy,
-        output: :tily,
-      },
-
-      {
-        input: :cw,
-        output: :kul,
-      },
-
-      {
         input: :s,
         contracted: [
           { trigger: :h, insertion: :ily, vowels: %i(a o e u) },
@@ -80,10 +60,13 @@ class Anpan::An
           { trigger: :c, insertion: :ltuc }
         ],
         regression: [
-          { trigger: :h, insertion: :tily, vowels: %i(a o e u)},
-          { trigger: :h, insertion: :t,    vowels: %i(i)},
-          { trigger: :y, insertion: :tily, vowels: %i(a o e u)},
-          { trigger: :y, insertion: :til,  vowels: %i(i)}
+          { trigger: :h, insertion: :tily, vowels: %i(a o e u) },
+          { trigger: :h, insertion: :t,    vowels: %i(i) },
+          { trigger: :n, insertion: :kily, vowels: %i(a o e u i) },
+          { trigger: :y, insertion: :tily, vowels: %i(a o e u) },
+          { trigger: :y, insertion: :til,  vowels: %i(i) },
+          { trigger: :y, insertion: :kily, vowels: %i(a o e u i) },
+          { trigger: :w, insertion: :kul,  vowels: %i(a o e u i) },
         ],
       },
 
