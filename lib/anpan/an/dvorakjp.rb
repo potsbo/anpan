@@ -145,14 +145,12 @@ class Anpan::An
         input: :f,
         output: :hul,
         contracted: [
-          { trigger: :y, insertion: :y }
+          { trigger: :y, insertion: :y },
+          { trigger: :n, insertion: :y },
         ],
         germinated: [
-          {trigger: :f, insertion: :ltuf}
+          { trigger: :f, insertion: :ltuf }
         ],
-        regression: [
-          {trigger: :n, insertion: :huly},
-        ]
       },
 
       {
