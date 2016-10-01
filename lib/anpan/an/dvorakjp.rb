@@ -347,8 +347,10 @@ class Anpan::An
 
     symbols: [
       { input: :'[' }, { input: :']' }, { input: :- },
+      { input: :~ }, { input: :';-', output: :~ }, { input: :';/', output: :'/' },
       { input: :",", output: :","}, { input: :'.', output: :"."},
       { input: :';j', output: :"↓"}, { input: :';k', output: :"↑"}, { input: :';h', output: :"←"}, { input: :';l', output: :"→"},
+      { input: :';[', output: :";["}, { input: :';]', output: :";]"},
       { input: :xn, output: :nn}, { input: :www, output: :w, addition: :ww, as_is: true}
     ]
   }
