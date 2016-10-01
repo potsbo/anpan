@@ -260,7 +260,7 @@ cyp	ちゅう
 cy;	ちゃん
 cyq	ちょん
 cyj	ちぇん
-cyk	ちゅう
+cyk	ちゅん
 cyx	ちぃん
 dya	ぢゃ
 dyi	ぢぃ
@@ -898,8 +898,8 @@ xyu	ゅ
 xyo	ょ
 xy'	ゃい
 xy,	ょう
-xy.	ぇう
-xyp	ょう
+xy.	ぇい
+xyp	ゅう
 xy;	ゃん
 xyq	ょん
 xyj	ぇん
@@ -910,8 +910,8 @@ xhu	ゅ
 xho	ょ
 xh'	ゃい
 xh,	ょう
-xh.	ぇう
-xhp	ょう
+xh.	ぇい
+xhp	ゅう
 xh;	ゃん
 xhq	ょん
 xhj	ぇん
@@ -922,8 +922,8 @@ lyu	ゅ
 lyo	ょ
 ly'	ゃい
 ly,	ょう
-ly.	ぇう
-lyp	ょう
+ly.	ぇい
+lyp	ゅう
 ly;	ゃん
 lyq	ょん
 lyj	ぇん
@@ -934,8 +934,8 @@ lhu	ゅ
 lho	ょ
 lh'	ゃい
 lh,	ょう
-lh.	ぇう
-lhp	ょう
+lh.	ぇい
+lhp	ゅう
 lh;	ゃん
 lhq	ょん
 lhj	ぇん
