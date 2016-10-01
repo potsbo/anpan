@@ -8,7 +8,10 @@ class Anpan::An
       {input: :k, output: :unn}, {input: :x, output: :inn},
     ],
     consonants: [
-      { input: nil },
+      {
+        input: nil,
+        only_singles: true,
+      },
 
       {
         input: :k,
