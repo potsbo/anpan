@@ -338,7 +338,7 @@ class Anpan::An
       { input: :';j', output: :"↓"}, { input: :';k', output: :"↑"}, { input: :';h', output: :"←"}, { input: :';l', output: :"→"},
       { input: :';[', output: :"z["}, { input: :';]', output: :"z]"},
       { input: :';.', output: :"…"}, { input: :';,', output: :"‥"},
-      { input: :xn, output: :nn}, { input: :"n'", output: :nn}, { input: :www, output: :w, addition: :ww, as_is: true}
+      { input: :xn, output: :nn}, { input: :www, output: :w, addition: :ww, as_is: true}
     ]
   }
 end
