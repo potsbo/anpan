@@ -292,7 +292,6 @@ class Anpan::An
       {
         input: :p,
         contracted: [
-          {trigger: :n, insertion: :ily},
           {trigger: :h, insertion: :ily},
           {trigger: :y, insertion: :ily},
         ],
