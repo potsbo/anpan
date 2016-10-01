@@ -4,11 +4,16 @@ require 'anpan/an/dvorakjp'
 
 class Anpan::An
   attr_reader :consonant_list, :vowel_list
-  def initialize(conf=CONF)
+  def initialize(conf = {})
+    conf = CONF if conf.empty?
+    reset
+    load_conf(conf)
+  end
+
+  def reset
     @vowel_list     = []
     @consonant_list = []
     @symbol_list    = []
-    load_conf(conf)
   end
 
   ### loading ###
