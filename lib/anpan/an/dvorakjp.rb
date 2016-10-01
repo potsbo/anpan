@@ -100,7 +100,8 @@ class Anpan::An
         ],
         germinated: [
           {trigger: :n, insertion: :nn}
-        ]
+        ],
+        single: %i(nn),
       },
 
       {
