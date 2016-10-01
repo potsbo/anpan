@@ -76,11 +76,12 @@ class Anpan::Consonant
   end
 
   def vowels(conf = {})
+    only_singles = conf[:only_singles] || @only_singles
     base = conf[:vowels] || @vowel_filter
     base = base & (conf[:vowel_filter] || %i(a o e u i))
     base = base - (conf[:expect_vowels] || [])
     all_vs = @vowel_list.select { |v| base.include?(v.output.to_s[0].to_sym) }
-    @only_singles ? all_vs.select { |v| v.output.to_s.size <= 1 } : all_vs
+    only_singles ? all_vs.select { |v| v.output.to_s.size <= 1 } : all_vs
   end
   ### pattern makers ###
 end

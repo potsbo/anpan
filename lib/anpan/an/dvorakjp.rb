@@ -315,8 +315,8 @@ class Anpan::An
         output: :l,
         contracted: [
           { trigger: :y,  insertion: :y },
-          { trigger: :k,  insertion: :k, vowel_filter: %i(a e) },
-          { trigger: :c,  insertion: :k, vowel_filter: %i(a e) },
+          { trigger: :k,  insertion: :k, vowel_filter: %i(a e), only_singles: true },
+          { trigger: :c,  insertion: :k, vowel_filter: %i(a e), only_singles: true },
           { trigger: :t,  insertion: :t, vowel_filter: %i(u) },
           { trigger: :ts, insertion: :t, vowel_filter: %i(u) },
           { trigger: :w,  insertion: :w, vowel_filter: %i(a) },
