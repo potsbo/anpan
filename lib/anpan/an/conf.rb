@@ -1,10 +1,10 @@
 class Anpan::An
   CONF = {
-    :vowels => [
+    vowels: [
       {input: :a}, {input: :o}, {input: :e}, {input: :u}, {input: :i},
       {input: :"'", output: :ai}, {input: :',', output: :ou}, {input: :'.', output: :ei},
       {input: :p, output: :uu}, {input: :y, output: :ii},
-      {input: :";", output: :ann}, {input: :q, output: :onn}, {input: :j, output: :enn},
+      {input: :';', output: :ann}, {input: :q, output: :onn}, {input: :j, output: :enn},
       {input: :k, output: :unn}, {input: :x, output: :inn},
     ],
     consonants: [
@@ -159,7 +159,7 @@ class Anpan::An
     ],
     symbols: [
       { input: :'[' }, { input: :']' }, { input: :- },
-      { input: :"l,", output: :","}, { input: :'l.', output: :"."},
+      { input: :'l,', output: :','}, { input: :'l.', output: :'.'},
     ]
   }
 end
