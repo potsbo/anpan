@@ -16,6 +16,7 @@ class Anpan::Consonant
     @regression   = conf[:regression]    || @regression   || []
     @vowel_filter = conf[:vowel_filter]  || %i(a o e u i)
     @only_singles = conf[:only_singles]  || false
+    @avoid_self   = conf[:avoid_self]    || false
     @single       = Array(conf[:single]) || @single       || []
   end
 
@@ -76,11 +77,13 @@ class Anpan::Consonant
   end
 
   def vowels(conf = {})
-    only_singles = conf[:only_singles] || @only_singles
+    only_singles = conf[:only_singles].nil? ? @only_singles : conf[:only_singles]
+    avoid_self   = conf[:avoid_self].nil?   ? @avoid_self   : conf[:avoid_self]
     base = conf[:vowels] || @vowel_filter
     base = base & (conf[:vowel_filter] || %i(a o e u i))
     base = base - (conf[:expect_vowels] || [])
     all_vs = @vowel_list.select { |v| base.include?(v.output.to_s[0].to_sym) }
+    all_vs = avoid_self ? all_vs.select { |v| v.input.to_s != @input.to_s } : all_vs
     only_singles ? all_vs.select { |v| v.output.to_s.size <= 1 } : all_vs
   end
   ### pattern makers ###

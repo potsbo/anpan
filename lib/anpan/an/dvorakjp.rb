@@ -15,10 +15,11 @@ class Anpan::An
 
       {
         input: :k,
+        avoid_self: true,
         contracted: [
-          { trigger: :y, insertion: :ily },
-          { trigger: :h, insertion: :ily },
-          { trigger: :w, insertion: :ul  },
+          { trigger: :y, insertion: :ily, avoid_self: false },
+          { trigger: :h, insertion: :ily, avoid_self: false },
+          { trigger: :w, insertion: :ul,  avoid_self: false },
         ],
         germinated: [
           { trigger: :k, insertion: :ltuk },
@@ -226,10 +227,11 @@ class Anpan::An
       {
         input: :j,
         output: :zily,
+        avoid_self: true,
         vowel_filter: %i(a o e u),
         contracted: [
-          { trigger: :y, insertion: nil },
-          { trigger: :h, insertion: nil },
+          { trigger: :y, insertion: nil, avoid_self: false },
+          { trigger: :h, insertion: nil, avoid_self: false },
         ],
         germinated: [
           { trigger: :j, insertion: :ltuj },
@@ -285,9 +287,10 @@ class Anpan::An
 
       {
         input: :p,
+        avoid_self: true,
         contracted: [
-          {trigger: :h, insertion: :ily},
-          {trigger: :y, insertion: :ily},
+          {trigger: :h, insertion: :ily, avoid_self: false },
+          {trigger: :y, insertion: :ily, avoid_self: false },
         ],
         germinated: [
           {trigger: :p, insertion: :ltup},
@@ -312,16 +315,17 @@ class Anpan::An
 
       {
         input: :x,
+        avoid_self: true,
         output: :l,
         contracted: [
-          { trigger: :y,  insertion: :y },
-          { trigger: :k,  insertion: :k, vowel_filter: %i(a e), only_singles: true },
-          { trigger: :c,  insertion: :k, vowel_filter: %i(a e), only_singles: true },
-          { trigger: :t,  insertion: :t, vowel_filter: %i(u),   only_singles: true },
-          { trigger: :ts, insertion: :t, vowel_filter: %i(u),   only_singles: true },
-          { trigger: :w,  insertion: :w, vowel_filter: %i(a),   only_singles: true },
-          { trigger: :h,  insertion: :y, vowel_filter: %i(a u o) },
-          { trigger: :h,  insertion: :y, vowel_filter: %i(i e) },
+          { trigger: :y,  insertion: :y,                                               avoid_self: false },
+          { trigger: :k,  insertion: :k, vowel_filter: %i(a e),   only_singles: true,  avoid_self: false },
+          { trigger: :c,  insertion: :k, vowel_filter: %i(a e),   only_singles: true,  avoid_self: false },
+          { trigger: :t,  insertion: :t, vowel_filter: %i(u),     only_singles: true,  avoid_self: false },
+          { trigger: :ts, insertion: :t, vowel_filter: %i(u),     only_singles: true,  avoid_self: false },
+          { trigger: :w,  insertion: :w, vowel_filter: %i(a),     only_singles: true,  avoid_self: false },
+          { trigger: :h,  insertion: :y, vowel_filter: %i(a u o),                      avoid_self: false },
+          { trigger: :h,  insertion: :y, vowel_filter: %i(i e),                        avoid_self: false },
         ],
         germinated: [
           { trigger: :x, insertion: :ltux },
@@ -330,6 +334,7 @@ class Anpan::An
 
       {
         input: :q,
+        avoid_self: true,
         output: :kul,
         vowel_filter: %i(a i e o),
         germinated: [
