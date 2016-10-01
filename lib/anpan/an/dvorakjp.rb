@@ -353,7 +353,7 @@ class Anpan::An
       { input: :~ }, { input: :';-', output: :~ }, { input: :';/', output: :'/' },
       { input: :",", output: :","}, { input: :'.', output: :"."},
       { input: :';j', output: :"↓"}, { input: :';k', output: :"↑"}, { input: :';h', output: :"←"}, { input: :';l', output: :"→"},
-      { input: :';[', output: :";["}, { input: :';]', output: :";]"},
+      { input: :';[', output: :"z["}, { input: :';]', output: :"z]"},
       { input: :xn, output: :nn}, { input: :www, output: :w, addition: :ww, as_is: true}
     ]
   }
