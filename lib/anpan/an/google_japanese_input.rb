@@ -13,7 +13,7 @@ class Anpan::An
           { trigger: :w, insertion: :ul  },
         ],
         germinated: [
-          { trigger: :k, insertion: :ltu },
+          { insertion: :ltu },
         ],
       },
 
@@ -25,7 +25,7 @@ class Anpan::An
           { trigger: :h, insertion: nil,  vowels: %i(i) },
         ],
         germinated: [
-          { trigger: :s, insertion: :ltu }
+          { insertion: :ltu }
         ],
       },
 
@@ -42,7 +42,7 @@ class Anpan::An
           { trigger: :"'",  insertion: :ol,  vowel_filter: %i(u) },
         ],
         germinated: [
-          { trigger: :t,    insertion: :ltu }
+          { insertion: :ltu }
         ],
       },
 
@@ -50,7 +50,7 @@ class Anpan::An
         input: :c,
         vowel_filter: [],
         germinated: [
-          { trigger: :c, insertion: :ltu }
+          { insertion: :ltu }
         ],
         regression: [
           { trigger: :h, insertion: :tily, vowels: %i(a o e u)},
@@ -78,7 +78,7 @@ class Anpan::An
           { trigger: :y,   insertion: :ily },
         ],
         germinated: [
-          { trigger: :n,   insertion: :n },
+          { insertion: :n },
         ],
         single: %i(nn),
       },
@@ -91,7 +91,7 @@ class Anpan::An
           { trigger: :wy, insertion: :uly, vowel_filter: %i(u) },
         ],
         germinated: [
-          { trigger: :h,  insertion: :ltu }
+          { insertion: :ltu }
         ],
       },
 
@@ -101,7 +101,7 @@ class Anpan::An
           { trigger: :y, insertion: :ily },
         ],
         germinated: [
-          { trigger: :m, insertion: :ltu }
+          { insertion: :ltu }
         ],
       },
 
@@ -109,7 +109,7 @@ class Anpan::An
         input: :y,
         vowel_filter: %i(a u o),
         germinated: [
-          { trigger: :y, insertion: :ltu }
+          { insertion: :ltu }
         ],
       },
 
@@ -126,7 +126,7 @@ class Anpan::An
           { trigger: :y, insertion: :y, vowel_filter: %i(a o u)},
         ],
         germinated: [
-          { trigger: :f, insertion: :ltu }
+          { insertion: :ltu }
         ],
       },
 
@@ -145,7 +145,7 @@ class Anpan::An
           { trigger: :y, insertion: :ily },
         ],
         germinated: [
-          { trigger: :r, insertion: :ltu }
+          { insertion: :ltu }
         ],
       },
 
@@ -168,7 +168,7 @@ class Anpan::An
           { trigger: :h, insertion: :ul, vowel_filter: %i(a o)},
         ],
         germinated: [
-          { trigger: :w, insertion: :ltu },
+          { insertion: :ltu },
         ],
         regression: [
           { trigger: :h, insertion: nil, vowels: %i(u) },
@@ -182,7 +182,7 @@ class Anpan::An
           { trigger: :w, insertion: :ul },
         ],
         germinated: [
-          { trigger: :g, insertion: :ltu },
+          { insertion: :ltu },
         ],
       },
 
@@ -192,7 +192,7 @@ class Anpan::An
           { trigger: :y, insertion: :ily },
         ],
         germinated: [
-          { trigger: :z, insertion: :ltu },
+          { insertion: :ltu },
         ],
       },
 
@@ -204,7 +204,7 @@ class Anpan::An
           { trigger: :y, insertion: nil },
         ],
         germinated: [
-          { trigger: :j, insertion: :ltu },
+          { insertion: :ltu },
         ],
       },
 
@@ -228,7 +228,7 @@ class Anpan::An
           { trigger: :"'y", insertion: :ely, vowel_filter: %i(u) },
         ],
         germinated: [
-          { trigger: :d,    insertion: :ltu },
+          { insertion: :ltu },
         ],
       },
 
@@ -238,7 +238,7 @@ class Anpan::An
           { trigger: :y, insertion: :ily },
         ],
         germinated: [
-          { trigger: :p, insertion: :ltu },
+          { insertion: :ltu },
         ],
       },
 
@@ -248,7 +248,7 @@ class Anpan::An
           { trigger: :y, insertion: :uly },
         ],
         germinated: [
-          { trigger: :v, insertion: :ltu },
+          { insertion: :ltu },
         ]
       },
       {
@@ -257,7 +257,7 @@ class Anpan::An
           { trigger: :y, insertion: :ily },
         ],
         germinated: [
-          { trigger: :b, insertion: :ltu },
+          { insertion: :ltu },
         ],
       },
 
@@ -271,7 +271,7 @@ class Anpan::An
           { trigger: :w,  insertion: :w, vowel_filter: %i(a) },
         ],
         germinated: [
-          { trigger: :l, insertion: :ltu },
+          { insertion: :ltu },
         ],
       },
 
@@ -286,7 +286,7 @@ class Anpan::An
           { trigger: :w, insertion: :w,  vowel_filter: %i(a) },
         ],
         germinated: [
-          { trigger: :x, insertion: :ltu },
+          { insertion: :ltu },
         ],
       },
 
@@ -295,7 +295,7 @@ class Anpan::An
         output: :kul,
         vowel_filter: %i(a i e o),
         germinated: [
-          { trigger: :q, insertion: :ltu },
+          { insertion: :ltu },
         ],
       },
 

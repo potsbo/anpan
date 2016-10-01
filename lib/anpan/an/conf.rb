@@ -16,7 +16,7 @@ class Anpan::An
           {trigger: :n, insertion: :ily}
         ],
         germinated: [
-          {trigger: :c, insertion: :ltu}
+          {insertion: :ltu}
         ]
       },
       {
@@ -25,7 +25,7 @@ class Anpan::An
           {trigger: :h, insertion: :ily}
         ],
         germinated: [
-          {trigger: :s, insertion: :ltu}
+          {insertion: :ltu}
         ]
       },
       {
@@ -35,7 +35,7 @@ class Anpan::An
           {trigger: :h, insertion: :ely},
         ],
         germinated: [
-          {trigger: :t, insertion: :ltu}
+          {insertion: :ltu}
         ],
       },
       {
@@ -44,7 +44,7 @@ class Anpan::An
           {trigger: :h, insertion: :ily},
         ],
         germinated: [
-          {trigger: :n, insertion: :n}
+          {insertion: :n}
         ],
       },
       {
@@ -53,7 +53,7 @@ class Anpan::An
           {trigger: :n, insertion: :ily},
         ],
         germinated: [
-          {trigger: :h, insertion: :ltu}
+          {insertion: :ltu}
         ]
       },
       {
@@ -62,14 +62,14 @@ class Anpan::An
           {trigger: :n, insertion: :ily},
         ],
         germinated: [
-          {trigger: :m, insertion: :ltu}
+          {insertion: :ltu}
         ]
       },
       {
         input: :f,
         output: :y,
         germinated: [
-          {trigger: :f, insertion: :ltu}
+          {insertion: :ltu}
         ],
         regression: [
           {trigger: :t, insertion: :f},
@@ -77,13 +77,14 @@ class Anpan::An
           {trigger: :n, insertion: :huly},
         ]
       },
+
       {
         input: :r,
         contracted: [
           {trigger: :h, insertion: :ily},
         ],
         germinated: [
-          {trigger: :r, insertion: :ltu}
+          {insertion: :ltu},
         ],
       },
       {
@@ -92,7 +93,7 @@ class Anpan::An
           {trigger: :h, insertion: :ul},
         ],
         germinated: [
-          {trigger: :r, insertion: :ltu}
+          {insertion: :ltu}
         ],
       },
       {
@@ -101,7 +102,7 @@ class Anpan::An
           {trigger: :n, insertion: :ily},
         ],
         germinated: [
-          {trigger: :g, insertion: :ltu},
+          {insertion: :ltu},
         ],
       },
       {
@@ -110,7 +111,7 @@ class Anpan::An
           {trigger: :h, insertion: :ily},
         ],
         germinated: [
-          {trigger: :z, insertion: :ltu},
+          {insertion: :ltu},
         ],
       },
       {
@@ -120,7 +121,7 @@ class Anpan::An
           {trigger: :h, insertion: :ily},
         ],
         germinated: [
-          {trigger: :d, insertion: :ltu},
+          {insertion: :ltu},
         ],
       },
       {
@@ -134,7 +135,7 @@ class Anpan::An
           {trigger: :s, insertion: :v},
         ],
         germinated: [
-          {trigger: :v, insertion: :ltu},
+          {insertion: :ltu},
         ],
       },
       {
@@ -143,7 +144,7 @@ class Anpan::An
           {trigger: :n, insertion: :ily}
         ],
         germinated: [
-          {trigger: :b, insertion: :ltu}
+          {insertion: :ltu}
         ]
       },
       {
@@ -152,7 +153,7 @@ class Anpan::An
           {trigger: :f, insertion: :ly}
         ],
         germinated: [
-          {trigger: :l, insertion: :ltu}
+          {insertion: :ltu}
         ]
       },
     ],
