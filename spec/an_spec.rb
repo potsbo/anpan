@@ -14,7 +14,7 @@ describe Anpan::An do
       'dvorakjp_prime.txt': Anpan::An::DVORAKJP,
     }
     config_files.each do |table, config|
-      context 'when anpan conf given' do
+      context "when #{table} given" do
         let(:conf) { config }
         let(:lines) { File.readlines("spec/table/#{table}").map(&:chomp) }
         describe "render covers #{table}" do
@@ -24,6 +24,14 @@ describe Anpan::An do
                 expect(render.split("\n")).to include line.chomp
               end
             end
+          end
+        end
+
+        describe 'uniqueness' do
+          it "Uniq by input should not appear twice" do
+            rendered = Anpan::An.new(config).render.split("\n")
+            uniq = rendered.uniq{ |r| r.split("\t").first }
+            expect(rendered - uniq).to eq []
           end
         end
 
@@ -42,6 +50,7 @@ describe Anpan::An do
     let(:render) { anpan.render }
     context 'conf one consonant and one vowel added' do
       before do
+        anpan.reset
         anpan.add_consonants(consonant)
         anpan.add_vowels(vowel)
       end
@@ -63,6 +72,7 @@ describe Anpan::An do
   describe '#consonant_list' do
     let(:list) { anpan.consonant_list }
     before do
+      anpan.reset
       anpan.add_consonants(consonant)
       anpan.add_vowels(vowel)
     end
@@ -80,6 +90,7 @@ describe Anpan::An do
   describe '#load_consonants' do
     let(:list) { anpan.consonant_list }
     before do
+      anpan.reset
       conf = [
         {
           input: :c,
@@ -103,6 +114,7 @@ describe Anpan::An do
   describe '#vowel_list' do
     let(:list) { anpan.vowel_list }
     before do
+      anpan.reset
       anpan.load_vowel([{input: :a}])
     end
     it 'should be an Array' do

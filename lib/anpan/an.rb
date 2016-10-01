@@ -56,11 +56,11 @@ class Anpan::An
     @patterns << @consonant_list.collect{|c| c.patterns @vowel_list}
     @patterns << @symbol_list.collect{|s| s.pattern}
     @patterns.flatten!
+    @patterns = @patterns.reverse.uniq{|p| p.input.to_sym }.reverse
   end
 
   def patterns
-    make_list unless @patterns && !@patterns.empty?
-    @patterns
+    (@patterns && !@patterns.empty?) ? @patterns : make_list
   end
 
   def render
