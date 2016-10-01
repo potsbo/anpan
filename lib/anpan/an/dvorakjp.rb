@@ -65,7 +65,6 @@ class Anpan::An
           { trigger: :n, insertion: :kily, vowels: %i(a o e u i) },
           { trigger: :y, insertion: :tily, vowels: %i(a o e u) },
           { trigger: :y, insertion: :til,  vowels: %i(i) },
-          { trigger: :y, insertion: :kily, vowels: %i(a o e u i) },
           { trigger: :w, insertion: :kul,  vowels: %i(a o e u i) },
         ],
       },
