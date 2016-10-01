@@ -1,13 +1,19 @@
 require 'anpan/an/conf'
 require 'anpan/an/google_japanese_input'
+require 'anpan/an/dvorakjp'
 
 class Anpan::An
   attr_reader :consonant_list, :vowel_list
-  def initialize(conf=CONF)
+  def initialize(conf = {})
+    conf = CONF if conf.empty?
+    reset
+    load_conf(conf)
+  end
+
+  def reset
     @vowel_list     = []
     @consonant_list = []
     @symbol_list    = []
-    load_conf(conf)
   end
 
   ### loading ###
@@ -50,11 +56,11 @@ class Anpan::An
     @patterns << @consonant_list.collect{|c| c.patterns @vowel_list}
     @patterns << @symbol_list.collect{|s| s.pattern}
     @patterns.flatten!
+    @patterns = @patterns.reverse.uniq{|p| p.input.to_sym }.reverse
   end
 
   def patterns
-    make_list unless @patterns && !@patterns.empty?
-    @patterns
+    (@patterns && !@patterns.empty?) ? @patterns : make_list
   end
 
   def render
