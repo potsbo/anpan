@@ -239,7 +239,6 @@ class Anpan::An
         vowel_filter: %i(i),
         contracted: [
           { trigger: :y, insertion: :ily },
-          { trigger: :h, insertion: nil },
         ],
         regression: [
           { trigger: :h,  insertion: :zil, vowel_filter: %i(i) },
