@@ -142,8 +142,8 @@ class Anpan::An
         output: :hul,
         vowel_filter: %i(a o e i),
         contracted: [
-          { trigger: :y, insertion: :y },
-          { trigger: :n, insertion: :y },
+          { trigger: :y, insertion: :y, vowel_filter: %i(a u o)},
+          { trigger: :n, insertion: :y, vowel_filter: %i(a o)},
         ],
         germinated: [
           { trigger: :f, insertion: :ltuf }
