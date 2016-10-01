@@ -602,9 +602,11 @@ lk	ぅん
 lx	ぃん
 lyi	ぃ
 xyi	ぃ
+lhi	ぃ
 xhi	ぃ
 lye	ぇ
 xye	ぇ
+lhe	ぇ
 xhe	ぇ
 ka	か
 ki	き
