@@ -65,7 +65,6 @@ class Anpan::An
           { trigger: :s,    insertion: nil,  vowel_filter: %i(u) },
           { trigger: :w,    insertion: :ol },
           { trigger: :"'",  insertion: :el,  vowel_filter: %i(i) },
-          { trigger: :"'y", insertion: :ely, vowel_filter: %i(u) },
           { trigger: :"'",  insertion: :ol,  vowel_filter: %i(u) },
         ],
         germinated: [
