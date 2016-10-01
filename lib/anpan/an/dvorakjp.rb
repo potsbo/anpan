@@ -48,7 +48,6 @@ class Anpan::An
           { trigger: :h, insertion: :ily, vowels: %i(a o e u) },
           { trigger: :h, insertion: nil,  vowels: %i(i) },
           { trigger: :y, insertion: :ily, vowels: %i(a o e u i) },
-          { trigger: :y, insertion: nil,  vowels: %i(i) },
         ],
         germinated: [
           {trigger: :s, insertion: :ltus}
