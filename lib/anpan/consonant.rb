@@ -57,7 +57,8 @@ class Anpan::Consonant
 
   def patterns_germinated
     @germination.map { |hash|
-      Pattern.new("#{@input}#{hash[:trigger]}","#{hash[:insertion]}")
+      trigger = hash[:trigger] || @input
+      Pattern.new("#{@input}#{trigger}","#{hash[:insertion]}#{trigger}")
     }
   end
 
