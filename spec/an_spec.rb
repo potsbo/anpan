@@ -19,9 +19,10 @@ describe Anpan::An do
         let(:lines) { File.readlines("spec/table/#{table}").map(&:chomp) }
         describe "render covers #{table}" do
           File.open("spec/table/#{table}") do |file|
+            rendered = Anpan::An.new(config).render.split("\n")
             file.each_line do |line|
               it "should contain '#{line}'" do
-                expect(render.split("\n")).to include line.chomp
+                expect(rendered).to include line.chomp
               end
             end
           end
