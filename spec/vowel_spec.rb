@@ -13,7 +13,8 @@ describe Anpan::Vowel do
       {';' => 'ann', 'q' => 'onn', 'j' => 'enn',
        'k' => 'unn', 'x' => 'inn'}.each do |input,output|
         it "should return #{output} for #{input}" do
-          expect(Anpan::Vowel.new(input: input, output: output).output).to eq output
+          vowel = Anpan::Vowel.new(input: input, output: output)
+          expect(vowel.output).to eq output
         end
       end
     end
