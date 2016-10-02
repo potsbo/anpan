@@ -1,7 +1,7 @@
 class Anpan::Consonant
-  attr_reader :input, :output
+  attr_reader :inputs, :outputs
   def initialize(conf)
-    @input        = conf[:input]
+    @inputs       = Array(conf[:input])
     @vowel_list   = []
     @patterns     = []
     @vowel_filter = []
@@ -9,8 +9,9 @@ class Anpan::Consonant
   end
 
   def load_conf(conf)
-    @input        = conf[:input]         || @input
-    @output       = conf[:output]        || @input        || @output
+    @inputs       = Array([conf[:input]]).flatten  || @inputs
+    @outputs      = Array(conf[:output])
+    @outputs      = @inputs if @outputs.empty?
     @contraction  = conf[:contracted]    || @contraction  || []
     @germination  = conf[:germinated]    || @germination  || []
     @regression   = conf[:regression]    || @regression   || []
@@ -32,11 +33,14 @@ class Anpan::Consonant
 
   def reset_all_patterns
     @patterns = []
-    @patterns.push patterns_normal
-    @patterns.push patterns_single
-    @patterns.push patterns_contracted
-    @patterns.push patterns_germinated
-    @patterns.push patterns_regression
+    @output       = @outputs.first
+    @inputs.each do |input|
+      @input = input
+      @patterns << [
+        patterns_normal, patterns_single, patterns_contracted,
+        patterns_germinated, patterns_regression
+      ]
+    end
     @patterns.flatten!
   end
 

@@ -84,7 +84,7 @@ describe Anpan::An do
       expect(list.size).to be 1
     end
     it 'should output "k"' do
-      expect(list.first.output).to eq :k
+      expect(list.first.outputs).to eq [:k]
     end
   end
 
@@ -107,7 +107,7 @@ describe Anpan::An do
         expect(list.size).to be 3
       end
       it 'should output "k"' do
-        expect(list.first.output).to eq :k
+        expect(list.first.outputs).to eq [:k]
       end
     end
   end
