@@ -263,6 +263,7 @@ class Anpan::An
 
       {
         input: %i(l x),
+        output: :l,
         contracted: [
           { trigger: :y, insertion: :y },
           { trigger: :k, insertion: :k,  vowel_filter: %i(a e) },

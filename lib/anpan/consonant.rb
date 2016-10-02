@@ -33,13 +33,15 @@ class Anpan::Consonant
 
   def reset_all_patterns
     @patterns = []
-    @output       = @outputs.first
     @inputs.each do |input|
       @input = input
-      @patterns << [
-        patterns_normal, patterns_single, patterns_contracted,
-        patterns_germinated, patterns_regression
-      ]
+      @outputs.each do |output|
+        @output = output
+        @patterns << [
+          patterns_normal, patterns_single, patterns_contracted,
+          patterns_germinated, patterns_regression
+        ]
+      end
     end
     @patterns.flatten!
   end
