@@ -116,7 +116,7 @@ describe Anpan::An do
     let(:list) { anpan.vowel_list }
     before do
       anpan.reset
-      anpan.load_vowel([{input: :a}])
+      anpan.load_vowel([{ input: :a }])
     end
     it 'should be an Array' do
       expect(list).to be_a Array
