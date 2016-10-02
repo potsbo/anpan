@@ -4,7 +4,7 @@ describe Anpan::Consonant do
   let(:consonant) { Anpan::Consonant.new(input: :c, output: :k) }
   describe '#input' do
     it 'should return c for (\'c\',{"output"=>\'k\'})' do
-      expect(consonant.input).to eq :c
+      expect(consonant.inputs).to eq [:c]
     end
   end
 
