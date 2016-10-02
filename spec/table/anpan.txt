@@ -336,7 +336,7 @@ whq	うぉん
 whj	うぇん
 whk	うぅん
 whx	うぃん
-wr	っ	r
+ww	っ	w
 ga	が
 go	ご
 ge	げ

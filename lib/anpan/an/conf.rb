@@ -1,10 +1,10 @@
 class Anpan::An
   CONF = {
-    :vowels => [
+    vowels: [
       {input: :a}, {input: :o}, {input: :e}, {input: :u}, {input: :i},
       {input: :"'", output: :ai}, {input: :',', output: :ou}, {input: :'.', output: :ei},
       {input: :p, output: :uu}, {input: :y, output: :ii},
-      {input: :";", output: :ann}, {input: :q, output: :onn}, {input: :j, output: :enn},
+      {input: :';', output: :ann}, {input: :q, output: :onn}, {input: :j, output: :enn},
       {input: :k, output: :unn}, {input: :x, output: :inn},
     ],
     consonants: [
@@ -16,7 +16,7 @@ class Anpan::An
           {trigger: :n, insertion: :ily}
         ],
         germinated: [
-          {trigger: :c, insertion: :ltuc}
+          {insertion: :ltu}
         ]
       },
       {
@@ -25,7 +25,7 @@ class Anpan::An
           {trigger: :h, insertion: :ily}
         ],
         germinated: [
-          {trigger: :s, insertion: :ltus}
+          {insertion: :ltu}
         ]
       },
       {
@@ -35,8 +35,8 @@ class Anpan::An
           {trigger: :h, insertion: :ely},
         ],
         germinated: [
-          {trigger: :t, insertion: :ltut}
-        ]
+          {insertion: :ltu}
+        ],
       },
       {
         input: :n,
@@ -44,8 +44,8 @@ class Anpan::An
           {trigger: :h, insertion: :ily},
         ],
         germinated: [
-          {trigger: :n, insertion: :nn}
-        ]
+          {insertion: :n}
+        ],
       },
       {
         input: :h,
@@ -53,7 +53,7 @@ class Anpan::An
           {trigger: :n, insertion: :ily},
         ],
         germinated: [
-          {trigger: :h, insertion: :ltuh}
+          {insertion: :ltu}
         ]
       },
       {
@@ -62,14 +62,14 @@ class Anpan::An
           {trigger: :n, insertion: :ily},
         ],
         germinated: [
-          {trigger: :m, insertion: :ltum}
+          {insertion: :ltu}
         ]
       },
       {
         input: :f,
         output: :y,
         germinated: [
-          {trigger: :f, insertion: :ltuf}
+          {insertion: :ltu}
         ],
         regression: [
           {trigger: :t, insertion: :f},
@@ -77,13 +77,14 @@ class Anpan::An
           {trigger: :n, insertion: :huly},
         ]
       },
+
       {
         input: :r,
         contracted: [
           {trigger: :h, insertion: :ily},
         ],
         germinated: [
-          {trigger: :r, insertion: :ltur}
+          {insertion: :ltu},
         ],
       },
       {
@@ -92,7 +93,7 @@ class Anpan::An
           {trigger: :h, insertion: :ul},
         ],
         germinated: [
-          {trigger: :r, insertion: :ltur}
+          {insertion: :ltu}
         ],
       },
       {
@@ -101,7 +102,7 @@ class Anpan::An
           {trigger: :n, insertion: :ily},
         ],
         germinated: [
-          {trigger: :g, insertion: :ltug},
+          {insertion: :ltu},
         ],
       },
       {
@@ -110,7 +111,7 @@ class Anpan::An
           {trigger: :h, insertion: :ily},
         ],
         germinated: [
-          {trigger: :z, insertion: :ltuz},
+          {insertion: :ltu},
         ],
       },
       {
@@ -120,7 +121,7 @@ class Anpan::An
           {trigger: :h, insertion: :ily},
         ],
         germinated: [
-          {trigger: :d, insertion: :ltud},
+          {insertion: :ltu},
         ],
       },
       {
@@ -134,7 +135,7 @@ class Anpan::An
           {trigger: :s, insertion: :v},
         ],
         germinated: [
-          {trigger: :v, insertion: :ltuv},
+          {insertion: :ltu},
         ],
       },
       {
@@ -143,7 +144,7 @@ class Anpan::An
           {trigger: :n, insertion: :ily}
         ],
         germinated: [
-          {trigger: :b, insertion: :ltub}
+          {insertion: :ltu}
         ]
       },
       {
@@ -152,13 +153,13 @@ class Anpan::An
           {trigger: :f, insertion: :ly}
         ],
         germinated: [
-          {trigger: :l, insertion: :ltul}
+          {insertion: :ltu}
         ]
       },
     ],
     symbols: [
       { input: :'[' }, { input: :']' }, { input: :- },
-      { input: :"l,", output: :","}, { input: :'l.', output: :"."},
+      { input: :'l,', output: :','}, { input: :'l.', output: :'.'},
     ]
   }
 end
