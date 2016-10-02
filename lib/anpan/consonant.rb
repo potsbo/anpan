@@ -9,7 +9,7 @@ class Anpan::Consonant
   end
 
   def load_conf(conf)
-    @inputs       = Array([conf[:input]]).flatten  || @inputs
+    @inputs       = Array([conf[:input]]).flatten || @inputs
     @outputs      = Array(conf[:output])
     @outputs      = @inputs if @outputs.empty?
     @contraction  = conf[:contracted]    || @contraction  || []
