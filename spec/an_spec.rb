@@ -38,7 +38,7 @@ describe Anpan::An do
 
         describe "#{table} covers rendered" do
           Anpan::An.new(config).render.split("\n").each do |pattern|
-            it "should not contain '#{pattern}' if it's not on the table file" do
+            it "should not contain '#{pattern}'" do
               expect(lines).to include pattern
             end
           end
