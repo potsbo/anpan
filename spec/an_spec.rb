@@ -31,7 +31,7 @@ describe Anpan::An do
         describe 'uniqueness' do
           it "Uniq by input should not appear twice" do
             rendered = Anpan::An.new(config).render.split("\n")
-            uniq = rendered.uniq{ |r| r.split("\t").first }
+            uniq = rendered.uniq { |r| r.split("\t").first }
             expect(rendered - uniq).to eq []
           end
         end
