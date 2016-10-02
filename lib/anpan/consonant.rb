@@ -1,7 +1,6 @@
 class Anpan::Consonant
   attr_reader :inputs, :outputs
   def initialize(conf)
-    @inputs       = Array(conf[:input])
     @vowel_list   = []
     @patterns     = []
     @vowel_filter = []
@@ -9,9 +8,8 @@ class Anpan::Consonant
   end
 
   def load_conf(conf)
-    @inputs       = Array([conf[:input]]).flatten || @inputs
-    @outputs      = Array(conf[:output])
-    @outputs      = @inputs if @outputs.empty?
+    @inputs       = conf[:input]         || @inputs
+    @outputs      = conf[:output]        || @inputs
     @contraction  = conf[:contracted]    || @contraction  || []
     @germination  = conf[:germinated]    || @germination  || []
     @regression   = conf[:regression]    || @regression   || []
@@ -19,6 +17,9 @@ class Anpan::Consonant
     @only_singles = conf[:only_singles]  || false
     @avoid_self   = conf[:avoid_self]    || false
     @single       = Array(conf[:single]) || @single       || []
+
+    @inputs  = Array([@inputs]).flatten
+    @outputs = Array([@outputs]).flatten
   end
 
   def add_vowel(vowel)
