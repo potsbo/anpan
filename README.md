@@ -1,4 +1,4 @@
-# Anpan
+# Anpan [![Build Status](https://travis-ci.org/potsbo/anpan.svg?branch=master)](https://travis-ci.org/potsbo/anpan)
 Anpan は Google日本語入力で利用できるローマ字テーブルの作成ツールであり、
 またそれを用いて作成されたDvorakユーザー向けのローマ字テーブルである。
 
