@@ -1,4 +1,4 @@
-class Vowel
+class Anpan::Vowel
   attr_reader :input, :output
   def initialize(conf)
     @input  = conf[:input]

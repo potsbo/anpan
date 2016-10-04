@@ -1,13 +1,19 @@
 require 'anpan/an/conf'
 require 'anpan/an/google_japanese_input'
+require 'anpan/an/dvorakjp'
 
-class Anpan
+class Anpan::An
   attr_reader :consonant_list, :vowel_list
-  def initialize(conf=CONF)
+  def initialize(conf = {})
+    conf = CONF if conf.empty?
+    reset
+    load_conf(conf)
+  end
+
+  def reset
     @vowel_list     = []
     @consonant_list = []
     @symbol_list    = []
-    load_conf(conf)
   end
 
   ### loading ###
@@ -18,15 +24,15 @@ class Anpan
   end
 
   def load_consonant(array = [])
-    add_consonants (array||[]).map {|a| Consonant.new a }
+    add_consonants (array||[]).map {|a| Anpan::Consonant.new a }
   end
 
   def load_vowel(array = [])
-    add_vowels (array||[]).collect {|a| Vowel.new a }
+    add_vowels (array||[]).collect {|a| Anpan::Vowel.new a }
   end
 
   def load_symbol(array)
-    add_symbols (array||{}).collect {|a| Symbol.new(a[:input], a[:output] || a[:input], a[:addition], a[:as_is])}
+    add_symbols (array||{}).collect {|a| Anpan::Symbol.new(a[:input], a[:output] || a[:input], a[:addition], a[:as_is])}
   end
   ### loading ###
 
@@ -50,11 +56,11 @@ class Anpan
     @patterns << @consonant_list.collect{|c| c.patterns @vowel_list}
     @patterns << @symbol_list.collect{|s| s.pattern}
     @patterns.flatten!
+    @patterns = @patterns.reverse.uniq{|p| p.input.to_sym }.reverse
   end
 
   def patterns
-    make_list unless @patterns && !@patterns.empty?
-    @patterns
+    (@patterns && !@patterns.empty?) ? @patterns : make_list
   end
 
   def render
@@ -63,11 +69,11 @@ class Anpan
   end
   ### rendering ###
 
-  def table
+  def table(args={})
     patterns.map { |pattern| pattern.to_h }
   end
 
-  def self.table
-    Anpan.new.table
+  def self.table(args={})
+    Anpan::An.new.table(args)
   end
 end

@@ -1,10 +1,10 @@
 require 'rspec'
 
-describe Consonant do
-  let(:consonant) { Consonant.new(input: :c, output: :k) }
+describe Anpan::Consonant do
+  let(:consonant) { Anpan::Consonant.new(input: :c, output: :k) }
   describe '#input' do
     it 'should return c for (\'c\',{"output"=>\'k\'})' do
-      expect(consonant.input).to eq :c
+      expect(consonant.inputs).to eq [:c]
     end
   end
 
@@ -14,7 +14,7 @@ describe Consonant do
     end
     context 'when consonant "c" and vowel "a" given' do
       before do
-        consonant.addVowel(Vowel.new(input: :a))
+        consonant.add_vowel(Anpan::Vowel.new(input: :a))
       end
       it 'should return a Pattern' do
         expect(consonant.patterns.first).to be_a Pattern
