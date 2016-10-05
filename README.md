@@ -51,6 +51,10 @@ Dvorak / DvorakJP利用者にとって学習コストが低いものにする。
 
 
 ### キー配列
+TODO
+
+## Installation
+TODO
 
 ## Development
 利用者の殆どが日本語を自由に使えると考えられるため、Issue や Pull Request は日本語で記述して良い。
