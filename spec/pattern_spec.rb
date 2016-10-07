@@ -1,7 +1,7 @@
 require 'rspec'
 
 describe Anpan::Pattern do
-  let(:pattern) { Anpan::Pattern.new('a','a') }
+  let(:pattern) { Anpan::Pattern.new('a', 'a') }
   describe '#render' do
     let(:render) { pattern.render }
     it 'should return string' do
