@@ -1,7 +1,7 @@
 require 'rspec'
 
-describe Pattern do
-  let(:pattern) { Pattern.new('a','a') }
+describe Anpan::Pattern do
+  let(:pattern) { Anpan::Pattern.new('a', 'a') }
   describe '#render' do
     let(:render) { pattern.render }
     it 'should return string' do
@@ -34,10 +34,10 @@ describe Pattern do
 
   describe 'TABLE' do
     it 'should not be nil' do
-      expect(Pattern::TABLE).not_to be_nil
+      expect(Anpan::Pattern::TABLE).not_to be_nil
     end
     it 'should have :a as a key' do
-      expect(Pattern::TABLE[:a]).not_to be_nil
+      expect(Anpan::Pattern::TABLE[:a]).not_to be_nil
     end
   end
 end

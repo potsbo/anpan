@@ -17,7 +17,7 @@ describe Anpan::Consonant do
         consonant.add_vowel(Anpan::Vowel.new(input: :a))
       end
       it 'should return a Pattern' do
-        expect(consonant.patterns.first).to be_a Pattern
+        expect(consonant.patterns.first).to be_a Anpan::Pattern
       end
       it 'should contain "か"' do
         expect(consonant.patterns.first.output_jp).to eq 'か'
