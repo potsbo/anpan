@@ -1,5 +1,6 @@
-class Pattern
-  TABLE = {
+class Anpan
+  class Pattern
+    TABLE = {
       # 標準50音
       a:  'あ', i: 'い', u: 'う', e: 'え', o: 'お',
       ka: 'か', ki:'き', ku:'く', ke:'け', ko:'こ',
@@ -37,5 +38,6 @@ class Pattern
       lyi: 'ぃ', lye: 'ぇ',
       va: 'ゔぁ',vi: 'ゔぃ',ve: 'ゔぇ',vo: 'ゔぉ',
       fa: 'ふぁ',fi: 'ふぃ',fu: 'ふ',  fe: 'ふぇ',fo: 'ふぉ',
-  }
+    }
+  end
 end
