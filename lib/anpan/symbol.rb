@@ -1,6 +1,7 @@
 class Anpan
   class Symbol
     attr_reader :input, :output
+
     def initialize(input, output, addition, as_is=false)
       @input    = input
       @output   = output
@@ -13,7 +14,7 @@ class Anpan
     end
 
     def pattern
-      Pattern.new(@input,@output,@addition, @as_is)
+      Pattern.new(@input, @output, @addition, @as_is)
     end
   end
 end
