@@ -2,7 +2,7 @@ class Anpan
   class Symbol
     attr_reader :input, :output
 
-    def initialize(input, output, addition, as_is=false)
+    def initialize(input, output, addition, as_is = false)
       @input    = input
       @output   = output
       @addition = addition
