@@ -38,6 +38,6 @@ class Anpan
       lyi: 'ぃ', lye: 'ぇ',
       va: 'ゔぁ',vi: 'ゔぃ',ve: 'ゔぇ',vo: 'ゔぉ',
       fa: 'ふぁ',fi: 'ふぃ',fu: 'ふ',  fe: 'ふぇ',fo: 'ふぉ',
-    }
+    }.freeze
   end
 end
