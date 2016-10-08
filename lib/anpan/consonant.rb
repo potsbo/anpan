@@ -66,7 +66,7 @@ class Anpan
     def patterns_germinated
       @germination.map { |hash|
         trigger = hash[:trigger] || @input
-        Pattern.new("#{@input}#{trigger}","#{hash[:insertion]}#{trigger}")
+        Pattern.new("#{@input}#{trigger}", "#{hash[:insertion]}#{trigger}")
       }
     end
 
@@ -82,18 +82,21 @@ class Anpan
     end
 
     def patterns_single
-      @single.map { |s| Pattern.new(@input, s)}
+      @single.map { |s| Pattern.new(@input, s) }
     end
 
     def vowels(conf = {})
       only_singles = conf[:only_singles].nil? ? @only_singles : conf[:only_singles]
       avoid_self   = conf[:avoid_self].nil?   ? @avoid_self   : conf[:avoid_self]
-      base  = conf[:vowels] || @vowel_filter
-      base &= conf[:vowel_filter]  || %i(a o e u i)
-      base -= conf[:expect_vowels] || []
-      all_vs = @vowel_list.select { |v| base.include?(v.output.to_s[0].to_sym) }
+      all_vs = @vowel_list.select { |v| vowel_filter(conf).include?(v.output.to_s[0].to_sym) }
       all_vs = avoid_self ? all_vs.select { |v| v.input.to_s != @input.to_s } : all_vs
       only_singles ? all_vs.select { |v| v.output.to_s.size <= 1 } : all_vs
+    end
+
+    def vowel_filter(conf = {})
+      base  = conf[:vowels] || @vowel_filter
+      base &= conf[:vowel_filter]  || %i(a o e u i)
+      base - (conf[:expect_vowels] || [])
     end
     ### pattern makers ###
   end
