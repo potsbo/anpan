@@ -25,15 +25,15 @@ class Anpan
     end
 
     def load_consonant(array = [])
-      add_consonants (array||[]).map {|a| Anpan::Consonant.new a }
+      add_consonants array.map { |a| Anpan::Consonant.new a }
     end
 
     def load_vowel(array = [])
-      add_vowels (array||[]).collect {|a| Anpan::Vowel.new a }
+      add_vowels array.map { |a| Anpan::Vowel.new a }
     end
 
-    def load_symbol(array)
-      add_symbols (array||{}).collect {|a| Anpan::Symbol.new(a[:input], a[:output] || a[:input], a[:addition], a[:as_is])}
+    def load_symbol(array = {})
+      add_symbols array.map { |a| Anpan::Symbol.new(a[:input], a[:output] || a[:input], a[:addition], a[:as_is]) }
     end
     ### loading ###
 
@@ -54,10 +54,10 @@ class Anpan
     ### rendering ###
     def make_list
       @patterns = []
-      @patterns << @consonant_list.collect{|c| c.patterns @vowel_list}
-      @patterns << @symbol_list.collect{|s| s.pattern}
+      @patterns << @consonant_list.map { |c| c.patterns @vowel_list }
+      @patterns << @symbol_list.map(&:pattern)
       @patterns.flatten!
-      @patterns = @patterns.reverse.uniq{|p| p.input.to_sym }.reverse
+      @patterns = @patterns.reverse.uniq { |p| p.input.to_sym }.reverse
     end
 
     def patterns
@@ -66,15 +66,15 @@ class Anpan
 
     def render
       make_list
-      @patterns.collect{|p| p.render}.join("\n")
+      @patterns.map(&:render).join("\n")
     end
     ### rendering ###
 
-    def table(args={})
-      patterns.map { |pattern| pattern.to_h }
+    def table(_ = {})
+      patterns.map(&:to_h)
     end
 
-    def self.table(args={})
+    def self.table(args = {})
       Anpan::An.new.table(args)
     end
   end
