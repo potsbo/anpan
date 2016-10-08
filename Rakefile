@@ -1,4 +1,4 @@
-require "rspec/core/rake_task"
+require 'rspec/core/rake_task'
 require 'anpan'
 
 RSpec::Core::RakeTask.new(:spec)
