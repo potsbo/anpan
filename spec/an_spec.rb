@@ -96,7 +96,7 @@ describe Anpan::An do
         {
           input: :c,
           output: :k,
-          vowel_filter: %i(a u o)
+          vowel_filter: %i(a u o),
         },
         { input: :s }, { input: :t }
       ]
