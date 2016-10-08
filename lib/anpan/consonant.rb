@@ -28,7 +28,7 @@ class Anpan
     end
 
     ### pattern makers ###
-    def patterns(vowel_list=nil)
+    def patterns(vowel_list = nil)
       @vowel_list = vowel_list || @vowel_list
       reset_all_patterns
     end

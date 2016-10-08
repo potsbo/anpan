@@ -61,7 +61,7 @@ class Anpan
     end
 
     def patterns
-      (@patterns && !@patterns.empty?) ? @patterns : make_list
+      @patterns && !@patterns.empty? ? @patterns : make_list
     end
 
     def render
