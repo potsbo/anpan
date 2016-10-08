@@ -4,7 +4,7 @@ describe Anpan::An do
   let(:conf) { {} }
   let(:anpan) { Anpan::An.new(conf) }
   let(:consonant) { Anpan::Consonant.new(input: :c, output: :k) }
-  let(:vowel) { Anpan::Vowel.new({input: :a}) }
+  let(:vowel) { Anpan::Vowel.new(input: :a) }
 
   describe 'config files' do
     let(:render) { anpan.render }
