@@ -10,7 +10,7 @@ describe Anpan do
       expect(table.first).to be_a Hash
     end
     it 'should return hash with input, output, and addition keys' do
-      expect(table.first.keys).to include(*%i(input output addition))
+      expect(table.first.keys).to include :input, :output, :addition
     end
   end
 end
