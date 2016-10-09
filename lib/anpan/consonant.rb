@@ -13,8 +13,6 @@ class Anpan
       @inputs       = conf[:input]         || @inputs
       @outputs      = conf[:output]        || @inputs
       @vowel_filter = conf[:vowel_filter]  || %i(a o e u i)
-      @only_singles = conf[:only_singles]  || false
-      @avoid_self   = conf[:avoid_self]    || false
 
       @inputs  = Array([@inputs]).flatten
       @outputs = Array([@outputs]).flatten
@@ -83,11 +81,21 @@ class Anpan
     end
 
     def vowels(conf = {})
-      only_singles = conf[:only_singles].nil? ? @only_singles : conf[:only_singles]
-      avoid_self   = conf[:avoid_self].nil?   ? @avoid_self   : conf[:avoid_self]
-      all_vs = @vowel_list.select { |v| vowel_filter(conf).include?(v.output.to_s[0].to_sym) }
-      all_vs = avoid_self ? all_vs.select { |v| v.input.to_s != @input.to_s } : all_vs
-      only_singles ? all_vs.select { |v| v.output.to_s.size <= 1 } : all_vs
+      all_vs = filtered_vowels(conf)
+      all_vs = all_vs.select { |v| v.input.to_s != @input.to_s } if avoid_self(conf)
+      only_singles(conf) ? all_vs.select { |v| v.output.size <= 1 } : all_vs
+    end
+
+    def filtered_vowels(conf = {})
+      @vowel_list.select { |v| vowel_filter(conf).include?(v.output[0].to_sym) }
+    end
+
+    def only_singles(conf = {})
+      conf[:only_singles].nil? ? @conf[:only_singles] : conf[:only_singles]
+    end
+
+    def avoid_self(conf = {})
+      conf[:avoid_self].nil? ? @conf[:avoid_self] : conf[:avoid_self]
     end
 
     def vowel_filter(conf = {})
