@@ -34,15 +34,11 @@ class Anpan
     end
 
     def reset_all_patterns
-      @patterns = []
-      @inputs.each do |input|
-        @input = input
-        @outputs.each do |output|
+      @patterns = @inputs.map do |input|
+        @outputs.map do |output|
+          @input = input
           @output = output
-          @patterns << [
-            patterns_normal, patterns_single, patterns_contracted,
-            patterns_germinated, patterns_regression
-          ]
+          [patterns_normal, patterns_single, patterns_contracted, patterns_germinated, patterns_regression]
         end
       end
       @patterns.flatten!
