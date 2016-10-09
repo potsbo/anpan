@@ -28,7 +28,7 @@ describe Anpan::Pattern do
     end
 
     it 'should contain input, output, and addition' do
-      expect(pattern.to_h.keys).to include(*%i(input output addition))
+      expect(pattern.to_h.keys).to include :input, :output, :addition
     end
   end
 

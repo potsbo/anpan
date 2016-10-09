@@ -4,4 +4,4 @@ gemspec
 gem 'rspec'
 gem 'rake'
 
-gem 'codecov', :require => false, :group => :test
+gem 'codecov', require: false, group: :test
