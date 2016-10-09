@@ -9,15 +9,12 @@ class Anpan
     end
 
     def load_conf(conf)
+      @conf = conf
       @inputs       = conf[:input]         || @inputs
       @outputs      = conf[:output]        || @inputs
-      @contraction  = conf[:contracted]    || @contraction  || []
-      @germination  = conf[:germinated]    || @germination  || []
-      @regression   = conf[:regression]    || @regression   || []
       @vowel_filter = conf[:vowel_filter]  || %i(a o e u i)
       @only_singles = conf[:only_singles]  || false
       @avoid_self   = conf[:avoid_self]    || false
-      @single       = Array(conf[:single]) || @single       || []
 
       @inputs  = Array([@inputs]).flatten
       @outputs = Array([@outputs]).flatten
@@ -49,7 +46,7 @@ class Anpan
     end
 
     def patterns_contracted
-      @contraction.collect do |c|
+      (@conf[:contracted] || []).map do |c|
         vowels(c).collect do |v|
           Pattern.new(
             "#{@input}#{c[:trigger]}#{v.input}",
@@ -60,14 +57,14 @@ class Anpan
     end
 
     def patterns_germinated
-      @germination.map { |hash|
+      (@conf[:germinated] || []).map { |hash|
         trigger = hash[:trigger] || @input
         Pattern.new("#{@input}#{trigger}", "#{hash[:insertion]}#{trigger}")
       }
     end
 
     def patterns_regression
-      @regression.collect do |a|
+      (@conf[:regression] || []).collect do |a|
         vowels(a).collect do |v|
           Pattern.new(
             "#{@input}#{a[:trigger]}#{v.input}",
@@ -78,7 +75,11 @@ class Anpan
     end
 
     def patterns_single
-      @single.map { |s| Pattern.new(@input, s) }
+      single.map { |s| Pattern.new(@input, s) }
+    end
+
+    def single
+      Array(@conf[:single]) || []
     end
 
     def vowels(conf = {})
