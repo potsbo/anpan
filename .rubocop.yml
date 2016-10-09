@@ -10,3 +10,5 @@ Style/Documentation:
   Enabled: false
 Style/AsciiComments:
   Enabled: false
+ClassLength:
+  Max: 350
