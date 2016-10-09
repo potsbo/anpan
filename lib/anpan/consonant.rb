@@ -55,10 +55,10 @@ class Anpan
     end
 
     def patterns_germinated
-      (@conf[:germinated] || []).map { |hash|
+      (@conf[:germinated] || []).map do |hash|
         trigger = hash[:trigger] || @input
         Pattern.new("#{@input}#{trigger}", "#{hash[:insertion]}#{trigger}")
-      }
+      end
     end
 
     def patterns_regression
