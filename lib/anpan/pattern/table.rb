@@ -9,9 +9,9 @@ class Anpan
       na: 'な', ni: 'に', nu: 'ぬ', ne: 'ね', no: 'の',
       ha: 'は', hi: 'ひ', hu: 'ふ', he: 'へ', ho: 'ほ',
       ma: 'ま', mi: 'み', mu: 'む', me: 'め', mo: 'も',
-      ya: 'や',           yu: 'ゆ',          yo: 'よ',
+      ya: 'や', yu: 'ゆ', yo: 'よ',
       ra: 'ら', ri: 'り', ru: 'る', re: 'れ', ro: 'ろ',
-      wa: 'わ', wi: 'ゐ',           we: 'ゑ', wo: 'を',
+      wa: 'わ', wi: 'ゐ', we: 'ゑ', wo: 'を',
       nn: 'ん',
 
       # 濁音
@@ -25,7 +25,7 @@ class Anpan
       # 小文字
       la: 'ぁ', li: 'ぃ', lu: 'ぅ', le: 'ぇ', lo: 'ぉ',
       ltu: 'っ',
-      lya: 'ゃ',         lyu: 'ゅ',         lyo: 'ょ',
+      lya: 'ゃ', lyu: 'ゅ', lyo: 'ょ',
       lka: 'ヵ', lke: 'ヶ', lwa: 'ゎ',
 
       # 記号
