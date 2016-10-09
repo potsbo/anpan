@@ -16,12 +16,23 @@ class Anpan
     end
 
     def to_h
-      { input: @input, output: output_jp, addition: @addition }
+      { input: @input, output: output_jp, addition: addition }
     end
 
     def output_jp
-      jp, @addition = search_table(@output)
-      jp
+      calculate unless @output_jp
+      @output_jp
+    end
+
+    def addition
+      calculate unless @addition
+      @addition
+    end
+
+    def calculate
+      result     = search_table(@output)
+      @output_jp = result[:jp]
+      @addition  = result[:rest]
     end
 
     def search_table(rest)
@@ -29,11 +40,11 @@ class Anpan
       (0..rest.length).each do |i|
         sym = rest[0..i].to_sym
         unless TABLE[sym].nil?
-          jp, rest = search_table(rest[(i + 1)..-1])
-          return TABLE[sym] + jp, rest
+          result = search_table(rest[(i + 1)..-1])
+          return { jp: TABLE[sym] + result[:jp], rest: result[:rest] }
         end
       end
-      return '', rest
+      { jp: '', rest: rest }
     end
   end
 end
