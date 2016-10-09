@@ -17,4 +17,8 @@ class Anpan
   def table(args = {})
     @an.table(args)
   end
+
+  def render
+    @an.patterns.map(&:render).join("\n")
+  end
 end
