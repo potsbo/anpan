@@ -8,4 +8,3 @@ task default: :spec
 task :render do
   puts Anpan.new(CONF).render
 end
-
