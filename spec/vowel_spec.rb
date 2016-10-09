@@ -10,8 +10,8 @@ describe Anpan::Vowel do
     end
 
     describe 'special vowels' do
-      {';' => 'ann', 'q' => 'onn', 'j' => 'enn',
-       'k' => 'unn', 'x' => 'inn'}.each do |input,output|
+      { ';' => 'ann', 'q' => 'onn', 'j' => 'enn',
+        'k' => 'unn', 'x' => 'inn' }.each do |input, output|
         it "should return #{output} for #{input}" do
           vowel = Anpan::Vowel.new(input: input, output: output)
           expect(vowel.output).to eq output

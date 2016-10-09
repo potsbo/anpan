@@ -2,11 +2,11 @@ class Anpan
   class An
     CONF = {
       vowels: [
-        {input: :a}, {input: :o}, {input: :e}, {input: :u}, {input: :i},
-        {input: :"'", output: :ai}, {input: :',', output: :ou}, {input: :'.', output: :ei},
-        {input: :p, output: :uu}, {input: :y, output: :ii},
-        {input: :';', output: :ann}, {input: :q, output: :onn}, {input: :j, output: :enn},
-        {input: :k, output: :unn}, {input: :x, output: :inn},
+        { input: :a }, { input: :o }, { input: :e }, { input: :u }, { input: :i },
+        { input: :"'", output: :ai }, { input: :',', output: :ou }, { input: :'.', output: :ei },
+        { input: :p, output: :uu }, { input: :y, output: :ii },
+        { input: :';', output: :ann }, { input: :q, output: :onn }, { input: :j, output: :enn },
+        { input: :k, output: :unn }, { input: :x, output: :inn }
       ],
       consonants: [
         { input: nil },
@@ -14,154 +14,154 @@ class Anpan
           input: :c,
           output: :k,
           contracted: [
-            {trigger: :n, insertion: :ily}
+            { trigger: :n, insertion: :ily },
           ],
           germinated: [
-            {insertion: :ltu}
-          ]
+            { insertion: :ltu },
+          ],
         },
         {
           input: :s,
           contracted: [
-            {trigger: :h, insertion: :ily}
+            { trigger: :h, insertion: :ily },
           ],
           germinated: [
-            {insertion: :ltu}
-          ]
+            { insertion: :ltu },
+          ],
         },
         {
           input: :t,
           contracted: [
-            {trigger: :n, insertion: :ily},
-            {trigger: :h, insertion: :ely},
+            { trigger: :n, insertion: :ily },
+            { trigger: :h, insertion: :ely },
           ],
           germinated: [
-            {insertion: :ltu}
+            { insertion: :ltu },
           ],
         },
         {
           input: :n,
           contracted: [
-            {trigger: :h, insertion: :ily},
+            { trigger: :h, insertion: :ily },
           ],
           germinated: [
-            {insertion: :n}
+            { insertion: :n },
           ],
         },
         {
           input: :h,
           contracted: [
-            {trigger: :n, insertion: :ily},
+            { trigger: :n, insertion: :ily },
           ],
           germinated: [
-            {insertion: :ltu}
-          ]
+            { insertion: :ltu },
+          ],
         },
         {
           input: :m,
           contracted: [
-            {trigger: :n, insertion: :ily},
+            { trigger: :n, insertion: :ily },
           ],
           germinated: [
-            {insertion: :ltu}
-          ]
+            { insertion: :ltu },
+          ],
         },
         {
           input: :f,
           output: :y,
           germinated: [
-            {insertion: :ltu}
+            { insertion: :ltu },
           ],
           regression: [
-            {trigger: :t, insertion: :f},
-            {trigger: :s, insertion: :f},
-            {trigger: :n, insertion: :huly},
-          ]
+            { trigger: :t, insertion: :f },
+            { trigger: :s, insertion: :f },
+            { trigger: :n, insertion: :huly },
+          ],
         },
 
         {
           input: :r,
           contracted: [
-            {trigger: :h, insertion: :ily},
+            { trigger: :h, insertion: :ily },
           ],
           germinated: [
-            {insertion: :ltu},
+            { insertion: :ltu },
           ],
         },
         {
           input: :w,
           contracted: [
-            {trigger: :h, insertion: :ul},
+            { trigger: :h, insertion: :ul },
           ],
           germinated: [
-            {insertion: :ltu}
+            { insertion: :ltu },
           ],
         },
         {
           input: :g,
           contracted: [
-            {trigger: :n, insertion: :ily},
+            { trigger: :n, insertion: :ily },
           ],
           germinated: [
-            {insertion: :ltu},
+            { insertion: :ltu },
           ],
         },
         {
           input: :z,
           contracted: [
-            {trigger: :h, insertion: :ily},
+            { trigger: :h, insertion: :ily },
           ],
           germinated: [
-            {insertion: :ltu},
+            { insertion: :ltu },
           ],
         },
         {
           input: :d,
           contracted: [
-            {trigger: :n, insertion: :ely},
-            {trigger: :h, insertion: :ily},
+            { trigger: :n, insertion: :ely },
+            { trigger: :h, insertion: :ily },
           ],
           germinated: [
-            {insertion: :ltu},
+            { insertion: :ltu },
           ],
         },
         {
           input: :v,
           output: :p,
           contracted: [
-            {trigger: :h, insertion: :ily},
+            { trigger: :h, insertion: :ily },
           ],
           regression: [
-            {trigger: :t, insertion: :v},
-            {trigger: :s, insertion: :v},
+            { trigger: :t, insertion: :v },
+            { trigger: :s, insertion: :v },
           ],
           germinated: [
-            {insertion: :ltu},
+            { insertion: :ltu },
           ],
         },
         {
           input: :b,
           contracted: [
-            {trigger: :n, insertion: :ily}
+            { trigger: :n, insertion: :ily },
           ],
           germinated: [
-            {insertion: :ltu}
-          ]
+            { insertion: :ltu },
+          ],
         },
         {
           input: :l,
           regression: [
-            {trigger: :f, insertion: :ly}
+            { trigger: :f, insertion: :ly },
           ],
           germinated: [
-            {insertion: :ltu}
-          ]
+            { insertion: :ltu },
+          ],
         },
       ],
       symbols: [
         { input: :'[' }, { input: :']' }, { input: :- },
-        { input: :'l,', output: :','}, { input: :'l.', output: :'.'},
-      ]
-    }
+        { input: :'l,', output: :',' }, { input: :'l.', output: :'.' }
+      ],
+    }.freeze
   end
 end

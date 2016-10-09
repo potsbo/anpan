@@ -6,15 +6,15 @@ require 'anpan/symbol'
 require 'anpan/pattern'
 
 class Anpan
-  def self.table(args={})
+  def self.table(args = {})
     An.table(args)
   end
 
-  def initialize(args={})
+  def initialize(args = {})
     @an = An.new(args)
   end
 
-  def table(args={})
+  def table(args = {})
     @an.table(args)
   end
 end

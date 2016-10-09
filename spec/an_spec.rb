@@ -4,7 +4,7 @@ describe Anpan::An do
   let(:conf) { {} }
   let(:anpan) { Anpan::An.new(conf) }
   let(:consonant) { Anpan::Consonant.new(input: :c, output: :k) }
-  let(:vowel) { Anpan::Vowel.new({input: :a}) }
+  let(:vowel) { Anpan::Vowel.new(input: :a) }
 
   describe 'config files' do
     let(:render) { anpan.render }
@@ -96,7 +96,7 @@ describe Anpan::An do
         {
           input: :c,
           output: :k,
-          vowel_filter: %i(a u o)
+          vowel_filter: %i(a u o),
         },
         { input: :s }, { input: :t }
       ]
@@ -148,7 +148,7 @@ describe Anpan::An do
       expect(table.first).to be_a Hash
     end
     it 'should return hash with input, output, and addition keys' do
-      expect(table.first.keys).to include(*%i(input output addition))
+      expect(table.first.keys).to include :input, :output, :addition
     end
   end
 end
