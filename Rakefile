@@ -5,6 +5,8 @@ require 'anpan'
 
 RSpec::Core::RakeTask.new(:spec)
 
+task default: :package
+
 CONFS = {
   'anpan.txt': Anpan::An::CONF,
   'dvorakjp.txt': Anpan::An::DVORAKJP,
@@ -16,8 +18,6 @@ package_task = Rake::PackageTask.new("tables", Anpan::VERSION) do |p|
   p.need_zip = true
   p.package_files.include TABLE_PATHS
 end
-
-task default: :package
 
 file package_task.package_dir_path => TABLE_PATHS
 
