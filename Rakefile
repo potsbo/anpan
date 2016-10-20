@@ -14,12 +14,10 @@ CONFS = {
 }
 
 TABLE_PATHS = CONFS.keys.map(&:to_s)
-package_task = Rake::PackageTask.new("tables", Anpan::VERSION) do |p|
+Rake::PackageTask.new("tables", Anpan::VERSION) do |p|
   p.need_zip = true
   p.package_files.include TABLE_PATHS
 end
-
-file package_task.package_dir_path => TABLE_PATHS
 
 def output_to_file(filename, conf)
   puts filename
