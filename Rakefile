@@ -14,7 +14,6 @@ end
 
 task default: :package
 
-DIST_DIR = 'dist'
 file package_task.package_dir_path => TABLES
 
 def output_to_file(filename, conf)
@@ -25,19 +24,15 @@ def output_to_file(filename, conf)
   end
 end
 
-task :dist_dir do
-  Dir.mkdir DIST_DIR unless File.exists? DIST_DIR
-end
-
-file 'anpan.txt' => :dist_dir do
+file 'anpan.txt' do
   output_to_file 'anpan.txt', Anpan::An::CONF
 end
 
-file 'dvorakjp.txt' => :dist_dir do
+file 'dvorakjp.txt' do
   output_to_file 'dvorakjp.txt', Anpan::An::DVORAKJP
 end
 
-file 'google_japanese_input.txt' => :dist_dir do
+file 'google_japanese_input.txt' do
   output_to_file 'google_japanese_input.txt', Anpan::An::GOOGLE_JAPANESE
 end
 
