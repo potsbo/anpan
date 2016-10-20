@@ -1,3 +1,5 @@
 *.swp
 /coverage/
 /dist/
+/pkg/
+/*.txt
