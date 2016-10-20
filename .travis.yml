@@ -9,7 +9,7 @@ deploy:
   provider: releases
   api_key:
     secure: o51u3pK9wgDMnvatUOEYOEav+SyIY03LkBvjajQGKKW1VHL3o8O/HfDKcLK8NDIhKHroelr6GdtPhQy6WsjMicwpHnpEE22912qr265qSmRG69uPB/WXom+wD86xvNfAQol+kRggbLXMtBe54/xHLIlGc0ocPxn5A81gcL5II5daB6RXuRqzc2e5fH1tQQ4Y6dqXZSD8dkWG6P4N1koZ4rsC+e0WMnX3MRUemOgRnHfrLBnTXcknguOlgpYeT1oT1rtuCYFshr/nxgDxXL/qS37lYjUh3IAobmFzmeeFlBL3dPss3T8n8ubtVS55HinB7GtSUqyOcHSXFVV+XFo58N13J3saq8QxqvNbHxonzlR92aMXUbD197yki7CJo8MFhClr2GOTJJ487MTKlytti++4xDN7ZV1WN0Im6xL7JddWG6D1u3UeOC5TF/igvvha/bCt4i63WCiYdhcyreDhEwB744x2nysg+9f7awZVtu9oCpLQAISqaEoTKbd3akRUk/B6wtJEB5VmWQcPgBM+vJRTcCzIzduoNeTX2HxLwkZL8je1gJELwvq5AyBBzrucsBcMWvO/x/JWzU2TG38Lw1qUbAvNLeoFmd2mtueWmxm0LZElLX/8dnZqYgHbTo23HGSCm5yyfXqSEUJ1KnOmnJ3cbjROQ88eLBDkrf6NwdI=
-  file: dist
+  file: pkg/tables*.zip
   on:
     repo: potsbo/anpan
     tags: true
