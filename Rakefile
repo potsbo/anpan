@@ -19,16 +19,12 @@ Rake::PackageTask.new("tables", Anpan::VERSION) do |p|
   p.package_files.include TABLE_PATHS
 end
 
-def output_to_file(filename, conf)
-  puts filename
-  File.open(filename.to_s, 'w') do |file|
-    file.write Anpan.new(conf).render
-  end
-end
-
 CONFS.each do |filename, conf|
   file filename do
-    output_to_file filename, conf
+    puts filename
+    File.open(filename.to_s, 'w') do |file|
+      file.write Anpan.new(conf).render
+    end
   end
 end
 
