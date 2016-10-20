@@ -14,7 +14,7 @@ CONFS = {
 }
 
 TABLE_PATHS = CONFS.keys.map(&:to_s)
-Rake::PackageTask.new("tables", Anpan::VERSION) do |p|
+Rake::PackageTask.new('tables', Anpan::VERSION) do |p|
   p.need_zip = true
   p.package_files.include TABLE_PATHS
 end
