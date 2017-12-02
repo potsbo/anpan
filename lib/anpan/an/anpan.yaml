@@ -22,7 +22,7 @@ vowels:
 - input: j
   output: enn
 - input: k
-  utput: unn
+  output: unn
 - input: x
   output: inn
 consonants:
