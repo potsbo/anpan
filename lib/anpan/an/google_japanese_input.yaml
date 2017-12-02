@@ -1,11 +1,11 @@
 ---
-:vowels:
+vowels:
 - input: a
 - input: o
 - input: e
 - input: u
 - input: i
-:consonants:
+consonants:
 - input:
 - input: k
   contracted:
@@ -313,7 +313,7 @@
   output: k
   vowel_filter:
   - u
-:symbols:
+symbols:
 - input: "["
 - input: "]"
 - input: "-"
