@@ -134,10 +134,10 @@ consonants:
   germinated:
   - insertion: ltu
 symbols:
-- :input: "["
-- :input: "]"
-- :input: "-"
-- :input: l,
-  :output: ","
-- :input: l.
-  :output: .
+- input: "["
+- input: "]"
+- input: "-"
+- input: l,
+  output: ","
+- input: l.
+  output: .

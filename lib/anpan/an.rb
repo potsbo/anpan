@@ -35,7 +35,7 @@ class Anpan
     end
 
     def load_symbol(array = {})
-      add_symbols array.map { |a| Anpan::Symbol.new(a[:input], a[:output] || a[:input], a[:addition], a[:as_is]) }
+      add_symbols array.map { |a| Anpan::Symbol.new a }
     end
     ### loading ###
 

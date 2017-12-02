@@ -2,11 +2,11 @@ class Anpan
   class Symbol
     attr_reader :input, :output
 
-    def initialize(input, output, addition, as_is = false)
-      @input    = input
-      @output   = output
-      @addition = addition
-      @as_is    = as_is
+    def initialize(conf)
+      @input    = conf[:input]    || conf['input']
+      @output   = conf[:output]   || conf['output']   || @input
+      @addition = conf[:addition] || conf['addition']
+      @as_is    = conf[:as_is]    || conf['as_is']    || false
     end
 
     def render
