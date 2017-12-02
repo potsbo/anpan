@@ -1,13 +1,13 @@
 ---
-:vowels:
+vowels:
 - input: a
 - input: o
 - input: e
 - input: u
 - input: i
-- input: '
+- input: "'"
   output: ai
-- input: ,
+- input: ","
   output: ou
 - input: .
   output: ei
@@ -23,7 +23,7 @@
   output: unn
 - input: x
   output: inn
-:consonants:
+consonants:
 - input:
   only_singles: true
 - input: k
@@ -432,17 +432,17 @@
   output: k
   vowel_filter:
   - u
-:symbols:
-- input: [
-- input: ]
-- input: -
-- input: ~
+symbols:
+- input: "["
+- input: "]"
+- input: "-"
+- input: "~"
 - input: ;-
   output: ~
 - input: ;/
   output: /
-- input: ,
-  output: ,
+- input: ","
+  output: ","
 - input: .
   output: .
 - input: ;j

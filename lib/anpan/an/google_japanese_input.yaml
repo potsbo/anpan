@@ -51,22 +51,21 @@
     - u
   - trigger: w
     insertion: ol
-  - trigger: '
+  - trigger: "'"
     insertion: el
     vowel_filter:
     - i
-  - trigger: 'y
+  - trigger: "'y"
     insertion: ely
     vowel_filter:
     - u
-  - trigger: '
+  - trigger: "'"
     insertion: ol
     vowel_filter:
     - u
   germinated:
   - insertion: ltu
 - input: c
-  vowel_filter: []
   germinated:
   - insertion: ltu
   regression:
@@ -243,15 +242,15 @@
     insertion: ol
   - trigger: h
     insertion: ely
-  - trigger: '
+  - trigger: "'"
     insertion: el
     vowel_filter:
     - i
-  - trigger: '
+  - trigger: "'"
     insertion: ol
     vowel_filter:
     - u
-  - trigger: 'y
+  - trigger: "'y"
     insertion: ely
     vowel_filter:
     - u
@@ -315,14 +314,14 @@
   vowel_filter:
   - u
 :symbols:
-- input: [
-- input: ]
-- input: -
-- input: ,
+- input: "["
+- input: "]"
+- input: "-"
+- input: ","
 - input: .
-- input: ~
+- input: "~"
 - input: z-
-  output: ~
+  output: "~"
 - input: z/
   output: /
 - input: zj

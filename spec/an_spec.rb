@@ -10,8 +10,8 @@ describe Anpan::An do
     let(:render) { anpan.render }
     config_files = {
       'anpan.txt': 'anpan.yaml',
-      'google_japanese_input.txt': Anpan::An::GOOGLE_JAPANESE,
-      'dvorakjp_prime.txt': Anpan::An::DVORAKJP,
+      'google_japanese_input.txt': 'google_japanese_input.yaml',
+      'dvorakjp_prime.txt': 'dvorakjp.yaml',
     }
     config_files.each do |table, config|
       context "when #{table} given" do
