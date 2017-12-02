@@ -9,7 +9,7 @@ describe Anpan::An do
   describe 'config files' do
     let(:render) { anpan.render }
     config_files = {
-      'anpan.txt': Anpan::An::CONF,
+      'anpan.txt': 'anpan.yaml',
       'google_japanese_input.txt': Anpan::An::GOOGLE_JAPANESE,
       'dvorakjp_prime.txt': Anpan::An::DVORAKJP,
     }
