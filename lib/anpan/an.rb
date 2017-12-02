@@ -7,7 +7,7 @@ class Anpan
     attr_reader :consonant_list, :vowel_list
     def initialize(conf = {})
       config = conf
-      config = YAML.load_file("./an/#{conf}") if conf.is_a? String
+      config = YAML.load_file(File.join(__dir__, 'an', conf)) if conf.is_a? String
       config = CONF if conf.empty?
       reset
       load_conf(config)
