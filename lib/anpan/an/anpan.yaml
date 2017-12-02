@@ -26,21 +26,21 @@ vowels:
 - input: x
   output: inn
 consonants:
-- :input: 
-- :input: c
-  :output: k
+- input:
+- input: c
+  output: k
   :contracted:
   - :trigger: n
     :insertion: ily
   :germinated:
   - :insertion: ltu
-- :input: s
+- input: s
   :contracted:
   - :trigger: h
     :insertion: ily
   :germinated:
   - :insertion: ltu
-- :input: t
+- input: t
   :contracted:
   - :trigger: n
     :insertion: ily
@@ -48,26 +48,26 @@ consonants:
     :insertion: ely
   :germinated:
   - :insertion: ltu
-- :input: n
+- input: n
   :contracted:
   - :trigger: h
     :insertion: ily
   :germinated:
   - :insertion: n
-- :input: h
+- input: h
   :contracted:
   - :trigger: n
     :insertion: ily
   :germinated:
   - :insertion: ltu
-- :input: m
+- input: m
   :contracted:
   - :trigger: n
     :insertion: ily
   :germinated:
   - :insertion: ltu
-- :input: f
-  :output: y
+- input: f
+  output: y
   :germinated:
   - :insertion: ltu
   :regression:
@@ -77,31 +77,31 @@ consonants:
     :insertion: f
   - :trigger: n
     :insertion: huly
-- :input: r
+- input: r
   :contracted:
   - :trigger: h
     :insertion: ily
   :germinated:
   - :insertion: ltu
-- :input: w
+- input: w
   :contracted:
   - :trigger: h
     :insertion: ul
   :germinated:
   - :insertion: ltu
-- :input: g
+- input: g
   :contracted:
   - :trigger: n
     :insertion: ily
   :germinated:
   - :insertion: ltu
-- :input: z
+- input: z
   :contracted:
   - :trigger: h
     :insertion: ily
   :germinated:
   - :insertion: ltu
-- :input: d
+- input: d
   :contracted:
   - :trigger: n
     :insertion: ely
@@ -109,8 +109,8 @@ consonants:
     :insertion: ily
   :germinated:
   - :insertion: ltu
-- :input: v
-  :output: p
+- input: v
+  output: p
   :contracted:
   - :trigger: h
     :insertion: ily
@@ -121,13 +121,13 @@ consonants:
     :insertion: v
   :germinated:
   - :insertion: ltu
-- :input: b
+- input: b
   :contracted:
   - :trigger: n
     :insertion: ily
   :germinated:
   - :insertion: ltu
-- :input: l
+- input: l
   :regression:
   - :trigger: f
     :insertion: ly
