@@ -21,9 +21,9 @@ class Anpan
 
     ### loading ###
     def load_conf(conf)
-      load_consonant conf[:consonants]
-      load_vowel     conf[:vowels]
-      load_symbol    conf[:symbols]
+      load_consonant conf[:consonants] || conf['consonants']
+      load_vowel     conf[:vowels]     || conf['vowels']
+      load_symbol    conf[:symbols]    || conf['symbols']
     end
 
     def load_consonant(array = [])

@@ -1,5 +1,5 @@
 ---
-:vowels:
+vowels:
 - :input: a
 - :input: o
 - :input: e
@@ -25,7 +25,7 @@
   :output: unn
 - :input: x
   :output: inn
-:consonants:
+consonants:
 - :input: 
 - :input: c
   :output: k
@@ -133,7 +133,7 @@
     :insertion: ly
   :germinated:
   - :insertion: ltu
-:symbols:
+symbols:
 - :input: "["
 - :input: "]"
 - :input: "-"
