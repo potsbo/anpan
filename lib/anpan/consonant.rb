@@ -99,12 +99,12 @@ class Anpan
     end
 
     def vowel_filter(conf = {})
-      base  = conf[:vowels]        || conf['vowels']       || @vowel_filter
+      base  = conf[:vowels] || @vowel_filter
       base.map!{|s| s.to_sym}
-      filter = conf[:vowel_filter]  || conf['vowel_filter'] || %i(a o e u i)
+      filter = conf[:vowel_filter] || %i(a o e u i)
       filter.map!{|s| s.to_sym}
       base &= filter
-      base - Array(conf[:expect_vowels] || conf['expect_vowels'])
+      base - Array(conf[:expect_vowels])
     end
     ### pattern makers ###
   end
