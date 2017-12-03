@@ -94,6 +94,7 @@ class Anpan
     end
 
     def only_singles(conf = {})
+      conf[:only_singles] ||= conf['only_singles']
       conf[:only_singles].nil? ? @conf[:only_singles] || @conf['only_singles'] : conf[:only_singles] || conf['only_singles']
     end
 
