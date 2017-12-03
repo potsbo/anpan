@@ -1,7 +1,4 @@
 require 'active_support/core_ext/hash/keys'
-require 'anpan/an/conf'
-require 'anpan/an/google_japanese_input'
-require 'anpan/an/dvorakjp'
 
 class Anpan
   class An
