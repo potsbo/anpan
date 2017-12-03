@@ -8,9 +8,9 @@ RSpec::Core::RakeTask.new(:spec)
 task default: :package
 
 CONFS = {
-  'anpan.txt': Anpan::An::CONF,
-  'dvorakjp.txt': Anpan::An::DVORAKJP,
-  'google_japanese_input.txt': Anpan::An::GOOGLE_JAPANESE,
+  'anpan.txt': 'anpan.yaml',
+  'google_japanese_input.txt': 'google_japanese_input.yaml',
+  'dvorakjp_prime.txt': 'dvorakjp.yaml',
 }
 
 TABLE_PATHS = CONFS.keys.map(&:to_s)
