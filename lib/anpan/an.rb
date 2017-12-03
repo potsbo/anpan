@@ -1,14 +1,15 @@
-require 'anpan/an/conf'
-require 'anpan/an/google_japanese_input'
-require 'anpan/an/dvorakjp'
+require 'active_support/core_ext/hash/keys'
 
 class Anpan
   class An
     attr_reader :consonant_list, :vowel_list
-    def initialize(conf = {})
-      conf = CONF if conf.empty?
+    def initialize(conf = 'anpan.yaml')
+      config = {}
+      config = YAML.load_file(File.join(__dir__, 'an', conf)) if conf.is_a? String
+      config = conf if conf.is_a? Hash
+      config = config.deep_symbolize_keys
       reset
-      load_conf(conf)
+      load_conf(config)
     end
 
     def reset
@@ -19,9 +20,9 @@ class Anpan
 
     ### loading ###
     def load_conf(conf)
-      load_consonant conf[:consonants]
-      load_vowel     conf[:vowels]
-      load_symbol    conf[:symbols]
+      load_consonant conf[:consonants] || []
+      load_vowel     conf[:vowels]     || []
+      load_symbol    conf[:symbols]    || []
     end
 
     def load_consonant(array = [])
@@ -33,7 +34,7 @@ class Anpan
     end
 
     def load_symbol(array = {})
-      add_symbols array.map { |a| Anpan::Symbol.new(a[:input], a[:output] || a[:input], a[:addition], a[:as_is]) }
+      add_symbols(array.map { |a| Anpan::Symbol.new(a) })
     end
     ### loading ###
 

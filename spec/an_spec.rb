@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Anpan::An do
-  let(:conf) { {} }
+  let(:conf) { nil }
   let(:anpan) { Anpan::An.new(conf) }
   let(:consonant) { Anpan::Consonant.new(input: :c, output: :k) }
   let(:vowel) { Anpan::Vowel.new(input: :a) }
@@ -9,9 +9,9 @@ describe Anpan::An do
   describe 'config files' do
     let(:render) { anpan.render }
     config_files = {
-      'anpan.txt': Anpan::An::CONF,
-      'google_japanese_input.txt': Anpan::An::GOOGLE_JAPANESE,
-      'dvorakjp_prime.txt': Anpan::An::DVORAKJP,
+      'anpan.txt': 'anpan.yaml',
+      'google_japanese_input.txt': 'google_japanese_input.yaml',
+      'dvorakjp_prime.txt': 'dvorakjp.yaml',
     }
     config_files.each do |table, config|
       context "when #{table} given" do
@@ -62,7 +62,7 @@ describe Anpan::An do
   end
 
   describe '#patterns' do
-    let(:conf) { Anpan::An::CONF }
+    let(:conf) { 'anpan.yaml' }
     it 'should have no alphabets in output_jp' do
       anpan.patterns.each do |pattern|
         expect(pattern.output_jp).not_to match(/[a-z]+/)

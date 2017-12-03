@@ -77,7 +77,7 @@ class Anpan
     end
 
     def single
-      Array(@conf[:single]) || []
+      @conf[:single] || []
     end
 
     def vowels(conf = {})
@@ -100,8 +100,11 @@ class Anpan
 
     def vowel_filter(conf = {})
       base  = conf[:vowels] || @vowel_filter
-      base &= conf[:vowel_filter]  || %i(a o e u i)
-      base - (conf[:expect_vowels] || [])
+      base.map!(&:to_sym)
+      filter = conf[:vowel_filter] || %i[a o e u i]
+      filter.map!(&:to_sym)
+      base &= filter
+      base - Array(conf[:expect_vowels])
     end
     ### pattern makers ###
   end
