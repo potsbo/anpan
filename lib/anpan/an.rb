@@ -10,7 +10,7 @@ class Anpan
       config = conf
       config = YAML.load_file(File.join(__dir__, 'an', conf)) if conf.is_a? String
       config = CONF if conf.empty?
-      config.deep_symbolize_keys!
+      config = config.deep_symbolize_keys
       reset
       load_conf(config)
     end
