@@ -44,32 +44,29 @@ class Anpan
     end
 
     def patterns_contracted
-      list = @conf[:contracted] || @conf['contracted'] || []
-      list.map do |c|
+      (@conf[:contracted] || []).map do |c|
         vowels(c).collect do |v|
           Pattern.new(
-            "#{@input}#{c[:trigger] || c['trigger']}#{v.input}",
-            "#{@output}#{c[:insertion] || c['insertion']}#{v.output}"
+            "#{@input}#{c[:trigger]}#{v.input}",
+            "#{@output}#{c[:insertion]}#{v.output}"
           )
         end
       end
     end
 
     def patterns_germinated
-      list = @conf[:germinated] || @conf['germinated'] || []
-      list.map do |hash|
-        trigger = hash[:trigger] || hash['trigger'] || @input
-        Pattern.new("#{@input}#{trigger}", "#{hash[:insertion] || hash['insertion']}#{trigger}")
+      (@conf[:germinated] || []).map do |hash|
+        trigger = hash[:trigger] || @input
+        Pattern.new("#{@input}#{trigger}", "#{hash[:insertion]}#{trigger}")
       end
     end
 
     def patterns_regression
-      list = @conf[:regression] || @conf['regression'] || []
-      list.collect do |a|
+      (@conf[:regression] || []).collect do |a|
         vowels(a).collect do |v|
           Pattern.new(
-            "#{@input}#{a[:trigger] || a['trigger']}#{v.input}",
-            "#{a[:insertion] || a['insertion']}#{v.output}"
+            "#{@input}#{a[:trigger]}#{v.input}",
+            "#{a[:insertion]}#{v.output}"
           )
         end
       end
