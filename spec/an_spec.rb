@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Anpan::An do
-  let(:conf) { {} }
+  let(:conf) { nil }
   let(:anpan) { Anpan::An.new(conf) }
   let(:consonant) { Anpan::Consonant.new(input: :c, output: :k) }
   let(:vowel) { Anpan::Vowel.new(input: :a) }

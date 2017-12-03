@@ -4,9 +4,9 @@ class Anpan
   class An
     attr_reader :consonant_list, :vowel_list
     def initialize(conf = {})
-      config = conf
+      config = {}
       config = YAML.load_file(File.join(__dir__, 'an', conf)) if conf.is_a? String
-      config = CONF if conf.empty?
+      config = conf if conf.is_a? Hash
       config = config.deep_symbolize_keys
       reset
       load_conf(config)
