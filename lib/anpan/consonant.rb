@@ -103,6 +103,7 @@ class Anpan
 
     def vowel_filter(conf = {})
       base  = conf[:vowels]        || conf['vowels']       || @vowel_filter
+      base.map!{|s| s.to_sym}
       base &= conf[:vowel_filter]  || conf['vowel_filter'] || %i(a o e u i)
       base - Array(conf[:expect_vowels] || conf['expect_vowels'])
     end
