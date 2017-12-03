@@ -10,9 +10,9 @@ class Anpan
 
     def load_conf(conf)
       @conf = conf
-      @inputs       = conf[:input]        || conf['input']        || @inputs
-      @outputs      = conf[:output]       || conf['output']       || @inputs
-      @vowel_filter = conf[:vowel_filter] || conf['vowel_filter'] || %i(a o e u i)
+      @inputs       = conf[:input]         || @inputs
+      @outputs      = conf[:output]        || @inputs
+      @vowel_filter = conf[:vowel_filter]  || %i(a o e u i)
 
       @inputs  = Array([@inputs]).flatten
       @outputs = Array([@outputs]).flatten
