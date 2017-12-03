@@ -154,7 +154,7 @@ consonants:
     - o
     - e
     - i
-    only_singles: true
+    only_singles: Yes
   germinated:
   - insertion: ltu
 - input: m
@@ -224,7 +224,7 @@ consonants:
   regression:
   - trigger: y
     insertion: w
-    only_singles: true
+    only_singles: Yes
 - input: w
   vowel_filter:
   - a
@@ -263,7 +263,7 @@ consonants:
   - insertion: ltu
 - input: j
   output: zily
-  avoid_self: true
+  avoid_self: Yes
   vowel_filter:
   - a
   - o
@@ -319,7 +319,7 @@ consonants:
   germinated:
   - insertion: ltu
 - input: p
-  avoid_self: true
+  avoid_self: Yes
   contracted:
   - trigger: h
     insertion: ily
@@ -340,32 +340,32 @@ consonants:
     vowel_filter:
     - a
     - e
-    only_singles: true
+    only_singles: Yes
   - trigger: c
     insertion: k
     vowel_filter:
     - a
     - e
-    only_singles: true
+    only_singles: Yes
   - trigger: t
     insertion: t
     vowel_filter:
     - u
-    only_singles: true
+    only_singles: Yes
   - trigger: ts
     insertion: t
     vowel_filter:
     - u
-    only_singles: true
+    only_singles: Yes
   - trigger: w
     insertion: w
     vowel_filter:
     - a
-    only_singles: true
+    only_singles: Yes
   germinated:
   - insertion: ltu
 - input: x
-  avoid_self: true
+  avoid_self: Yes
   output: l
   contracted:
   - trigger: y
@@ -376,32 +376,32 @@ consonants:
     vowel_filter:
     - a
     - e
-    only_singles: true
+    only_singles: Yes
     avoid_self: false
   - trigger: c
     insertion: k
     vowel_filter:
     - a
     - e
-    only_singles: true
+    only_singles: Yes
     avoid_self: false
   - trigger: t
     insertion: t
     vowel_filter:
     - u
-    only_singles: true
+    only_singles: Yes
     avoid_self: false
   - trigger: ts
     insertion: t
     vowel_filter:
     - u
-    only_singles: true
+    only_singles: Yes
     avoid_self: false
   - trigger: w
     insertion: w
     vowel_filter:
     - a
-    only_singles: true
+    only_singles: Yes
     avoid_self: false
   - trigger: h
     insertion: y
@@ -419,7 +419,7 @@ consonants:
   germinated:
   - insertion: ltu
 - input: q
-  avoid_self: true
+  avoid_self: Yes
   output: kul
   vowel_filter:
   - a
@@ -466,4 +466,4 @@ symbols:
 - input: www
   output: w
   addition: ww
-  as_is: true
+  as_is: Yes

@@ -80,7 +80,7 @@ class Anpan
     end
 
     def single
-      Array(@conf[:single]) || []
+      @conf[:single] || @conf['single'] || []
     end
 
     def vowels(conf = {})
@@ -94,17 +94,19 @@ class Anpan
     end
 
     def only_singles(conf = {})
-      conf[:only_singles].nil? ? @conf[:only_singles] : conf[:only_singles]
+      # conf[:only_singles].nil? ? @conf[:only_singles] : conf[:only_singles]
+      conf[:only_singles] || conf['only_singles'] || false
     end
 
     def avoid_self(conf = {})
-      conf[:avoid_self].nil? ? @conf[:avoid_self] : conf[:avoid_self]
+      # conf[:avoid_self].nil? ? @conf[:avoid_self] : conf[:avoid_self]
+      conf[:avoid_self] || conf['avoid_self'] || false
     end
 
     def vowel_filter(conf = {})
-      base  = conf[:vowels] || @vowel_filter
-      base &= conf[:vowel_filter]  || %i(a o e u i)
-      base - (conf[:expect_vowels] || [])
+      base  = conf[:vowels]        || conf['vowels']       || @vowel_filter
+      base &= conf[:vowel_filter]  || conf['vowel_filter'] || %i(a o e u i)
+      base - Array(conf[:expect_vowels] || conf['expect_vowels'])
     end
     ### pattern makers ###
   end

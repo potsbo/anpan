@@ -66,6 +66,7 @@ consonants:
   germinated:
   - insertion: ltu
 - input: c
+  vowel_filter: []
   germinated:
   - insertion: ltu
   regression:
