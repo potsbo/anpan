@@ -3,7 +3,7 @@ require 'active_support/core_ext/hash/keys'
 class Anpan
   class An
     attr_reader :consonant_list, :vowel_list
-    def initialize(conf = {})
+    def initialize(conf = 'anpan.yaml')
       config = {}
       config = YAML.load_file(File.join(__dir__, 'an', conf)) if conf.is_a? String
       config = conf if conf.is_a? Hash
@@ -20,9 +20,9 @@ class Anpan
 
     ### loading ###
     def load_conf(conf)
-      load_consonant conf[:consonants]
-      load_vowel     conf[:vowels]
-      load_symbol    conf[:symbols]
+      load_consonant conf[:consonants] || []
+      load_vowel     conf[:vowels]     || []
+      load_symbol    conf[:symbols]    || []
     end
 
     def load_consonant(array = [])

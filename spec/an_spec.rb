@@ -62,7 +62,7 @@ describe Anpan::An do
   end
 
   describe '#patterns' do
-    let(:conf) { Anpan::An::CONF }
+    let(:conf) { 'anpan.yaml' }
     it 'should have no alphabets in output_jp' do
       anpan.patterns.each do |pattern|
         expect(pattern.output_jp).not_to match(/[a-z]+/)
