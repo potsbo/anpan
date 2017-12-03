@@ -1,3 +1,4 @@
+require 'active_support/core_ext/hash/keys'
 require 'anpan/an/conf'
 require 'anpan/an/google_japanese_input'
 require 'anpan/an/dvorakjp'
@@ -8,6 +9,7 @@ class Anpan
     def initialize(conf = {})
       config = conf
       config = YAML.load_file(File.join(__dir__, 'an', conf)) if conf.is_a? String
+      config.deep_symbolize_keys
       config = CONF if conf.empty?
       reset
       load_conf(config)
