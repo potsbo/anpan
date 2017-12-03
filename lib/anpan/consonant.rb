@@ -77,7 +77,7 @@ class Anpan
     end
 
     def single
-      @conf[:single] || @conf['single'] || []
+      @conf[:single] || []
     end
 
     def vowels(conf = {})
