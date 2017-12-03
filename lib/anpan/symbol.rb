@@ -3,10 +3,10 @@ class Anpan
     attr_reader :input, :output
 
     def initialize(conf)
-      @input    = conf[:input]    || conf['input']
-      @output   = conf[:output]   || conf['output']   || @input
-      @addition = conf[:addition] || conf['addition']
-      @as_is    = conf[:as_is]    || conf['as_is']    || false
+      @input    = conf[:input]
+      @output   = conf[:output]   || @input
+      @addition = conf[:addition]
+      @as_is    = conf[:as_is]    || false
     end
 
     def render
