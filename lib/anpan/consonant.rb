@@ -94,13 +94,11 @@ class Anpan
     end
 
     def only_singles(conf = {})
-      # conf[:only_singles].nil? ? @conf[:only_singles] : conf[:only_singles]
-      conf[:only_singles] || conf['only_singles'] || false
+      conf[:only_singles].nil? ? @conf[:only_singles] || @conf['only_singles'] : conf[:only_singles] || conf['only_singles']
     end
 
     def avoid_self(conf = {})
-      # conf[:avoid_self].nil? ? @conf[:avoid_self] : conf[:avoid_self]
-      conf[:avoid_self] || conf['avoid_self'] || false
+      conf[:avoid_self].nil? ? @conf[:avoid_self] : conf[:avoid_self]
     end
 
     def vowel_filter(conf = {})

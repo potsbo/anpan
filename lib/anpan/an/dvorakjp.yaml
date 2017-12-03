@@ -24,8 +24,8 @@ vowels:
 - input: x
   output: inn
 consonants:
-- input:
-  only_singles: true
+- input: null
+  only_singles: Yes
 - input: k
   avoid_self: true
   contracted:
