@@ -438,7 +438,7 @@ symbols:
 - input: "-"
 - input: "~"
 - input: ;-
-  output: ~
+  output: "~"
 - input: ;/
   output: /
 - input: ","
