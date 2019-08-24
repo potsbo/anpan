@@ -34,12 +34,14 @@ consonants:
     :insertion: ily
   :germinated:
   - :insertion: ltu
+  single: ku
 - input: s
   :contracted:
   - :trigger: h
     :insertion: ily
   :germinated:
   - :insertion: ltu
+  single: su
 - input: t
   :contracted:
   - :trigger: n
@@ -48,24 +50,28 @@ consonants:
     :insertion: ely
   :germinated:
   - :insertion: ltu
+  single: tu
 - input: n
   :contracted:
   - :trigger: h
     :insertion: ily
   :germinated:
   - :insertion: n
+  single: nn
 - input: h
   :contracted:
   - :trigger: n
     :insertion: ily
   :germinated:
   - :insertion: ltu
+  single: hu
 - input: m
   :contracted:
   - :trigger: n
     :insertion: ily
   :germinated:
   - :insertion: ltu
+  single: mu
 - input: f
   output: y
   :germinated:
@@ -77,30 +83,35 @@ consonants:
     :insertion: f
   - :trigger: n
     :insertion: huly
+  single: hu
 - input: r
   :contracted:
   - :trigger: h
     :insertion: ily
   :germinated:
   - :insertion: ltu
+  single: -
 - input: w
   :contracted:
   - :trigger: h
     :insertion: ul
   :germinated:
   - :insertion: ltu
+  single: u
 - input: g
   :contracted:
   - :trigger: n
     :insertion: ily
   :germinated:
   - :insertion: ltu
+  single: gu
 - input: z
   :contracted:
   - :trigger: h
     :insertion: ily
   :germinated:
   - :insertion: ltu
+  single: zu
 - input: d
   :contracted:
   - :trigger: n
@@ -109,6 +120,7 @@ consonants:
     :insertion: ily
   :germinated:
   - :insertion: ltu
+  single: dolu
 - input: v
   output: p
   :contracted:
@@ -121,12 +133,14 @@ consonants:
     :insertion: v
   :germinated:
   - :insertion: ltu
+  single: pu
 - input: b
   :contracted:
   - :trigger: n
     :insertion: ily
   :germinated:
   - :insertion: ltu
+  single: bu
 - input: l
   :regression:
   - :trigger: f
