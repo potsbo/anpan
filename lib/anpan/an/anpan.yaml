@@ -90,7 +90,7 @@ consonants:
     :insertion: ily
   :germinated:
   - :insertion: ltu
-  single: -
+  single: '-'
 - input: w
   :contracted:
   - :trigger: h
