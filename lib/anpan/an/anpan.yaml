@@ -50,7 +50,7 @@ consonants:
     :insertion: ely
   :germinated:
   - :insertion: ltu
-  single: tu
+  single: to
 - input: n
   :contracted:
   - :trigger: h
