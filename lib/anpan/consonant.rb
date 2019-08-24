@@ -73,7 +73,7 @@ class Anpan
     end
 
     def patterns_single
-      single.map { |s| Pattern.new(@input, s) }
+      Array(single).map { |s| Pattern.new(@input, s) }
     end
 
     def single
