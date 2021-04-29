@@ -1,0 +1,19 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "20:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: codecov
+    versions:
+    - 0.4.2
+    - 0.4.3
+    - 0.5.1
+  - dependency-name: activesupport
+    versions:
+    - 6.1.2
+    - 6.1.2.1
+    - 6.1.3
