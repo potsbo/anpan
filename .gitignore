@@ -3,3 +3,5 @@
 /dist/
 /pkg/
 /*.txt
+.bundle
+vendor
