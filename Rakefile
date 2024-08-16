@@ -26,19 +26,19 @@ end
 
 file package_task.package_dir_path => TABLE_PATHS
 
-def output_to_file(filename, conf)
+def output_to_file(filename, conf, target)
   puts filename
   File.open(filename.to_s, 'w') do |file|
-    file.write Anpan.new(conf).render
+    file.write Anpan.new(conf).render(target)
   end
 end
 
 CONFS.each do |key, conf|
-  TARGETS.each do |k, ext|
+  TARGETS.each do |target, ext|
     filename = "#{key}#{ext}"
 
     file filename do
-      output_to_file filename, conf
+      output_to_file filename, conf, target
     end
   end
 end

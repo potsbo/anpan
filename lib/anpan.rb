@@ -18,7 +18,12 @@ class Anpan
     @an.table(args)
   end
 
-  def render
-    @an.patterns.map(&:render).join("\n")
+  def render(target)
+    case target
+    when :google_japanese_input
+      @an.patterns.map(&:render).join("\n")
+    when :kawasemi
+      "" # TODO: implement
+    end
   end
 end
