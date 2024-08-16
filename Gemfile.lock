@@ -19,6 +19,8 @@ GEM
       concurrent-ruby (~> 1.0)
     minitest (5.14.3)
     rake (13.2.1)
+    rexml (3.3.5)
+      strscan
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -32,6 +34,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.1)
+    strscan (3.1.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     zeitwerk (2.4.2)
@@ -42,6 +45,7 @@ PLATFORMS
 DEPENDENCIES
   anpan!
   rake
+  rexml
   rspec
 
 BUNDLED WITH

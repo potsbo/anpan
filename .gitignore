@@ -3,5 +3,6 @@
 /dist/
 /pkg/
 /*.txt
+/*.nrset
 .bundle
 vendor

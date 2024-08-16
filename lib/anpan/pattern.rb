@@ -1,4 +1,5 @@
 require 'anpan/pattern/table'
+require 'rexml/document'
 
 class Anpan
   class Pattern
@@ -10,9 +11,22 @@ class Anpan
       @as_is    = as_is
     end
 
-    def render
+    def render(target = :google_japanese_input)
       output = @as_is ? @output : output_jp
-      [@input, output, @addition].join("\t").gsub(/\t+$/, '')
+
+      case target
+      when :google_japanese_input
+        [@input, output, @addition].join("\t").gsub(/\t+$/, '')
+      when :kawasemi
+        # かわせみは自動で tt -> っt に変換してくれるのでそれを阻害しないようにする
+        return [] unless @addition.empty?
+
+        key = REXML::Element.new('key')
+        key.text = @input
+        value = REXML::Element.new('string')
+        value.text = output
+        [key, value]
+      end
     end
 
     def to_h

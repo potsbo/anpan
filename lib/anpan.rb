@@ -1,4 +1,5 @@
 require 'yaml'
+require 'rexml/document'
 require 'anpan/vowel'
 require 'anpan/consonant'
 require 'anpan/an'
@@ -18,7 +19,26 @@ class Anpan
     @an.table(args)
   end
 
-  def render
-    @an.patterns.map(&:render).join("\n")
+  def render(target)
+    case target
+    when :google_japanese_input
+      @an.patterns.map { |p| p.render(target) }.join("\n")
+    when :kawasemi
+      doc = REXML::Document.new
+      doc << REXML::XMLDecl.new('1.0', 'UTF-8')
+      plist = REXML::Element.new('plist')
+      plist.add_attribute('version', '1.0')
+      dict = REXML::Element.new('dict')
+
+      @an.patterns.each do |p|
+        p.render(target).each do |e|
+          dict << e
+        end
+      end
+      plist << dict
+      doc << plist
+
+      doc.to_s
+    end
   end
 end
