@@ -70,6 +70,17 @@ TODO
 ## Development
 利用者の殆どが日本語を自由に使えると考えられるため、Issue や Pull Request は日本語で記述して良い。
 
+### Nix
+[Nix](https://nixos.org/) (flakes 有効) があれば Ruby を別途入れなくても開発できる。
+gem は `vendor/` 以下にインストールされる。
+
+```sh
+nix develop          # direnv を使う場合は `direnv allow`
+bundle install
+bundle exec rake spec  # テスト
+bundle exec rake       # テーブルを生成して pkg/ に zip を作る
+```
+
 ## Future Works
 + Anpanテーブルの仕様を解説する
 + configファイルの仕様を解説する
