@@ -1,5 +1,5 @@
 # Anpan
-[![Build Status](https://travis-ci.org/potsbo/anpan.svg?branch=master)](https://travis-ci.org/potsbo/anpan)
+[![CI](https://github.com/potsbo/anpan/actions/workflows/ci.yaml/badge.svg)](https://github.com/potsbo/anpan/actions/workflows/ci.yaml)
 [![Code Climate](https://codeclimate.com/github/potsbo/anpan/badges/gpa.svg)](https://codeclimate.com/github/potsbo/anpan)
 [![codecov](https://codecov.io/gh/potsbo/anpan/branch/master/graph/badge.svg)](https://codecov.io/gh/potsbo/anpan)
 
